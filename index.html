@@ -1,5 +1,8 @@
 <!-- TODO Implement a Dark Mode -->
 <!-- TODO Create a better mobile mode -->
+<!-- TODO Numbers that are too long bleed off the calculator -->
+<!-- TODO Use Module Export for JS Class -->
+<!-- TODO Implement Delete Keyboard Button -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,8 +24,8 @@
                 <div class="col-12" id="keypad">
                     <div class="row">
                         <div class="col-12 bg-dark text-white mb-2">
-                            <h6 class="text-right text-danger mt-2" id="sub-number">0</h6>
-                            <h1 class="text-right" id="number">0</h1>
+                            <h6 class="text-right text-danger mt-2" id="secondary-display">0</h6>
+                            <h1 class="text-right" id="primary-display">0</h1>
                         </div>
                     </div>
                     <div class="row">
@@ -30,46 +33,46 @@
                             <button class="btn btn-lg btn-block btn-danger btn-raised mb-2" id="btn-clear">Clear</button>
                         </div>
                         <div class="col-3">
-                            <button class="btn btn-lg btn-block btn-warning btn-raised mb-2">&#247;</button>
+                            <button class="btn btn-lg btn-block btn-warning btn-raised mb-2" id="btn-division">&#247;</button>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-3">
-                            <button class="btn btn-lg btn-block btn-info btn-raised mb-2 btn-number" value="7">7</button>
+                            <button class="btn btn-lg btn-block btn-info btn-raised mb-2" id="sevenButton">7</button>
                         </div>
                         <div class="col-3">
-                            <button class="btn btn-lg btn-block btn-info btn-raised mb-2 btn-number" value="8">8</button>
+                            <button class="btn btn-lg btn-block btn-info btn-raised mb-2" id="eightButton">8</button>
                         </div>
                         <div class="col-3">
-                            <button class="btn btn-lg btn-block btn-info btn-raised mb-2 btn-number" value="9">9</button>
+                            <button class="btn btn-lg btn-block btn-info btn-raised mb-2" id="nineButton">9</button>
                         </div>
                         <div class="col-3">
-                            <button class="btn btn-lg btn-block btn-warning btn-raised mb-2">&#215;</button>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-3">
-                            <button class="btn btn-lg btn-block btn-info btn-raised mb-2 btn-number" value="4">4</button>
-                        </div>
-                        <div class="col-3">
-                            <button class="btn btn-lg btn-block btn-info btn-raised mb-2 btn-number" value="5">5</button>
-                        </div>
-                        <div class="col-3">
-                            <button class="btn btn-lg btn-block btn-info btn-raised mb-2 btn-number" value="6">6</button>
-                        </div>
-                        <div class="col-3">
-                            <button class="btn btn-lg btn-block btn-warning btn-raised mb-2">&#8722;</button>
+                            <button class="btn btn-lg btn-block btn-warning btn-raised mb-2" id="btn-multiplication">&#215;</button>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-3">
-                            <button class="btn btn-lg btn-block btn-info btn-raised mb-2 btn-number" value="1">1</button>
+                            <button class="btn btn-lg btn-block btn-info btn-raised mb-2" id="fourButton">4</button>
                         </div>
                         <div class="col-3">
-                            <button class="btn btn-lg btn-block btn-info btn-raised mb-2 btn-number" value="2">2</button>
+                            <button class="btn btn-lg btn-block btn-info btn-raised mb-2" id="fiveButton">5</button>
                         </div>
                         <div class="col-3">
-                            <button class="btn btn-lg btn-block btn-info btn-raised mb-2 btn-number" value="3">3</button>
+                            <button class="btn btn-lg btn-block btn-info btn-raised mb-2" id="sixButton">6</button>
+                        </div>
+                        <div class="col-3">
+                            <button class="btn btn-lg btn-block btn-warning btn-raised mb-2" id="btn-subtraction">&#8722;</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-3">
+                            <button class="btn btn-lg btn-block btn-info btn-raised mb-2" id="oneButton">1</button>
+                        </div>
+                        <div class="col-3">
+                            <button class="btn btn-lg btn-block btn-info btn-raised mb-2" id="twoButton">2</button>
+                        </div>
+                        <div class="col-3">
+                            <button class="btn btn-lg btn-block btn-info btn-raised mb-2" id="threeButton">3</button>
                         </div>
                         <div class="col-3">
                             <button class="btn btn-lg btn-block btn-warning btn-raised mb-2" id="btn-addition">&#43;</button>
@@ -77,13 +80,13 @@
                     </div>
                     <div class="row">
                         <div class="col-6">
-                            <button class="btn btn-lg btn-block btn-info btn-raised mb-2 btn-number" value="0">0</button>
+                            <button class="btn btn-lg btn-block btn-info btn-raised mb-2" id="zeroButton">0</button>
                         </div>
                         <div class="col-3">
-                            <button class="btn btn-lg btn-block btn-info btn-raised mb-2">.</button>
+                            <button class="btn btn-lg btn-block btn-info btn-raised mb-2" id="btn-decimal">.</button>
                         </div>
                         <div class="col-3">
-                            <button class="btn btn-lg btn-block btn-primary btn-raised mb-2">&#61;</button>
+                            <button class="btn btn-lg btn-block btn-primary btn-raised mb-2" id="btn-equals">&#61;</button>
                         </div>
                     </div>
                 </div>
@@ -96,6 +99,9 @@
     <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
     <script>$(document).ready(function() { $('body').bootstrapMaterialDesign(); });</script>
+
+    <!-- Calculator Class -->
+    <script type="text/javascript" src="assets/js/calculator.js"></script>
 
     <!-- Page Specific JS -->
     <script type="text/javascript" src="assets/js/index.js"></script>
