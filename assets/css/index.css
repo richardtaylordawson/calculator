@@ -4,5 +4,10 @@ body {
 }
 
 #calculator {
+    padding: 18px;
+    border-radius: 15px;
+}
+
+#keypad {
     background-color: #cccccc;
 }

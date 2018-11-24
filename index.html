@@ -1,9 +1,12 @@
 <!-- TODO Implement a Dark Mode -->
+<!-- TODO Create a better mobile mode -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Bootstrap Material Calculator</title>
+    <title>Material Calculator</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
     <!-- Bootstrap 4 CSS with Material Theme -->
     <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
@@ -14,72 +17,74 @@
 <body>
     <div class="container">
         <div class="row">
-            <div class="col-lg-4 offset-lg-4 col-md-6 offset-md-3" id="calculator">
-                <div class="row">
-                    <div class="col-12 bg-dark text-white mb-2">
-                        <h6 class="text-right text-danger mt-2" id="sub-number">0</h6>
-                        <h1 class="text-right" id="number">0</h1>
+            <div class="mb-4 mt-4 col-lg-4 offset-lg-4 col-md-6 offset-md-3 bg-secondary" id="calculator">
+                <div class="col-12" id="keypad">
+                    <div class="row">
+                        <div class="col-12 bg-dark text-white mb-2">
+                            <h6 class="text-right text-danger mt-2" id="sub-number">0</h6>
+                            <h1 class="text-right" id="number">0</h1>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-9">
-                        <button class="btn btn-lg btn-block btn-danger btn-raised mb-2" id="btn-clear">Clear</button>
+                    <div class="row">
+                        <div class="col-9">
+                            <button class="btn btn-lg btn-block btn-danger btn-raised mb-2" id="btn-clear">Clear</button>
+                        </div>
+                        <div class="col-3">
+                            <button class="btn btn-lg btn-block btn-warning btn-raised mb-2">&#247;</button>
+                        </div>
                     </div>
-                    <div class="col-3">
-                        <button class="btn btn-lg btn-block btn-warning btn-raised mb-2">&#247;</button>
+                    <div class="row">
+                        <div class="col-3">
+                            <button class="btn btn-lg btn-block btn-info btn-raised mb-2 btn-number" value="7">7</button>
+                        </div>
+                        <div class="col-3">
+                            <button class="btn btn-lg btn-block btn-info btn-raised mb-2 btn-number" value="8">8</button>
+                        </div>
+                        <div class="col-3">
+                            <button class="btn btn-lg btn-block btn-info btn-raised mb-2 btn-number" value="9">9</button>
+                        </div>
+                        <div class="col-3">
+                            <button class="btn btn-lg btn-block btn-warning btn-raised mb-2">&#215;</button>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-3">
-                        <button class="btn btn-lg btn-block btn-info btn-raised mb-2 btn-number" value="7">7</button>
+                    <div class="row">
+                        <div class="col-3">
+                            <button class="btn btn-lg btn-block btn-info btn-raised mb-2 btn-number" value="4">4</button>
+                        </div>
+                        <div class="col-3">
+                            <button class="btn btn-lg btn-block btn-info btn-raised mb-2 btn-number" value="5">5</button>
+                        </div>
+                        <div class="col-3">
+                            <button class="btn btn-lg btn-block btn-info btn-raised mb-2 btn-number" value="6">6</button>
+                        </div>
+                        <div class="col-3">
+                            <button class="btn btn-lg btn-block btn-warning btn-raised mb-2">&#8722;</button>
+                        </div>
                     </div>
-                    <div class="col-3">
-                        <button class="btn btn-lg btn-block btn-info btn-raised mb-2 btn-number" value="8">8</button>
+                    <div class="row">
+                        <div class="col-3">
+                            <button class="btn btn-lg btn-block btn-info btn-raised mb-2 btn-number" value="1">1</button>
+                        </div>
+                        <div class="col-3">
+                            <button class="btn btn-lg btn-block btn-info btn-raised mb-2 btn-number" value="2">2</button>
+                        </div>
+                        <div class="col-3">
+                            <button class="btn btn-lg btn-block btn-info btn-raised mb-2 btn-number" value="3">3</button>
+                        </div>
+                        <div class="col-3">
+                            <button class="btn btn-lg btn-block btn-warning btn-raised mb-2" id="btn-addition">&#43;</button>
+                        </div>
                     </div>
-                    <div class="col-3">
-                        <button class="btn btn-lg btn-block btn-info btn-raised mb-2 btn-number" value="9">9</button>
-                    </div>
-                    <div class="col-3">
-                        <button class="btn btn-lg btn-block btn-warning btn-raised mb-2">&#215;</button>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-3">
-                        <button class="btn btn-lg btn-block btn-info btn-raised mb-2 btn-number" value="4">4</button>
-                    </div>
-                    <div class="col-3">
-                        <button class="btn btn-lg btn-block btn-info btn-raised mb-2 btn-number" value="5">5</button>
-                    </div>
-                    <div class="col-3">
-                        <button class="btn btn-lg btn-block btn-info btn-raised mb-2 btn-number" value="6">6</button>
-                    </div>
-                    <div class="col-3">
-                        <button class="btn btn-lg btn-block btn-warning btn-raised mb-2">&#8722;</button>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-3">
-                        <button class="btn btn-lg btn-block btn-info btn-raised mb-2 btn-number" value="1">1</button>
-                    </div>
-                    <div class="col-3">
-                        <button class="btn btn-lg btn-block btn-info btn-raised mb-2 btn-number" value="2">2</button>
-                    </div>
-                    <div class="col-3">
-                        <button class="btn btn-lg btn-block btn-info btn-raised mb-2 btn-number" value="3">3</button>
-                    </div>
-                    <div class="col-3">
-                        <button class="btn btn-lg btn-block btn-warning btn-raised mb-2" id="btn-addition">&#43;</button>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-6">
-                        <button class="btn btn-lg btn-block btn-info btn-raised mb-2 btn-number" value="0">0</button>
-                    </div>
-                    <div class="col-3">
-                        <button class="btn btn-lg btn-block btn-info btn-raised mb-2">.</button>
-                    </div>
-                    <div class="col-3">
-                        <button class="btn btn-lg btn-block btn-primary btn-raised mb-2">&#61;</button>
+                    <div class="row">
+                        <div class="col-6">
+                            <button class="btn btn-lg btn-block btn-info btn-raised mb-2 btn-number" value="0">0</button>
+                        </div>
+                        <div class="col-3">
+                            <button class="btn btn-lg btn-block btn-info btn-raised mb-2">.</button>
+                        </div>
+                        <div class="col-3">
+                            <button class="btn btn-lg btn-block btn-primary btn-raised mb-2">&#61;</button>
+                        </div>
                     </div>
                 </div>
             </div>

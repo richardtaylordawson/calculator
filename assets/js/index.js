@@ -2,7 +2,7 @@ let numberButtons = document.getElementsByClassName('btn-number');
 
 for(let i = 0; i < numberButtons.length; i++) {
     numberButtons[i].addEventListener('click', function() {
-        test(this.value);
+        input(this.value);
     });
 }
 
@@ -20,35 +20,37 @@ document.addEventListener('keydown', (event)  => {
     console.log(event.keyCode);
 
     switch(event.keyCode) {
+        // 48 - 57
+        // Numbers 0-9
         case 48:
-            test(0);
+            input(0);
             break;
         case 49:
-            test(1);
+            input(1);
             break;
         case 50:
-            test(2);
+            input(2);
             break;
         case 51:
-            test(3);
+            input(3);
             break;
         case 52:
-            test(4);
+            input(4);
             break;
         case 53:
-            test(5);
+            input(5);
             break;
         case 54:
-            test(6);
+            input(6);
             break;
         case 55:
-            test(7);
+            input(7);
             break;
         case 56:
-            test(8);
+            input(8);
             break;
         case 57:
-            test(9);
+            input(9);
             break;
         case 187:
             add();
@@ -59,7 +61,7 @@ document.addEventListener('keydown', (event)  => {
     }
 });
 
-function test(value) {
+function input(value) {
     document.getElementById('number').innerText = (document.getElementById('number').innerText === '0')
         ? value.toString()
         : document.getElementById('number').innerText.toString() + value.toString();
