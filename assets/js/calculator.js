@@ -1,3 +1,5 @@
+// TODO Use Module Export for JS Class
+// TODO Add comment blocks
 class Calculator {
     constructor(elements) {
         // Number buttons zero indexed 0-9
@@ -46,7 +48,7 @@ class Calculator {
             this.subtract();
         });
 
-        this.multiplicationButton().addEventListener('click', () => {
+        this.multiplicationButton.addEventListener('click', () => {
             this.multiply();
         });
 
@@ -60,6 +62,7 @@ class Calculator {
     }
 
     initializeKeyboardEvents() {
+        // TODO Implement Delete Keyboard Button
         document.addEventListener('keydown', (event)  => {
             console.log(event.keyCode);
 
@@ -129,13 +132,24 @@ class Calculator {
     }
 
     input(value) {
-        document.getElementById('number').innerText = (document.getElementById('number').innerText === '0')
-            ? value.toString()
-            : document.getElementById('number').innerText.toString() + value.toString();
+        const decimalRegex = new RegExp(/\./, 'g');
+        const operatorRegex = new RegExp(/[\/\+\-\*]/, 'g');
 
-        document.getElementById('sub-number').innerText = (document.getElementById('sub-number').innerText === '0')
-            ? value.toString()
-            : document.getElementById('sub-number').innerText.toString() + value.toString();
+        // Check to make sure a decimal hasn't already been added since numbers can only have a single decimal point
+        if((value === '.' && !decimalRegex.test(this.primaryDisplay.innerText)) || value !== '.') {
+            let secondaryDisplayValue = (operatorRegex.test(this.secondaryDisplay.innerText) && this.secondaryDisplay.innerText.split(' ').length !== 3)
+                ? this.secondaryDisplay.innerText.toString() + ' ' + value.toString()
+                : this.secondaryDisplay.innerText.toString() + value.toString();
+
+            this.primaryDisplay.innerText = (this.primaryDisplay.innerText !== '0' && value !== '.') || (value === '.')
+                ? this.primaryDisplay.innerText.toString() + value.toString()
+                : value.toString();
+
+            //TODO Need to figure out the secondary display better
+            this.secondaryDisplay.innerText = (this.secondaryDisplay.innerText !== '0' && value !== '.') || (value === '.')
+                ? secondaryDisplayValue
+                : value.toString();
+        }
     }
 
     clear() {
@@ -144,8 +158,14 @@ class Calculator {
     }
 
     add() {
-        this.primaryDisplay.innerText = '0';
-        this.secondaryDisplay.innerText = this.secondaryDisplay.innerText + ' + ';
+        const additionRegex = new RegExp(/\+/, 'g');
+
+        if(!additionRegex.test(this.secondaryDisplay.innerText)) {
+            this.primaryDisplay.innerText = '0';
+            this.secondaryDisplay.innerText = this.secondaryDisplay.innerText + ' + ';
+        } else {
+            //Do computation and call add again
+        }
     }
 
     subtract() {
@@ -164,7 +184,27 @@ class Calculator {
     }
 
     compute() {
+        const parts = this.secondaryDisplay.innerText.split(' ');
 
+        let value;
+
+        switch(parts[1]) {
+            case "+":
+                value = parseInt(parts[0]) + parseInt(parts[2]);
+                break;
+            case "-":
+                value = parseInt(parts[0]) - parseInt(parts[2]);
+                break;
+            case "*":
+                value = parseInt(parts[0]) * parseInt(parts[2]);
+                break;
+            case "/":
+                value = parseInt(parts[0]) / parseInt(parts[2]);
+                break;
+        }
+
+        this.primaryDisplay.innerText = value;
+        this.secondaryDisplay.innerText = this.secondaryDisplay.innerText.toString() + ' = ' + value.toString();
     }
 
 }
