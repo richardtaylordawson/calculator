@@ -1,9 +1,11 @@
+import Calculator from "./calculator.js";
+
 /**
  * Initializes the calculator object
  * Object takes care of all the logic, event listeners, etc of the calculator
  * @constant calculator
  */
-const calculator = new Calculator(
+new Calculator(
     {
         "numberButtons": [
             document.getElementById('zeroButton'),

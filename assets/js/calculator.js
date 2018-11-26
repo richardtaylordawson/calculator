@@ -1,9 +1,8 @@
-// TODO Use Module Export for JS Class
 /**
  * @author Richard Dawson
  * @classdesc involves all logic, event listeners, etc of a working calculator application
  */
-class Calculator {
+export default class Calculator {
     /**
      * Create a Calculator.
      * @param {object} elements - All the DOM objects of the calculator.
