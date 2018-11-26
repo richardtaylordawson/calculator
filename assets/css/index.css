@@ -5,6 +5,7 @@ body {
     margin: 0;
     background-attachment: fixed;
     padding: 75px;
+    font-family: monospace;
 }
 
 #calculator {
