@@ -1,0 +1,23 @@
+{
+  "name": "calculator",
+  "version": "1.0.0",
+  "description": "Simple calculator application built using Bootstrap 4, HTML, SCSS/CSS & Javascript with a Material UI Theme.",
+  "main": "index.html",
+  "dependencies": {
+    "bootstrap": "^4.1.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/richardtaylordawson/calculator.git"
+  },
+  "author": "Richard Taylor Dawson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/richardtaylordawson/calculator/issues"
+  },
+  "homepage": "https://github.com/richardtaylordawson/calculator#readme"
+}
