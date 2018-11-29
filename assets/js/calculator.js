@@ -76,72 +76,29 @@ export default class Calculator {
      */
     initializeKeyboardEvents() {
         document.addEventListener('keydown', (event)  => {
-            console.log(event.keyCode);
-
-            switch(event.keyCode) {
-                // 48 - 57
-                // Numbers 0 - 9
-                case 48:
-                    this.input('0');
-                    break;
-                case 49:
-                    this.input('1');
-                    break;
-                case 50:
-                    this.input('2');
-                    break;
-                case 51:
-                    this.input('3');
-                    break;
-                case 52:
-                    this.input('4');
-                    break;
-                case 53:
-                    this.input('5');
-                    break;
-                case 54:
-                    this.input('6');
-                    break;
-                case 55:
-                    this.input('7');
-                    break;
-                case 56:
-                    this.input('8');
-                    break;
-                case 57:
-                    this.input('9');
-                    break;
-                // . or decimal key
-                case 190:
-                    this.input('.');
-                    break;
-                // Escape key used as the clear button
-                case 27:
-                    this.clear();
-                    break;
-                //TODO finish these later. May have to change everything to a map
-                // case 187:
-                //     this.add();
-                //     break;
-                // case 187:
-                //     this.subtract();
-                //     break;
-                // case 187:
-                //     this.multiply();
-                //     break;
-                // case 191:
-                //     this.divide();
-                //     break;
-                // case 191:
-                //     this.compute();
-                //     break;
+            if((event.key >= 0 && event.key <= 9) || event.key === '.') {
+                this.input(event.key);
+            } else if(event.key === 'Escape') {
+                this.clear();
+            } else if(event.key === '+') {
+                this.add();
+            } else if(event.key === '-') {
+                this.subtract();
+            } else if(event.key === '*') {
+                this.multiply();
+            } else if(event.key === '/') {
+                this.divide();
+            } else if(event.key === '=') {
+                this.compute();
+            } else if(event.key === 'Enter') {
+                this.compute();
             }
         });
     }
 
     /**
      * Enables or disables all number buttons and decimal button
-     * @param {bool} enable - Decides whether or not to enable or disable the buttons.
+     * @param {boolean} enable - Decides whether or not to enable or disable the buttons.
      */
     toggleNumberButtons(enable) {
         for(let i = 0; i < this.numberButtons.length; i++) {
@@ -154,7 +111,7 @@ export default class Calculator {
     /**
      * Searches and finds the input value of a number button
      * @param {element} element - DOM element that was clicked or keystroked.
-     * @return Returns the index of the matched element
+     * @return {string} Returns the index of the matched element as a string
      */
     getInputValue(element) {
         return this.numberButtons.indexOf(element).toString();
@@ -167,7 +124,7 @@ export default class Calculator {
     input(value) {
         if(this.primaryDisplay.innerText.toString().length !== this.maxNumberLength) {
             const decimalRegex = new RegExp(/\./, 'g');
-            const operatorRegex = new RegExp(/[\/\+\-\*]/, 'g');
+            const operatorRegex = new RegExp(/[\/+\-*]/, 'g');
 
             // Check to make sure a decimal hasn't already been added since numbers can only have a single decimal point
             if((value === '.' && !decimalRegex.test(this.primaryDisplay.innerText)) || value !== '.') {
@@ -213,7 +170,7 @@ export default class Calculator {
         //     this.compute(true);
         // }
         this.primaryDisplay.innerText = '0';
-        this.secondaryDisplay.innerText = this.secondaryDisplay.innerText + ' + ';
+        this.secondaryDisplay.innerText = `${this.secondaryDisplay.innerText} + `;
     }
 
     /**
@@ -222,7 +179,7 @@ export default class Calculator {
      */
     subtract() {
         this.primaryDisplay.innerText = '0';
-        this.secondaryDisplay.innerText = this.secondaryDisplay.innerText + ' - ';
+        this.secondaryDisplay.innerText = `${this.secondaryDisplay.innerText} - `;
     }
 
     /**
@@ -231,7 +188,7 @@ export default class Calculator {
      */
     multiply() {
         this.primaryDisplay.innerText = '0';
-        this.secondaryDisplay.innerText = this.secondaryDisplay.innerText + ' * ';
+        this.secondaryDisplay.innerText = `${this.secondaryDisplay.innerText} * `;
     }
 
     /**
@@ -240,12 +197,12 @@ export default class Calculator {
      */
     divide() {
         this.primaryDisplay.innerText = '0';
-        this.secondaryDisplay.innerText = this.secondaryDisplay.innerText + ' / ';
+        this.secondaryDisplay.innerText = `${this.secondaryDisplay.innerText} / `;
     }
 
     /**
      * Computes the mathematical expression and displays it on the calculator
-     * @param {bool} early - If a computation button is clicked before equals, then computation occurs "early"
+     * @param {boolean} early - If a computation button is clicked before equals, then computation occurs "early"
      */
     compute(early = false) {
         const equalsRegex = new RegExp(/=/, 'g');
@@ -254,6 +211,8 @@ export default class Calculator {
             const parts = this.secondaryDisplay.innerText.split(' ');
 
             let value;
+
+            console.log(parts[1].charCodeAt(0));
 
             switch(parts[1]) {
                 case "+":
