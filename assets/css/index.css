@@ -3,17 +3,19 @@ body {
     font-family: monospace;
 }
 
-/* TODO get rid of custom color */
+#application {
+    min-width: 460px;
+}
+
 #calculator {
-    /* Adds the secondary background to the top and bottom of the calculator */
+    /* Adds the border to the calculator */
     border-radius: 15px;
     border: 15px solid rgb(108, 117, 125);
 }
 
-/* TODO get rid of custom color */
 #keypad {
-    /* Needed a lighter gray that isn't part of the default Bootstrap 4 background colors */
-    background-color: #cccccc;
+    /* Needed a gray that isn't part of the default Bootstrap 4 background colors */
+    background-color: rgb(80, 80, 80);
 }
 
 .card {
