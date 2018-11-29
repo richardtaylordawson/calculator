@@ -1,18 +1,26 @@
 body {
-    background-image: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%);
-    background-repeat: no-repeat;
-    height: 100%;
-    margin: 0;
-    background-attachment: fixed;
-    padding: 75px;
+    padding: 50px;
     font-family: monospace;
 }
 
 #calculator {
-    padding: 18px;
+    /* Adds the secondary background to the top and bottom of the calculator */
     border-radius: 15px;
+    border: 15px solid rgb(108, 117, 125);
 }
 
 #keypad {
+    /* Needed a lighter gray that isn't part of the default Bootstrap 4 background colors */
     background-color: #cccccc;
+}
+
+.card {
+    border-radius: 15px;
+}
+
+/* Override Material Theme For Buttons Inside Card */
+.card-text .btn.btn-secondary {
+    background-color: rgb(108, 117, 125);
+    color: white;
+    cursor: default;
 }
