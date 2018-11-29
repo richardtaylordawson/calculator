@@ -12,77 +12,135 @@
 
     <!-- Page Specific CSS -->
     <link rel="stylesheet" href="assets/css/index.css"/>
+
+    <!-- TODO gradient backgrounds -->
 </head>
-<body>
-    <div class="container">
+<body class="bg-light">
+    <div class="container-fluid">
         <div class="row">
-            <div class="mb-4 mt-4 col-lg-4 offset-lg-4 col-md-6 offset-md-3 bg-secondary" id="calculator">
-                <div class="col-12" id="keypad">
-                    <div class="row">
-                        <div class="col-12 bg-dark text-white mb-2">
-                            <h6 class="text-right text-danger mt-2" id="secondary-display">0</h6>
-                            <h1 class="text-right" id="primary-display">0</h1>
+            <div class="mb-4 mt-4 col-lg-5 col-md-12">
+                <div id="calculator">
+                    <div class="col-12" id="keypad">
+                        <div class="row">
+                            <div class="col-12 bg-dark text-white mb-2">
+                                <h6 class="text-right text-danger mt-2" id="secondary-display">0</h6>
+                                <h1 class="text-right" id="primary-display">0</h1>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-9">
+                                <button class="btn btn-lg btn-block btn-danger btn-raised mb-2" id="btn-clear">Clear</button>
+                            </div>
+                            <div class="col-3">
+                                <button class="btn btn-lg btn-block btn-warning btn-raised mb-2" id="btn-division">&#247;</button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-3">
+                                <button class="btn btn-lg btn-block btn-info btn-raised mb-2" id="sevenButton">7</button>
+                            </div>
+                            <div class="col-3">
+                                <button class="btn btn-lg btn-block btn-info btn-raised mb-2" id="eightButton">8</button>
+                            </div>
+                            <div class="col-3">
+                                <button class="btn btn-lg btn-block btn-info btn-raised mb-2" id="nineButton">9</button>
+                            </div>
+                            <div class="col-3">
+                                <button class="btn btn-lg btn-block btn-warning btn-raised mb-2" id="btn-multiplication">&#215;</button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-3">
+                                <button class="btn btn-lg btn-block btn-info btn-raised mb-2" id="fourButton">4</button>
+                            </div>
+                            <div class="col-3">
+                                <button class="btn btn-lg btn-block btn-info btn-raised mb-2" id="fiveButton">5</button>
+                            </div>
+                            <div class="col-3">
+                                <button class="btn btn-lg btn-block btn-info btn-raised mb-2" id="sixButton">6</button>
+                            </div>
+                            <div class="col-3">
+                                <button class="btn btn-lg btn-block btn-warning btn-raised mb-2" id="btn-subtraction">&#8722;</button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-3">
+                                <button class="btn btn-lg btn-block btn-info btn-raised mb-2" id="oneButton">1</button>
+                            </div>
+                            <div class="col-3">
+                                <button class="btn btn-lg btn-block btn-info btn-raised mb-2" id="twoButton">2</button>
+                            </div>
+                            <div class="col-3">
+                                <button class="btn btn-lg btn-block btn-info btn-raised mb-2" id="threeButton">3</button>
+                            </div>
+                            <div class="col-3">
+                                <button class="btn btn-lg btn-block btn-warning btn-raised mb-2" id="btn-addition">&#43;</button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <button class="btn btn-lg btn-block btn-info btn-raised mb-2" id="zeroButton">0</button>
+                            </div>
+                            <div class="col-3">
+                                <button class="btn btn-lg btn-block btn-info btn-raised mb-2" id="btn-decimal">.</button>
+                            </div>
+                            <div class="col-3">
+                                <button class="btn btn-lg btn-block btn-primary btn-raised mb-2" id="btn-equals">&#61;</button>
+                            </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-9">
-                            <button class="btn btn-lg btn-block btn-danger btn-raised mb-2" id="btn-clear">Clear</button>
+                </div>
+            </div>
+            <div class="mb-4 mt-4 col-lg-7 col-md-12">
+                <div class="card bg-gradient-info text-muted">
+                    <div class="card-body">
+                        <h5 class="card-title">Color Coding</h5>
+                        <div class="card-text">
+                            <div class="row">
+                                <div class="col-md-6 col-sm-12">
+                                    <button type="button" class="btn btn-danger bmd-btn-fab bmd-btn-fab-sm"></button>
+                                    <p class="d-inline font-italic">Clears memory</p>
+                                </div>
+                                <div class="col-md-6 col-sm-12">
+                                    <button type="button" class="btn btn-warning bmd-btn-fab bmd-btn-fab-sm"></button>
+                                    <p class="d-inline font-italic">Action that involves two numbers</p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-3">
-                            <button class="btn btn-lg btn-block btn-warning btn-raised mb-2" id="btn-division">&#247;</button>
+                        <div class="card-text">
+                            <div class="row">
+                                <div class="col-md-6 col-sm-12">
+                                    <button type="button" class="btn btn-info bmd-btn-fab bmd-btn-fab-sm"></button>
+                                    <p class="d-inline font-italic">Simple number or constant</p>
+                                </div>
+                                <div class="col-md-6 col-sm-12">
+                                    <button type="button" class="btn btn-primary bmd-btn-fab bmd-btn-fab-sm"></button>
+                                    <p class="d-inline font-italic">Gives a result</p>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-3">
-                            <button class="btn btn-lg btn-block btn-info btn-raised mb-2" id="sevenButton">7</button>
-                        </div>
-                        <div class="col-3">
-                            <button class="btn btn-lg btn-block btn-info btn-raised mb-2" id="eightButton">8</button>
-                        </div>
-                        <div class="col-3">
-                            <button class="btn btn-lg btn-block btn-info btn-raised mb-2" id="nineButton">9</button>
-                        </div>
-                        <div class="col-3">
-                            <button class="btn btn-lg btn-block btn-warning btn-raised mb-2" id="btn-multiplication">&#215;</button>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-3">
-                            <button class="btn btn-lg btn-block btn-info btn-raised mb-2" id="fourButton">4</button>
-                        </div>
-                        <div class="col-3">
-                            <button class="btn btn-lg btn-block btn-info btn-raised mb-2" id="fiveButton">5</button>
-                        </div>
-                        <div class="col-3">
-                            <button class="btn btn-lg btn-block btn-info btn-raised mb-2" id="sixButton">6</button>
-                        </div>
-                        <div class="col-3">
-                            <button class="btn btn-lg btn-block btn-warning btn-raised mb-2" id="btn-subtraction">&#8722;</button>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-3">
-                            <button class="btn btn-lg btn-block btn-info btn-raised mb-2" id="oneButton">1</button>
-                        </div>
-                        <div class="col-3">
-                            <button class="btn btn-lg btn-block btn-info btn-raised mb-2" id="twoButton">2</button>
-                        </div>
-                        <div class="col-3">
-                            <button class="btn btn-lg btn-block btn-info btn-raised mb-2" id="threeButton">3</button>
-                        </div>
-                        <div class="col-3">
-                            <button class="btn btn-lg btn-block btn-warning btn-raised mb-2" id="btn-addition">&#43;</button>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-6">
-                            <button class="btn btn-lg btn-block btn-info btn-raised mb-2" id="zeroButton">0</button>
-                        </div>
-                        <div class="col-3">
-                            <button class="btn btn-lg btn-block btn-info btn-raised mb-2" id="btn-decimal">.</button>
-                        </div>
-                        <div class="col-3">
-                            <button class="btn btn-lg btn-block btn-primary btn-raised mb-2" id="btn-equals">&#61;</button>
+                        <h5 class="card-title mt-4">Keyboard Shortcuts</h5>
+                        <div class="card-text">
+                            <div class="row">
+                                <div class="col-md-6 col-sm-12">
+                                    <button class="btn btn-secondary btn-raised">0-9</button> OR <button class="btn btn-secondary btn-raised">.</button>
+                                    <div class="d-inline font-italic">Gives Input</div>
+                                </div>
+                                <div class="col-md-6 col-sm-12">
+                                    <button class="btn btn-secondary btn-raised">Esc</button>
+                                    <div class="d-inline font-italic">Clears memory</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-12">
+                                    <button class="btn btn-secondary btn-raised">+ / * -</button>
+                                    <div class="d-inline font-italic">Executes given action</div>
+                                </div>
+                                <div class="col-md-6 col-sm-12">
+                                    <button class="btn btn-secondary btn-raised">Return</button> OR <button class="btn btn-secondary btn-raised">=</button>
+                                    <div class="d-inline font-italic">Calculates result</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
