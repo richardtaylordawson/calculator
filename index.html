@@ -10,6 +10,9 @@
     <!-- Bootstrap 4 CSS with Material Theme -->
     <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
 
+    <!-- Font Awesome 5 -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
     <!-- Page Specific CSS -->
     <link rel="stylesheet" href="assets/css/index.css"/>
 </head>
@@ -26,8 +29,11 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-9">
+                            <div class="col-6">
                                 <button class="btn btn-lg btn-block btn-danger btn-raised mb-2" id="btn-clear">Clear</button>
+                            </div>
+                            <div class="col-3">
+                                <button class="btn btn-lg btn-block btn-danger btn-raised mb-2" id="btn-backspace"><i class="fas fa-backspace" id="backspace-icon"></i></button>
                             </div>
                             <div class="col-3">
                                 <button class="btn btn-lg btn-block btn-warning btn-raised mb-2" id="btn-division">&#247;</button>
@@ -125,7 +131,7 @@
                                     <div class="d-inline font-italic">Gives Input</div>
                                 </div>
                                 <div class="col-md-6 col-sm-12">
-                                    <button class="btn btn-secondary btn-raised">Esc</button>
+                                    <button class="btn btn-secondary btn-raised">Esc</button> OR <button class="btn btn-secondary btn-raised">Clear</button>
                                     <div class="d-inline font-italic">Clears memory</div>
                                 </div>
                             </div>
@@ -137,6 +143,12 @@
                                 <div class="col-md-6 col-sm-12">
                                     <button class="btn btn-secondary btn-raised">Return</button> OR <button class="btn btn-secondary btn-raised">=</button>
                                     <div class="d-inline font-italic">Calculates result</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-9 col-sm-12">
+                                    <button class="btn btn-secondary btn-raised">Backspace</button>
+                                    <div class="d-inline font-italic">Deletes last inputted character</div>
                                 </div>
                             </div>
                         </div>

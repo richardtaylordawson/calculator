@@ -24,3 +24,7 @@ body {
     color: white;
     cursor: default;
 }
+
+#backspace-icon {
+    font-size: 18px;
+}

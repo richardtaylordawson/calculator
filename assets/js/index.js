@@ -21,6 +21,7 @@ new Calculator(
         ],
         "decimalButton" : document.getElementById('btn-decimal'),
         "clearButton" : document.getElementById('btn-clear'),
+        "backspaceButton" : document.getElementById('btn-backspace'),
         "additionButton" : document.getElementById('btn-addition'),
         "subtractionButton" : document.getElementById('btn-subtraction'),
         "multiplicationButton" : document.getElementById('btn-multiplication'),

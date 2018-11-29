@@ -14,6 +14,7 @@ export default class Calculator {
         this.decimalButton = elements.decimalButton;
 
         this.clearButton = elements.clearButton;
+        this.backspaceButton = elements.backspaceButton;
 
         this.additionButton = elements.additionButton;
         this.subtractionButton = elements.subtractionButton;
@@ -50,6 +51,10 @@ export default class Calculator {
             this.clear();
         });
 
+        this.backspaceButton.addEventListener('click', () => {
+           this.backspace();
+        });
+
         this.additionButton.addEventListener('click', () => {
             this.add();
         });
@@ -78,8 +83,10 @@ export default class Calculator {
         document.addEventListener('keydown', (event)  => {
             if((event.key >= 0 && event.key <= 9) || event.key === '.') {
                 this.input(event.key);
-            } else if(event.key === 'Escape') {
+            } else if(event.key === 'Escape' || event.key === 'Clear') {
                 this.clear();
+            } else if(event.key === 'Backspace') {
+                this.backspace();
             } else if(event.key === '+') {
                 this.add();
             } else if(event.key === '-') {
@@ -153,6 +160,18 @@ export default class Calculator {
         this.primaryDisplay.innerText = '0';
         this.secondaryDisplay.innerText = '0';
         this.toggleNumberButtons(false);
+    }
+
+    /**
+     * Deletes the last character inputted
+     */
+    backspace() {
+        if((this.primaryDisplay.innerText !== '0')) {
+            const slicedDisplay = this.primaryDisplay.innerText.toString().slice(0, this.primaryDisplay.innerText.toString().length - 1);
+
+            this.primaryDisplay.innerText = (slicedDisplay === '') ? '0' : slicedDisplay;
+            this.secondaryDisplay.innerText = (slicedDisplay === '') ? '0' : slicedDisplay;
+        }
     }
 
     /**
