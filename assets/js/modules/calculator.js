@@ -37,6 +37,7 @@ export default class Calculator {
      * Adds click event handlers to all DOM objects of the calculator.
      */
     initializeClickEvents() {
+        //TODO change to for each loops everywhere
         for(let i = 0; i < this.numberButtons.length; i++) {
             this.numberButtons[i].addEventListener('click', (event) => {
                 this.input(this.getInputValue(event.target));

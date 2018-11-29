@@ -3,12 +3,14 @@ body {
     font-family: monospace;
 }
 
+/* TODO get rid of custom color */
 #calculator {
     /* Adds the secondary background to the top and bottom of the calculator */
     border-radius: 15px;
     border: 15px solid rgb(108, 117, 125);
 }
 
+/* TODO get rid of custom color */
 #keypad {
     /* Needed a lighter gray that isn't part of the default Bootstrap 4 background colors */
     background-color: #cccccc;
@@ -16,13 +18,6 @@ body {
 
 .card {
     border-radius: 15px;
-}
-
-/* Override Material Theme For Buttons Inside Card */
-.card-text .btn.btn-secondary {
-    background-color: rgb(108, 117, 125);
-    color: white;
-    cursor: default;
 }
 
 #backspace-icon {
