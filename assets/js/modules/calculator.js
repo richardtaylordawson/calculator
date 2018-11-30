@@ -58,6 +58,7 @@ export default class Calculator {
         this.primaryDisplay.innerText = this.currentNumber;
         this.secondaryDisplay.innerText = this.currentNumber;
         this.toggleInputButtons(false);
+        this.toggleSingleNumberButtons(false);
     }
 
     /**
@@ -188,6 +189,12 @@ export default class Calculator {
 
             if((!decimalRegex.test(this.currentNumber) && value === '.')) {
                 this.currentNumber = `${this.currentNumber}${value}`;
+            } else if(value === 'plus-minus') {
+                if(this.currentNumber !== '0') {
+                    this.currentNumber = this.currentNumber.charAt(0) === '-'
+                        ? this.currentNumber.slice(1)
+                        : `-${this.currentNumber}`;
+                }
             } else if(value !== '.' && value === '0' && this.currentNumber !== '0') {
                 this.currentNumber = `${this.currentNumber}${value}`;
             } else if(value !== '.') {
@@ -232,7 +239,7 @@ export default class Calculator {
      * Deletes the last character inputted
      */
     backspace() {
-        if((this.currentNumber !== '0')) {
+        if((this.currentNumber !== '0' || this.currentNumber !== '-')) {
             const slicedDisplay = this.currentNumber.slice(0, this.currentNumber.length - 1);
 
             this.currentNumber = (slicedDisplay === '')
@@ -251,7 +258,7 @@ export default class Calculator {
      * Performs the percentage as long as only one number is current as input
      */
     percentage() {
-        if(this.currentNumber !== '0') {
+        if(this.currentNumber !== '0' && this.operator === '') {
             this.operator = '%';
             this.compute();
         }
@@ -263,10 +270,8 @@ export default class Calculator {
     squareRoot() {
         // TODO cannot take the square root of a negative number
         if(this.operator === '') {
-            let value = Math.sqrt(parseInt(this.firstNumber));
-            this.primaryDisplay.innerText = value;
-            this.secondaryDisplay.innerText = `sqrt(${this.firstNumber}) = ${value}`;
-            console.log('square root');
+            this.operator = 'sqrt';
+            this.compute();
         }
     }
 
@@ -275,17 +280,9 @@ export default class Calculator {
      * to the secondary display of the calculator.
      */
     add() {
-        // const operatorRegex = new RegExp(/[\/\+\-\*]/, 'g');
-        //
-        // if(!operatorRegex.test(this.secondaryDisplay.innerText)) {
-        //     this.primaryDisplay.innerText = '0';
-        //     this.secondaryDisplay.innerText = this.secondaryDisplay.innerText + ' + ';
-        // } else {
-        //     //Do computation and call add again
-        //     this.compute(true);
-        // }
-        this.primaryDisplay.innerText = '0';
-        this.secondaryDisplay.innerText = `${this.secondaryDisplay.innerText} + `;
+        this.operator = '+';
+        this.currentNumber = '0';
+        this.display();
     }
 
     /**
@@ -293,8 +290,9 @@ export default class Calculator {
      * to the secondary display of the calculator.
      */
     subtract() {
-        this.primaryDisplay.innerText = '0';
-        this.secondaryDisplay.innerText = `${this.secondaryDisplay.innerText} - `;
+        this.operator = '-';
+        this.currentNumber = '0';
+        this.display();
     }
 
     /**
@@ -302,8 +300,9 @@ export default class Calculator {
      * to the secondary display of the calculator.
      */
     multiply() {
-        this.primaryDisplay.innerText = '0';
-        this.secondaryDisplay.innerText = `${this.secondaryDisplay.innerText} * `;
+        this.operator = '*';
+        this.currentNumber = '0';
+        this.display();
     }
 
     /**
@@ -311,8 +310,9 @@ export default class Calculator {
      * to the secondary display of the calculator.
      */
     divide() {
-        this.primaryDisplay.innerText = '0';
-        this.secondaryDisplay.innerText = `${this.secondaryDisplay.innerText} / `;
+        this.operator = '/';
+        this.currentNumber = '0';
+        this.display();
     }
 
     /**
@@ -321,62 +321,49 @@ export default class Calculator {
      */
     compute(early = false) {
         let value;
+        const decimalRegex = new RegExp(/\./, 'g');
+
+        const tempFirst = decimalRegex.test(this.firstNumber)
+            ? parseFloat(this.firstNumber)
+            : parseInt(this.firstNumber);
+
+        const tempSecond = decimalRegex.test(this.secondNumber)
+            ? parseFloat(this.secondNumber)
+            : parseInt(this.secondNumber);
 
         switch(this.operator) {
             case "%":
-                value = parseFloat(this.currentNumber / 100).toString();
+                const temp = decimalRegex.test(this.currentNumber)
+                    ? parseFloat(this.currentNumber)
+                    : parseInt(this.currentNumber);
+
+                value = parseFloat(temp / 100).toString();
+                break;
+            case "sqrt":
+                value = decimalRegex.test(this.currentNumber)
+                    ? Math.sqrt(parseFloat(this.currentNumber)).toString()
+                    : Math.sqrt(parseInt(this.currentNumber)).toString();
                 break;
             case "+":
-                value = parseInt(parts[0]) + parseInt(parts[2]);
+                value = (tempFirst + tempSecond).toString();
                 break;
             case "-":
-                value = parseInt(parts[0]) - parseInt(parts[2]);
+                value = (tempFirst - tempSecond).toString();
                 break;
             case "*":
-                value = parseInt(parts[0]) * parseInt(parts[2]);
+                value = (tempFirst * tempSecond).toString();
                 break;
             case "/":
-                value = parseInt(parts[0]) / parseInt(parts[2]);
+                value = (tempFirst / tempSecond).toString();
                 break;
+        }
+
+        if(value.length > this.maxNumberLength) {
+            value = value.slice(0, this.maxNumberLength);
         }
 
         this.currentNumber = value;
 
         this.display(true);
-
-        // const equalsRegex = new RegExp(/=/, 'g');
-        //
-        // if(!equalsRegex.test(this.secondaryDisplay.innerText)) {
-        //     const parts = this.secondaryDisplay.innerText.split(' ');
-        //
-        //     let value;
-        //
-        //     console.log(parts[1].charCodeAt(0));
-        //
-        //     switch(parts[1]) {
-        //         case "+":
-        //             value = parseInt(parts[0]) + parseInt(parts[2]);
-        //             break;
-        //         case "-":
-        //             value = parseInt(parts[0]) - parseInt(parts[2]);
-        //             break;
-        //         case "*":
-        //             value = parseInt(parts[0]) * parseInt(parts[2]);
-        //             break;
-        //         case "/":
-        //             value = parseInt(parts[0]) / parseInt(parts[2]);
-        //             break;
-        //     }
-        //
-        //     this.primaryDisplay.innerText = (early)
-        //         ? '0'
-        //         : value;
-        //
-        //     this.secondaryDisplay.innerText = (early)
-        //         ? `${value} ${parts[1]}`
-        //         : `${this.secondaryDisplay.innerText.toString()} = `;
-        // } else {
-        //
-        // }
     }
 }
