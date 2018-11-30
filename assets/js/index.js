@@ -11,20 +11,23 @@ import Theme from "./modules/theme.js";
 new Calculator(
     {
         "numberButtons": [
-            document.getElementById('zeroButton'),
-            document.getElementById('oneButton'),
-            document.getElementById('twoButton'),
-            document.getElementById('threeButton'),
-            document.getElementById('fourButton'),
-            document.getElementById('fiveButton'),
-            document.getElementById('sixButton'),
-            document.getElementById('sevenButton'),
-            document.getElementById('eightButton'),
-            document.getElementById('nineButton')
+            document.getElementById('btn-zero'),
+            document.getElementById('btn-one'),
+            document.getElementById('btn-two'),
+            document.getElementById('btn-three'),
+            document.getElementById('btn-four'),
+            document.getElementById('btn-five'),
+            document.getElementById('btn-six'),
+            document.getElementById('btn-seven'),
+            document.getElementById('btn-eight'),
+            document.getElementById('btn-nine')
         ],
         "decimalButton" : document.getElementById('btn-decimal'),
+        "plusMinusButton": document.getElementById('btn-plus-minus'),
         "clearButton" : document.getElementById('btn-clear'),
         "backspaceButton" : document.getElementById('btn-backspace'),
+        "percentageButton" : document.getElementById('btn-percentage'),
+        "squareRootButton" : document.getElementById('btn-square-root'),
         "additionButton" : document.getElementById('btn-addition'),
         "subtractionButton" : document.getElementById('btn-subtraction'),
         "multiplicationButton" : document.getElementById('btn-multiplication'),

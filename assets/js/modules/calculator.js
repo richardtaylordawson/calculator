@@ -13,8 +13,13 @@ export default class Calculator {
 
         this.decimalButton = elements.decimalButton;
 
+        this.plusMinusButton = elements.plusMinusButton;
+
         this.clearButton = elements.clearButton;
         this.backspaceButton = elements.backspaceButton;
+
+        this.percentageButton = elements.percentageButton;
+        this.squareRootButton = elements.squareRootButton;
 
         this.additionButton = elements.additionButton;
         this.subtractionButton = elements.subtractionButton;
@@ -28,47 +33,84 @@ export default class Calculator {
 
         this.maxNumberLength = options.maxNumberLength;
 
+        // These are strings because otherwise we cannot have a number with a decimal and nothing after. Ex: 5.
+        this.firstNumber = '0';
+        this.secondNumber = '0';
+        this.currentNumber = '0';
+        this.operator = '';
+
+        this.initializeCalculator();
+
         this.initializeClickEvents();
 
         this.initializeKeyboardEvents();
     }
 
     /**
+     * Initializes the calculator values / clears the memory back to normal when needed
+     */
+    initializeCalculator() {
+        this.firstNumber = '0';
+        this.secondNumber = '0';
+        this.currentNumber = '0';
+        this.operator = '';
+
+        this.primaryDisplay.innerText = this.currentNumber;
+        this.secondaryDisplay.innerText = this.currentNumber;
+        this.toggleInputButtons(false);
+    }
+
+    /**
      * Adds click event handlers to all DOM objects of the calculator.
      */
     initializeClickEvents() {
-        //TODO change to for each loops everywhere
-        for(let i = 0; i < this.numberButtons.length; i++) {
-            this.numberButtons[i].addEventListener('click', (event) => {
+        this.numberButtons.forEach((numberButton) => {
+            numberButton.addEventListener('click', (event) => {
                 this.input(this.getInputValue(event.target));
             });
-        }
+        });
 
         this.decimalButton.addEventListener('click', () => {
             this.input('.');
         });
 
+        this.plusMinusButton.addEventListener('click', () => {
+            this.input('plus-minus');
+        });
+
         this.clearButton.addEventListener('click', () => {
-            this.clear();
+            this.initializeCalculator();
         });
 
         this.backspaceButton.addEventListener('click', () => {
            this.backspace();
         });
 
+        this.percentageButton.addEventListener('click', () => {
+            this.percentage();
+        });
+
+        this.squareRootButton.addEventListener('click', () => {
+            this.squareRoot();
+        });
+
         this.additionButton.addEventListener('click', () => {
+            this.toggleSingleNumberButtons(true);
             this.add();
         });
 
         this.subtractionButton.addEventListener('click', () => {
+            this.toggleSingleNumberButtons(true);
             this.subtract();
         });
 
         this.multiplicationButton.addEventListener('click', () => {
+            this.toggleSingleNumberButtons(true);
             this.multiply();
         });
 
         this.divisionButton.addEventListener('click', () => {
+            this.toggleSingleNumberButtons(true);
             this.divide();
         });
 
@@ -82,10 +124,11 @@ export default class Calculator {
      */
     initializeKeyboardEvents() {
         document.addEventListener('keydown', (event)  => {
+            // TODO need keyboard events for sqrt, percentage, plus minus
             if((event.key >= 0 && event.key <= 9) || event.key === '.') {
                 this.input(event.key);
             } else if(event.key === 'Escape' || event.key === 'Clear') {
-                this.clear();
+                this.initializeCalculator();
             } else if(event.key === 'Backspace') {
                 this.backspace();
             } else if(event.key === '+') {
@@ -105,15 +148,24 @@ export default class Calculator {
     }
 
     /**
-     * Enables or disables all number buttons and decimal button
+     * Enables or disables all number buttons and decimal/plus-minus button
      * @param {boolean} enable - Decides whether or not to enable or disable the buttons.
      */
-    toggleNumberButtons(enable) {
-        for(let i = 0; i < this.numberButtons.length; i++) {
-            this.numberButtons[i].disabled = enable;
-        }
+    toggleInputButtons(enable) {
+        this.numberButtons.forEach((numberButton) => {
+            numberButton.disabled = enable;
+        });
 
-        this.decimalButton.disabled = enable;
+        const decimalRegex = new RegExp(/\./, 'g');
+
+        this.decimalButton.disabled = (decimalRegex.test(this.currentNumber) || enable);
+
+        this.plusMinusButton.disabled = enable;
+    }
+
+    toggleSingleNumberButtons(disable) {
+        this.percentageButton.disabled = disable;
+        this.squareRootButton.disabled = disable;
     }
 
     /**
@@ -126,57 +178,100 @@ export default class Calculator {
     }
 
     /**
-     * Adds the input value to the primary and secondary display of the calculator
+     * Adds the input value to the current number and calls the display
      * @param {string} value - Either a number value between 0-9 or a decimal value
      */
     input(value) {
-        if(this.primaryDisplay.innerText.toString().length !== this.maxNumberLength) {
+        // Need this check because although the buttons will be disabled the user can still use the keyboard
+        if(this.currentNumber.length !== this.maxNumberLength) {
             const decimalRegex = new RegExp(/\./, 'g');
-            const operatorRegex = new RegExp(/[\/+\-*]/, 'g');
 
-            // Check to make sure a decimal hasn't already been added since numbers can only have a single decimal point
-            if((value === '.' && !decimalRegex.test(this.primaryDisplay.innerText)) || value !== '.') {
-                let secondaryDisplayValue = (operatorRegex.test(this.secondaryDisplay.innerText) && this.secondaryDisplay.innerText.split(' ').length !== 3)
-                    ? `${this.secondaryDisplay.innerText.toString()} ${value.toString()}`
-                    : `${this.secondaryDisplay.innerText.toString()}${value.toString()}`;
-
-                this.primaryDisplay.innerText = (this.primaryDisplay.innerText !== '0' && value !== '.') || (value === '.')
-                    ? `${this.primaryDisplay.innerText.toString()}${value.toString()}`
-                    : value.toString();
-
-                //TODO Need to figure out the secondary display better
-                this.secondaryDisplay.innerText = (this.secondaryDisplay.innerText !== '0' && value !== '.') || (value === '.')
-                    ? secondaryDisplayValue
-                    : value.toString();
+            if((!decimalRegex.test(this.currentNumber) && value === '.')) {
+                this.currentNumber = `${this.currentNumber}${value}`;
+            } else if(value !== '.' && value === '0' && this.currentNumber !== '0') {
+                this.currentNumber = `${this.currentNumber}${value}`;
+            } else if(value !== '.') {
+                this.currentNumber = this.currentNumber === '0'
+                    ? `${value}`
+                    : `${this.currentNumber}${value}`;
             }
 
-            this.toggleNumberButtons(this.primaryDisplay.innerText.toString().length === this.maxNumberLength)
+            this.operator === ''
+                ? this.firstNumber = this.currentNumber
+                : this.secondNumber = this.currentNumber;
+
+            this.display();
         }
     }
 
     /**
-     * Clears the calculator displays and resets everything back to its original state
+     * Displays the numbers correctly on the primary and secondary display
+     * @param {boolean} computed - lets the display know if the equation was just computed
      */
-    clear() {
-        this.primaryDisplay.innerText = '0';
-        this.secondaryDisplay.innerText = '0';
-        this.toggleNumberButtons(false);
+    display(computed = false) {
+        this.primaryDisplay.innerText = `${this.currentNumber}`;
+
+        if(computed) {
+            this.secondaryDisplay.innerText = `${this.firstNumber} ${this.operator} ${this.secondNumber} =`;
+
+            this.firstNumber = this.currentNumber;
+            this.operator = '';
+            this.secondNumber = '0';
+
+            this.toggleSingleNumberButtons(false);
+        } else {
+            this.secondaryDisplay.innerText = (this.operator === '')
+                ? `${this.firstNumber}`
+                : `${this.firstNumber} ${this.operator} ${this.secondNumber}`;
+        }
+
+        this.toggleInputButtons(this.currentNumber.length === this.maxNumberLength);
     }
 
     /**
      * Deletes the last character inputted
      */
     backspace() {
-        if((this.primaryDisplay.innerText !== '0')) {
-            const slicedDisplay = this.primaryDisplay.innerText.toString().slice(0, this.primaryDisplay.innerText.toString().length - 1);
+        if((this.currentNumber !== '0')) {
+            const slicedDisplay = this.currentNumber.slice(0, this.currentNumber.length - 1);
 
-            this.primaryDisplay.innerText = (slicedDisplay === '') ? '0' : slicedDisplay;
-            this.secondaryDisplay.innerText = (slicedDisplay === '') ? '0' : slicedDisplay;
+            this.currentNumber = (slicedDisplay === '')
+                ? '0'
+                : slicedDisplay;
+
+            this.operator === ''
+                ? this.firstNumber = this.currentNumber
+                : this.secondNumber = this.currentNumber;
+
+            this.display();
         }
     }
 
     /**
-     * Lets the class know that addition would like to be performed by either calling computer or adding
+     * Performs the percentage as long as only one number is current as input
+     */
+    percentage() {
+        if(this.currentNumber !== '0') {
+            this.operator = '%';
+            this.compute();
+        }
+    }
+
+    /**
+     * Performs the square root as long as only one number is current as input
+     */
+    squareRoot() {
+        // TODO cannot take the square root of a negative number
+        if(this.operator === '') {
+            let value = Math.sqrt(parseInt(this.firstNumber));
+            this.primaryDisplay.innerText = value;
+            this.secondaryDisplay.innerText = `sqrt(${this.firstNumber}) = ${value}`;
+            console.log('square root');
+        }
+    }
+
+    /**
+     * Lets the class know that addition would like to be performed by either calling compute or adding
      * to the secondary display of the calculator.
      */
     add() {
@@ -194,7 +289,7 @@ export default class Calculator {
     }
 
     /**
-     * Lets the class know that subtraction would like to be performed by either calling computer or adding
+     * Lets the class know that subtraction would like to be performed by either calling compute or adding
      * to the secondary display of the calculator.
      */
     subtract() {
@@ -203,7 +298,7 @@ export default class Calculator {
     }
 
     /**
-     * Lets the class know that multiplication would like to be performed by either calling computer or adding
+     * Lets the class know that multiplication would like to be performed by either calling compute or adding
      * to the secondary display of the calculator.
      */
     multiply() {
@@ -212,7 +307,7 @@ export default class Calculator {
     }
 
     /**
-     * Lets the class know that division would like to be performed by either calling computer or adding
+     * Lets the class know that division would like to be performed by either calling compute or adding
      * to the secondary display of the calculator.
      */
     divide() {
@@ -225,39 +320,63 @@ export default class Calculator {
      * @param {boolean} early - If a computation button is clicked before equals, then computation occurs "early"
      */
     compute(early = false) {
-        const equalsRegex = new RegExp(/=/, 'g');
+        let value;
 
-        if(!equalsRegex.test(this.secondaryDisplay.innerText)) {
-            const parts = this.secondaryDisplay.innerText.split(' ');
-
-            let value;
-
-            console.log(parts[1].charCodeAt(0));
-
-            switch(parts[1]) {
-                case "+":
-                    value = parseInt(parts[0]) + parseInt(parts[2]);
-                    break;
-                case "-":
-                    value = parseInt(parts[0]) - parseInt(parts[2]);
-                    break;
-                case "*":
-                    value = parseInt(parts[0]) * parseInt(parts[2]);
-                    break;
-                case "/":
-                    value = parseInt(parts[0]) / parseInt(parts[2]);
-                    break;
-            }
-
-            this.primaryDisplay.innerText = (early)
-                ? '0'
-                : value;
-
-            this.secondaryDisplay.innerText = (early)
-                ? `${value} ${parts[1]}`
-                : `${this.secondaryDisplay.innerText.toString()} = `;
-        } else {
-
+        switch(this.operator) {
+            case "%":
+                value = parseFloat(this.currentNumber / 100).toString();
+                break;
+            case "+":
+                value = parseInt(parts[0]) + parseInt(parts[2]);
+                break;
+            case "-":
+                value = parseInt(parts[0]) - parseInt(parts[2]);
+                break;
+            case "*":
+                value = parseInt(parts[0]) * parseInt(parts[2]);
+                break;
+            case "/":
+                value = parseInt(parts[0]) / parseInt(parts[2]);
+                break;
         }
+
+        this.currentNumber = value;
+
+        this.display(true);
+
+        // const equalsRegex = new RegExp(/=/, 'g');
+        //
+        // if(!equalsRegex.test(this.secondaryDisplay.innerText)) {
+        //     const parts = this.secondaryDisplay.innerText.split(' ');
+        //
+        //     let value;
+        //
+        //     console.log(parts[1].charCodeAt(0));
+        //
+        //     switch(parts[1]) {
+        //         case "+":
+        //             value = parseInt(parts[0]) + parseInt(parts[2]);
+        //             break;
+        //         case "-":
+        //             value = parseInt(parts[0]) - parseInt(parts[2]);
+        //             break;
+        //         case "*":
+        //             value = parseInt(parts[0]) * parseInt(parts[2]);
+        //             break;
+        //         case "/":
+        //             value = parseInt(parts[0]) / parseInt(parts[2]);
+        //             break;
+        //     }
+        //
+        //     this.primaryDisplay.innerText = (early)
+        //         ? '0'
+        //         : value;
+        //
+        //     this.secondaryDisplay.innerText = (early)
+        //         ? `${value} ${parts[1]}`
+        //         : `${this.secondaryDisplay.innerText.toString()} = `;
+        // } else {
+        //
+        // }
     }
 }

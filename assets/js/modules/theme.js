@@ -15,6 +15,9 @@ export default class Theme {
         this.initializeClickEvents();
     }
 
+    /**
+     * Displays the default theme
+     */
     initializeDefaultTheme() {
         this.themes.forEach((theme) => {
             if(theme.default) {
@@ -34,6 +37,10 @@ export default class Theme {
         });
     }
 
+    /**
+     * Displays the theme passed into it
+     * @param {element} chosenTheme - DOM element chosen as the next theme
+     */
     toggleTheme(chosenTheme) {
         let chosenIndex = 0;
 
