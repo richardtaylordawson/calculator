@@ -150,18 +150,26 @@ export default class Calculator {
 
     /**
      * Enables or disables all number buttons and decimal/plus-minus button
-     * @param {boolean} enable - Decides whether or not to enable or disable the buttons.
+     * @param {boolean} disable - Decides whether or not to enable or disable the buttons.
      */
-    toggleInputButtons(enable) {
+    toggleInputButtons(disable) {
         this.numberButtons.forEach((numberButton) => {
-            numberButton.disabled = enable;
+            numberButton.disabled = disable;
         });
 
         const decimalRegex = new RegExp(/\./, 'g');
 
-        this.decimalButton.disabled = (decimalRegex.test(this.currentNumber) || enable);
+        this.decimalButton.disabled = (decimalRegex.test(this.currentNumber) || disable);
 
-        this.plusMinusButton.disabled = enable;
+        const minusRegex = new RegExp(/-/, 'g');
+
+        if(!disable) {
+            this.plusMinusButton.disabled = false;
+        } else if(minusRegex.test(this.currentNumber)) {
+            this.plusMinusButton.disabled = false;
+        } else {
+            this.plusMinusButton.disabled = disable;
+        }
     }
 
     toggleSingleNumberButtons(disable) {
@@ -184,7 +192,7 @@ export default class Calculator {
      */
     input(value) {
         // Need this check because although the buttons will be disabled the user can still use the keyboard
-        if(this.currentNumber.length !== this.maxNumberLength) {
+        if((this.currentNumber.length !== this.maxNumberLength) || value === 'plus-minus') {
             const decimalRegex = new RegExp(/\./, 'g');
 
             if((!decimalRegex.test(this.currentNumber) && value === '.')) {
