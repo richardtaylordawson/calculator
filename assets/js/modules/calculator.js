@@ -45,7 +45,7 @@ export default class Calculator {
 
         this.initializeKeyboardEvents();
     }
-
+asdfasdg
     /**
      * Initializes the calculator values / clears the memory back to normal when needed
      */
@@ -199,7 +199,7 @@ export default class Calculator {
     input(value) {
         //todo negative doesnt work on 0
         //todo keyboard still works for plu sminus
-        // Need this check because although the buttons will be disabled the user can still use the keyboard
+        // Need this check because although asdfthe buttons will be disabled the user can still use the keyboard
         if((this.currentNumber.length !== this.maxNumberLength) || value === 'plus-minus') {
             const decimalRegex = new RegExp(/\./, 'g');
 
@@ -216,13 +216,12 @@ export default class Calculator {
             } else if(value !== '.') {
                 this.currentNumber = this.currentNumber === '0'
                     ? `${value}`
-                    : `${this.currentNumber}${value}`;
+                    : `${this.currentNumber}${value}`;asdg
             }
 
             this.operator === ''
                 ? this.firstNumber = this.currentNumber
-                : this.secondNumber = this.currentNumber;
-
+                : this.secondNumber = this.currentNumber;asd
             this.display();
         }
     }
