@@ -17,29 +17,13 @@
 
 ## Table of contents
 
-- [Quick start](#quick-start)
+- [View project](#view-project)
 - [Status](#status)
-- [What's included](#whats-included)
 - [Documentation](#documentation)
 - [License](#license)
 
 
-## Quick start
-
-Several quick start options are available:
-
-- [Download the latest release.](https://github.com/twbs/bootstrap/archive/v4.1.3.zip)
-- Clone the repo: `git clone https://github.com/twbs/bootstrap.git`
-- Install with [npm](https://www.npmjs.com/): `npm install bootstrap`
-- Install with [yarn](https://yarnpkg.com/): `yarn add bootstrap@4.1.3`
-- Install with [Composer](https://getcomposer.org/): `composer require twbs/bootstrap:4.1.3`
-- Install with [NuGet](https://www.nuget.org/): CSS: `Install-Package bootstrap` Sass: `Install-Package bootstrap.sass`
-
-Read the [Getting started page](https://getbootstrap.com/docs/4.1/getting-started/introduction/) for information on the framework contents, templates and examples, and more.
-
-
-Simple calculator application built using Bootstrap 4, HTML, ES6 Modules and multiple Bootstrap Themes from Bootswatch.
-
+## View Project
 <https://richardtaylordawson.github.io/calculator/>
 
 ##Status
@@ -54,15 +38,10 @@ Simple calculator application built using Bootstrap 4, HTML, ES6 Modules and mul
 [![Code Climate maintainability](https://img.shields.io/codeclimate/maintainability/rcihardtaylordawson/calculator.svg)](https://codeclimate.com/github/richardtaylordawson/calculator/progress/maintainability)
 <https://github.com/richardtaylordawson/calculator/blob/master/LICENSE>
 
-## What's included
-Possibly something here
-
 ## Documentation
 
-Bootstrap's documentation, included in this repo in the root directory, is built with [Jekyll](https://jekyllrb.com/) and publicly hosted on GitHub Pages at <https://getbootstrap.com/>. The docs may also be run locally.
-
-Documentation search is powered by [Algolia's DocSearch](https://community.algolia.com/docsearch/). Working on our search? Be sure to set `debug: true` in `site/docs/4.1/assets/js/src/search.js` file.
+Need to write documentation
 
 ## License
 
-Code released under the [MIT License](https://github.com/twbs/bootstrap/blob/master/LICENSE).
+Code released under the [MIT License](https://github.com/richardtaylordawson/calculator/blob/master/LICENSE).
