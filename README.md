@@ -1,25 +1,18 @@
 <p align="center">
-  <a href="https://getbootstrap.com/">
-    <img src="https://getbootstrap.com/docs/4.1/assets/brand/bootstrap-solid.svg" alt="Bootstrap logo" width=72 height=72>
+  <a href="">
+    <img src="" alt="Richard's logo" width=72 height=72>
   </a>
 
-  <h3 align="center">Bootstrap</h3>
+  <h3 align="center">Calculator</h3>
 
   <p align="center">
-    Sleek, intuitive, and powerful front-end framework for faster and easier web development.
-    <br>
-    <a href="https://getbootstrap.com/docs/4.1/"><strong>Explore Bootstrap docs »</strong></a>
-    <br>
-    <br>
-    <a href="https://github.com/twbs/bootstrap/issues/new?template=bug.md">Report bug</a>
-    ·
-    <a href="https://github.com/twbs/bootstrap/issues/new?template=feature.md&labels=feature">Request feature</a>
-    ·
-    <a href="https://themes.getbootstrap.com/">Themes</a>
-    ·
-    <a href="https://blog.getbootstrap.com/">Blog</a>
+    Simple calculator application built using Bootstrap 4, HTML, ES6 Modules and multiple Bootstrap Themes from Bootswatch.
   </p>
 </p>
+
+## Creator
+[![Twitter Follow](https://img.shields.io/twitter/follow/espadrine.svg?label=Follow&style=social)](https://twitter.com/richard_codes)
+[![Twitter URL](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/richard_codes)
 
 
 ## Table of contents
@@ -53,8 +46,6 @@ Simple calculator application built using Bootstrap 4, HTML, ES6 Modules and mul
 ##Status
 [![GitHub language count](https://img.shields.io/github/languages/count/badges/shields.svg)](https://richardtaylordawson.github.io/calculator/)
 [![GitHub commit activity the past week, 4 weeks, year](https://img.shields.io/github/commit-activity/y/eslint/eslint.svg)](https://github.com/richardtaylordawson/calculator)
-[![Twitter Follow](https://img.shields.io/twitter/follow/espadrine.svg?label=Follow&style=social)](https://twitter.com/richard_codes)
-[![Twitter URL](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/richard_codes)
 [![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/richardtaylordawson/calculator)
 [![GitHub issue/pull request author](https://img.shields.io/github/issues/detail/u/badges/shields/979.svg)](https://github.com/richardtaylordawson/calculator)
 [![GitHub repo size in bytes](https://img.shields.io/github/repo-size/badges/shields.svg)](https://github.com/richardtaylordawson/calculator)
@@ -72,13 +63,6 @@ Possibly something here
 Bootstrap's documentation, included in this repo in the root directory, is built with [Jekyll](https://jekyllrb.com/) and publicly hosted on GitHub Pages at <https://getbootstrap.com/>. The docs may also be run locally.
 
 Documentation search is powered by [Algolia's DocSearch](https://community.algolia.com/docsearch/). Working on our search? Be sure to set `debug: true` in `site/docs/4.1/assets/js/src/search.js` file.
-
-## Creator
-
-**Richard Dawson**
-
-- <https://twitter.com/richard_codes>
-- <https://github.com/richardtaylordawson/>
 
 
 ## License
