@@ -11,30 +11,30 @@ import Theme from "./modules/theme.js";
 new Calculator(
     {
         "numberButtons": [
-            document.getElementById('btn-zero'),
-            document.getElementById('btn-one'),
-            document.getElementById('btn-two'),
-            document.getElementById('btn-three'),
-            document.getElementById('btn-four'),
-            document.getElementById('btn-five'),
-            document.getElementById('btn-six'),
-            document.getElementById('btn-seven'),
-            document.getElementById('btn-eight'),
-            document.getElementById('btn-nine')
+            document.getElementById("btn-zero"),
+            document.getElementById("btn-one"),
+            document.getElementById("btn-two"),
+            document.getElementById("btn-three"),
+            document.getElementById("btn-four"),
+            document.getElementById("btn-five"),
+            document.getElementById("btn-six"),
+            document.getElementById("btn-seven"),
+            document.getElementById("btn-eight"),
+            document.getElementById("btn-nine")
         ],
-        "decimalButton" : document.getElementById('btn-decimal'),
-        "plusMinusButton": document.getElementById('btn-plus-minus'),
-        "clearButton" : document.getElementById('btn-clear'),
-        "backspaceButton" : document.getElementById('btn-backspace'),
-        "percentageButton" : document.getElementById('btn-percentage'),
-        "squareRootButton" : document.getElementById('btn-square-root'),
-        "additionButton" : document.getElementById('btn-addition'),
-        "subtractionButton" : document.getElementById('btn-subtraction'),
-        "multiplicationButton" : document.getElementById('btn-multiplication'),
-        "divisionButton" : document.getElementById('btn-division'),
-        "equalsButton" : document.getElementById('btn-equals'),
-        "primaryDisplay" : document.getElementById('primary-display'),
-        "secondaryDisplay" : document.getElementById('secondary-display')
+        "decimalButton" : document.getElementById("btn-decimal"),
+        "plusMinusButton": document.getElementById("btn-plus-minus"),
+        "clearButton" : document.getElementById("btn-clear"),
+        "backspaceButton" : document.getElementById("btn-backspace"),
+        "percentageButton" : document.getElementById("btn-percentage"),
+        "squareRootButton" : document.getElementById("btn-square-root"),
+        "additionButton" : document.getElementById("btn-addition"),
+        "subtractionButton" : document.getElementById("btn-subtraction"),
+        "multiplicationButton" : document.getElementById("btn-multiplication"),
+        "divisionButton" : document.getElementById("btn-division"),
+        "equalsButton" : document.getElementById("btn-equals"),
+        "primaryDisplay" : document.getElementById("primary-display"),
+        "secondaryDisplay" : document.getElementById("secondary-display")
     },
     {
         "maxNumberLength" : 12
@@ -51,47 +51,47 @@ new Calculator(
 new Theme({
     "themes": [
         {
-            "element": document.getElementById('minty-theme'),
+            "element": document.getElementById("minty-theme"),
             "identifier": "minty-theme",
             "default": false
         },
         {
-            "element": document.getElementById('sandstone-theme'),
+            "element": document.getElementById("sandstone-theme"),
             "identifier": "sandstone-theme",
             "default": false
         },
         {
-            "element": document.getElementById('pulse-theme'),
+            "element": document.getElementById("pulse-theme"),
             "identifier": "pulse-theme",
             "default": false
         },
         {
-            "element": document.getElementById('journal-theme'),
+            "element": document.getElementById("journal-theme"),
             "identifier": "journal-theme",
             "default": false
         },
         {
-            "element": document.getElementById('solar-theme'),
+            "element": document.getElementById("solar-theme"),
             "identifier": "solar-theme",
             "default": false
         },
         {
-            "element": document.getElementById('slate-theme'),
+            "element": document.getElementById("slate-theme"),
             "identifier": "slate-theme",
             "default": false
         },
         {
-            "element": document.getElementById('dark-theme'),
+            "element": document.getElementById("dark-theme"),
             "identifier": "dark-theme",
             "default": false
         },
         {
-            "element": document.getElementById('school-theme'),
+            "element": document.getElementById("school-theme"),
             "identifier": "school-theme",
             "default": false
         },
         {
-            "element": document.getElementById('default-theme'),
+            "element": document.getElementById("default-theme"),
             "identifier": "default-theme",
             "default": true
         }

@@ -31,7 +31,7 @@ export default class Theme {
      */
     initializeClickEvents() {
         this.themes.forEach((theme) => {
-            theme.element.addEventListener('click', (event) => {
+            theme.element.addEventListener("click", (event) => {
                 this.toggleTheme(event.target);
             });
         });
@@ -47,14 +47,14 @@ export default class Theme {
         this.themes.forEach((theme, index) => {
             if(theme.element === chosenTheme) {
                 chosenIndex = index;
-                theme.element.classList.add('active');
+                theme.element.classList.add("active");
             } else {
-                theme.element.classList.remove('active');
+                theme.element.classList.remove("active");
             }
         });
 
         for(let i = 0; i < this.themes.length; i++) {
-            document.styleSheets[i].disabled = (i !== chosenIndex)
+            document.styleSheets[i].disabled = (i !== chosenIndex);
         }
     }
 }

@@ -34,10 +34,10 @@ export default class Calculator {
         this.maxNumberLength = options.maxNumberLength;
 
         // These are strings because otherwise we cannot have a number with a decimal and nothing after. Ex: 5.4
-        this.firstNumber = '0';
-        this.secondNumber = '0';
-        this.currentNumber = '0';
-        this.operator = '';
+        this.firstNumber = "0";
+        this.secondNumber = "0";
+        this.currentNumber = "0";
+        this.operator = "";
 
         this.initializeCalculator();
 
@@ -50,10 +50,10 @@ export default class Calculator {
      * Initializes the calculator values / clears the memory back to normal when needed
      */
     initializeCalculator() {
-        this.firstNumber = '0';
-        this.secondNumber = '0';
-        this.currentNumber = '0';
-        this.operator = '';
+        this.firstNumber = "0";
+        this.secondNumber = "0";
+        this.currentNumber = "0";
+        this.operator = "";
 
         this.primaryDisplay.innerText = this.currentNumber;
         this.secondaryDisplay.innerText = this.currentNumber;
@@ -66,52 +66,52 @@ export default class Calculator {
      */
     initializeClickEvents() {
         this.numberButtons.forEach((numberButton) => {
-            numberButton.addEventListener('click', (event) => {
+            numberButton.addEventListener("click", (event) => {
                 this.input(this.getInputValue(event.target));
             });
         });
 
-        this.decimalButton.addEventListener('click', () => {
-            this.input('.');
+        this.decimalButton.addEventListener("click", () => {
+            this.input(".");
         });
 
-        this.plusMinusButton.addEventListener('click', () => {
-            this.input('plus-minus');
+        this.plusMinusButton.addEventListener("click", () => {
+            this.input("plus-minus");
         });
 
-        this.clearButton.addEventListener('click', () => {
+        this.clearButton.addEventListener("click", () => {
             this.initializeCalculator();
         });
 
-        this.backspaceButton.addEventListener('click', () => {
+        this.backspaceButton.addEventListener("click", () => {
            this.backspace();
         });
 
-        this.percentageButton.addEventListener('click', () => {
+        this.percentageButton.addEventListener("click", () => {
             this.percentage();
         });
 
-        this.squareRootButton.addEventListener('click', () => {
+        this.squareRootButton.addEventListener("click", () => {
             this.squareRoot();
         });
 
-        this.additionButton.addEventListener('click', () => {
+        this.additionButton.addEventListener("click", () => {
             this.add();
         });
 
-        this.subtractionButton.addEventListener('click', () => {
+        this.subtractionButton.addEventListener("click", () => {
             this.subtract();
         });
 
-        this.multiplicationButton.addEventListener('click', () => {
+        this.multiplicationButton.addEventListener("click", () => {
             this.multiply();
         });
 
-        this.divisionButton.addEventListener('click', () => {
+        this.divisionButton.addEventListener("click", () => {
             this.divide();
         });
 
-        this.equalsButton.addEventListener('click', () => {
+        this.equalsButton.addEventListener("click", () => {
             this.compute();
         });
     }
@@ -120,30 +120,30 @@ export default class Calculator {
      * Adds a keydown handler to the document that listens for certain keystrokes used for calculations
      */
     initializeKeyboardEvents() {
-        document.addEventListener('keydown', (event)  => {
-            if((event.key >= 0 && event.key <= 9) || event.key === '.') {
+        document.addEventListener("keydown", (event)  => {
+            if((event.key >= 0 && event.key <= 9) || event.key === ".") {
                 this.input(event.key);
-            } else if(event.key === 'p') {
-                this.input('plus-minus');
-            } else if(event.key === 'Escape' || event.key === 'Clear') {
+            } else if(event.key === "p") {
+                this.input("plus-minus");
+            } else if(event.key === "Escape" || event.key === "Clear") {
                 this.initializeCalculator();
-            } else if(event.key === 'Backspace') {
+            } else if(event.key === "Backspace") {
                 this.backspace();
-            } else if(event.key === '%') {
+            } else if(event.key === "%") {
                 this.percentage();
-            } else if(event.key === 's') {
+            } else if(event.key === "s") {
                 this.squareRoot();
-            } else if(event.key === '+') {
+            } else if(event.key === "+") {
                 this.add();
-            } else if(event.key === '-') {
+            } else if(event.key === "-") {
                 this.subtract();
-            } else if(event.key === '*') {
+            } else if(event.key === "*") {
                 this.multiply();
-            } else if(event.key === '/') {
+            } else if(event.key === "/") {
                 this.divide();
-            } else if(event.key === '=') {
+            } else if(event.key === "=") {
                 this.compute();
-            } else if(event.key === 'Enter') {
+            } else if(event.key === "Enter") {
                 this.compute();
             }
         });
@@ -159,11 +159,11 @@ export default class Calculator {
             numberButton.disabled = maxDisplayHit;
         });
 
-        const decimalRegex = new RegExp(/\./, 'g');
+        const decimalRegex = new RegExp(/\./, "g");
 
         this.decimalButton.disabled = (decimalRegex.test(this.currentNumber) || maxDisplayHit);
 
-        const minusRegex = new RegExp(/-/, 'g');
+        const minusRegex = new RegExp(/-/, "g");
 
         if(!maxDisplayHit) {
             this.plusMinusButton.disabled = false;
@@ -200,26 +200,26 @@ export default class Calculator {
         //todo negative doesnt work on 0
         //todo keyboard still works for plu sminus
         // Need this check because although the buttons will be disabled the user can still use the keyboard
-        if((this.currentNumber.length !== this.maxNumberLength) || value === 'plus-minus') {
-            const decimalRegex = new RegExp(/\./, 'g');
+        if((this.currentNumber.length !== this.maxNumberLength) || value === "plus-minus") {
+            const decimalRegex = new RegExp(/\./, "g");
 
-            if((!decimalRegex.test(this.currentNumber) && value === '.')) {
+            if((!decimalRegex.test(this.currentNumber) && value === ".")) {
                 this.currentNumber = `${this.currentNumber}${value}`;
-            } else if(value === 'plus-minus') {
-                if(this.currentNumber !== '0') {
-                    this.currentNumber = this.currentNumber.charAt(0) === '-'
+            } else if(value === "plus-minus") {
+                if(this.currentNumber !== "0") {
+                    this.currentNumber = this.currentNumber.charAt(0) === "-"
                         ? this.currentNumber.slice(1)
                         : `-${this.currentNumber}`;
                 }
-            } else if(value !== '.' && value === '0' && this.currentNumber !== '0') {
+            } else if(value !== "." && value === "0" && this.currentNumber !== "0") {
                 this.currentNumber = `${this.currentNumber}${value}`;
-            } else if(value !== '.') {
-                this.currentNumber = this.currentNumber === '0'
+            } else if(value !== ".") {
+                this.currentNumber = this.currentNumber === "0"
                     ? `${value}`
                     : `${this.currentNumber}${value}`;
             }
 
-            this.operator === ''
+            this.operator === ""
                 ? this.firstNumber = this.currentNumber
                 : this.secondNumber = this.currentNumber;
 
@@ -235,11 +235,11 @@ export default class Calculator {
         this.primaryDisplay.innerText = `${this.currentNumber}`;
 
         if(computed) {
-            let value = '';
+            let value = "";
 
-            if(this.operator === '%') {
+            if(this.operator === "%") {
                 value = `${this.firstNumber}${this.operator} =`;
-            } else if(this.operator === 'sqrt') {
+            } else if(this.operator === "sqrt") {
                 value = `${this.operator}(${this.firstNumber}) =`;
             } else {
                 value = `${this.firstNumber} ${this.operator} ${this.secondNumber} =`;
@@ -248,12 +248,12 @@ export default class Calculator {
             this.secondaryDisplay.innerText = value;
 
             this.firstNumber = this.currentNumber;
-            this.operator = '';
-            this.secondNumber = '0';
+            this.operator = "";
+            this.secondNumber = "0";
 
             this.toggleSingleNumberButtons(false);
         } else {
-            this.secondaryDisplay.innerText = (this.operator === '')
+            this.secondaryDisplay.innerText = (this.operator === "")
                 ? `${this.firstNumber}`
                 : `${this.firstNumber} ${this.operator} ${this.secondNumber}`;
         }
@@ -265,14 +265,14 @@ export default class Calculator {
      * Deletes the last character inputted
      */
     backspace() {
-        if(this.currentNumber !== '0') {
+        if(this.currentNumber !== "0") {
             const slicedDisplay = this.currentNumber.slice(0, this.currentNumber.length - 1);
 
-            this.currentNumber = (slicedDisplay === '' || slicedDisplay === '-')
-                ? '0'
+            this.currentNumber = (slicedDisplay === "" || slicedDisplay === "-")
+                ? "0"
                 : slicedDisplay;
 
-            this.operator === ''
+            this.operator === ""
                 ? this.firstNumber = this.currentNumber
                 : this.secondNumber = this.currentNumber;
 
@@ -284,8 +284,8 @@ export default class Calculator {
      * Performs the percentage as long as only one number is current as input
      */
     percentage() {
-        if(this.currentNumber !== '0' && this.operator === '') {
-            this.operator = '%';
+        if(this.currentNumber !== "0" && this.operator === "") {
+            this.operator = "%";
             this.compute();
         }
     }
@@ -294,10 +294,10 @@ export default class Calculator {
      * Performs the square root as long as only one number is current as input and it is not negative
      */
     squareRoot() {
-        const minusRegex = new RegExp(/-/, 'g');
+        const minusRegex = new RegExp(/-/, "g");
 
-        if(this.operator === '' && !minusRegex.test(this.currentNumber)) {
-            this.operator = 'sqrt';
+        if(this.operator === "" && !minusRegex.test(this.currentNumber)) {
+            this.operator = "sqrt";
             this.compute();
         }
     }
@@ -307,7 +307,7 @@ export default class Calculator {
      * to the secondary display of the calculator.
      */
     add() {
-        this.operator = '+';
+        this.operator = "+";
         this.multiNumberFunctionInitiated();
     }
 
@@ -316,7 +316,7 @@ export default class Calculator {
      * to the secondary display of the calculator.
      */
     subtract() {
-        this.operator = '-';
+        this.operator = "-";
         this.multiNumberFunctionInitiated();
     }
 
@@ -325,7 +325,7 @@ export default class Calculator {
      * to the secondary display of the calculator.
      */
     multiply() {
-        this.operator = '*';
+        this.operator = "*";
         this.multiNumberFunctionInitiated();
     }
 
@@ -334,7 +334,7 @@ export default class Calculator {
      * to the secondary display of the calculator.
      */
     divide() {
-        this.operator = '/';
+        this.operator = "/";
         this.multiNumberFunctionInitiated();
     }
 
@@ -342,8 +342,8 @@ export default class Calculator {
      * Performs actions that are similar for all buttons that need multiple numbers in order to perform
      */
     multiNumberFunctionInitiated() {
-        this.toggleSingleNumberButtons(this.operator !== '');
-        this.currentNumber = '0';
+        this.toggleSingleNumberButtons(this.operator !== "");
+        this.currentNumber = "0";
         this.display();
     }
 
@@ -352,8 +352,8 @@ export default class Calculator {
      * @param {boolean} early - If a computation button is clicked before equals, then computation occurs "early"
      */
     compute(early = false) {
-        //TODO Numbers like 0.45 don't work in computations
-        const decimalRegex = new RegExp(/\./, 'g');
+        //TODO Numbers like 0.45 don"t work in computations
+        const decimalRegex = new RegExp(/\./, "g");
 
         const tempFirstNumber = decimalRegex.test(this.firstNumber)
             ? parseFloat(this.firstNumber)
