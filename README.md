@@ -12,7 +12,7 @@
 
 ## Creator
 
-<a href="https://richardtaylordawson.github.io/">
+<a href="https://github.com/richardtaylordawson/">
    <img src="https://twitter.com/richard_codes/profile_image?size=original" alt="Richard's image" width=72 height=72>
 </a>
 
