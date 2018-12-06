@@ -1,6 +1,6 @@
 <p align="center">
   <a href="">
-    <img src="" alt="Richard's logo" width=72 height=72>
+    <img src="http://icons.iconarchive.com/icons/iconsmind/outline/256/Calculator-icon.png" alt="Richard's logo" width=72 height=72>
   </a>
 
   <h3 align="center">Calculator</h3>
@@ -21,8 +21,7 @@
 - [Status](#status)
 - [What's included](#whats-included)
 - [Documentation](#documentation)
-- [Creators](#creators)
-- [Copyright and license](#copyright-and-license)
+- [License](#license)
 
 
 ## Quick start
@@ -44,6 +43,7 @@ Simple calculator application built using Bootstrap 4, HTML, ES6 Modules and mul
 <https://richardtaylordawson.github.io/calculator/>
 
 ##Status
+
 [![GitHub language count](https://img.shields.io/github/languages/count/badges/shields.svg)](https://richardtaylordawson.github.io/calculator/)
 [![GitHub commit activity the past week, 4 weeks, year](https://img.shields.io/github/commit-activity/y/eslint/eslint.svg)](https://github.com/richardtaylordawson/calculator)
 [![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/richardtaylordawson/calculator)
@@ -54,7 +54,6 @@ Simple calculator application built using Bootstrap 4, HTML, ES6 Modules and mul
 [![Code Climate maintainability](https://img.shields.io/codeclimate/maintainability/rcihardtaylordawson/calculator.svg)](https://codeclimate.com/github/richardtaylordawson/calculator/progress/maintainability)
 <https://github.com/richardtaylordawson/calculator/blob/master/LICENSE>
 
-
 ## What's included
 Possibly something here
 
@@ -63,7 +62,6 @@ Possibly something here
 Bootstrap's documentation, included in this repo in the root directory, is built with [Jekyll](https://jekyllrb.com/) and publicly hosted on GitHub Pages at <https://getbootstrap.com/>. The docs may also be run locally.
 
 Documentation search is powered by [Algolia's DocSearch](https://community.algolia.com/docsearch/). Working on our search? Be sure to set `debug: true` in `site/docs/4.1/assets/js/src/search.js` file.
-
 
 ## License
 
