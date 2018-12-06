@@ -14,21 +14,12 @@
 [![Twitter Follow](https://img.shields.io/twitter/follow/espadrine.svg?label=Follow&style=social)](https://twitter.com/richard_codes)
 [![Twitter URL](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/richard_codes)
 
-
-## Table of contents
-
-- [View project](#view-project)
-- [Status](#status)
-- [Documentation](#documentation)
-- [License](#license)
-
-
 ## View Project
 <https://richardtaylordawson.github.io/calculator/>
 
-##Status
+## Status
 
-[![GitHub language count](https://img.shields.io/github/languages/count/badges/shields.svg)](https://richardtaylordawson.github.io/calculator/)
+[![GitHub language count](https://img.shields.io/github/languages/count/badges/shields.svg)](https://github.com/richardtaylordawson/calculator)
 [![GitHub commit activity the past week, 4 weeks, year](https://img.shields.io/github/commit-activity/y/eslint/eslint.svg)](https://github.com/richardtaylordawson/calculator)
 [![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/richardtaylordawson/calculator)
 [![GitHub issue/pull request author](https://img.shields.io/github/issues/detail/u/badges/shields/979.svg)](https://github.com/richardtaylordawson/calculator)
@@ -36,11 +27,6 @@
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/02ee35b7c3e14b6da802677e73fbdb32)](https://www.codacy.com/app/richardtaylordawson/calculator?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=richardtaylordawson/calculator&amp;utm_campaign=Badge_Grade)
 [![Code Climate issues](https://img.shields.io/codeclimate/issues/richardtaylordawson/calculator.svg)](https://codeclimate.com/github/richardtaylordawson/calculator/issues)
 [![Code Climate maintainability](https://img.shields.io/codeclimate/maintainability/rcihardtaylordawson/calculator.svg)](https://codeclimate.com/github/richardtaylordawson/calculator/progress/maintainability)
-<https://github.com/richardtaylordawson/calculator/blob/master/LICENSE>
-
-## Documentation
-
-Need to write documentation
 
 ## License
 
