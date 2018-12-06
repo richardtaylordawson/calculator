@@ -22,11 +22,10 @@
 
 ## Status
 
-[![GitHub issue/pull request author](https://img.shields.io/badge/author-richardtaylordawson-lightgrey.svg)](https://github.com/richardtaylordawson)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/02ee35b7c3e14b6da802677e73fbdb32)](https://www.codacy.com/app/richardtaylordawson/calculator?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=richardtaylordawson/calculator&amp;utm_campaign=Badge_Grade)
 [![Code Climate maintainability](https://img.shields.io/codeclimate/maintainability/richardtaylordawson/calculator.svg)](https://codeclimate.com/github/richardtaylordawson/calculator/progress/maintainability)
-[![HitCount](http://hits.dwyl.com/richardtaylordawson/calculator.svg?style=plastic)](http://hits.dwyl.com/richardtaylordawson/calculator)
-[![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/richardtaylordawson/calculator)
+[![HitCount](http://hits.dwyl.com/richardtaylordawson/calculator.svg)](http://hits.dwyl.com/richardtaylordawson/calculator)
+[![GitHub License](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/richardtaylordawson/calculator/blob/master/LICENSE)
 [![GitHub repo size in bytes](https://img.shields.io/github/repo-size/badges/shields.svg)](https://github.com/richardtaylordawson/calculator)
 [![GitHub language count](https://img.shields.io/badge/languages-3-blue.svg)](https://github.com/richardtaylordawson/calculator/)
 [![Code Climate issues](https://img.shields.io/codeclimate/issues/richardtaylordawson/calculator.svg)](https://codeclimate.com/github/richardtaylordawson/calculator/issues)
