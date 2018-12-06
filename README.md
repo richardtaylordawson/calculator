@@ -16,7 +16,7 @@
 
 [![Twitter URL](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=@richard_codes)
 [![Twitter Follow](https://img.shields.io/twitter/follow/richard_codes.svg?label=Follow&style=social)](https://twitter.com/intent/follow?screen_name=richard_codes)
-![GitHub followers](https://img.shields.io/github/followers/richardtaylordawson.svg?label=Follow&style=social)
+[![GitHub followers](https://img.shields.io/github/followers/richardtaylordawson.svg?label=Follow&style=social)](https://github.com/richardtaylordawson/)
 
 ## View Project
 <https://richardtaylordawson.github.io/calculator/>
