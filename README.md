@@ -11,8 +11,12 @@
 </p>
 
 ## Creator
-[![Twitter Follow](https://img.shields.io/twitter/follow/espadrine.svg?label=Follow&style=social)](https://twitter.com/richard_codes)
-[![Twitter URL](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/richard_codes)
+
+<img src="https://twitter.com/richard_codes/profile_image?size=original" alt="Richard's logo" width=72 height=72>
+<br>
+
+[![Twitter URL](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=@richard_codes)
+[![Twitter Follow](https://img.shields.io/twitter/follow/richard_codes.svg?label=Follow&style=social)](https://twitter.com/intent/follow?screen_name=richard_codes)
 
 ## View Project
 <https://richardtaylordawson.github.io/calculator/>
