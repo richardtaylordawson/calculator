@@ -25,7 +25,7 @@
 ## Status
 [![GitHub Last Commit](https://img.shields.io/github/last-commit/richardtaylordawson/calculator.svg)](https://github.com/richardtaylordawson/calculator/commits/master)
 [![GitHub Search Hit Counter](https://img.shields.io/github/search/richardtaylordawson/calculator/goto.svg)](https://github.com/richardtaylordawson/calculator/)
-[![Codacy Grade Badge](https://api.codacy.com/project/badge/Grade/02ee35b7c3e14b6da802677e73fbdb32)](https://www.codacy.com/app/richardtaylordawson/calculator?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=richardtaylordawson/calculator&amp;utm_campaign=Badge_Grade)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/02ee35b7c3e14b6da802677e73fbdb32)](https://www.codacy.com/app/richardtaylordawson/calculator?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=richardtaylordawson/calculator&amp;utm_campaign=Badge_Grade)
 [![GitHub Repo Size in Size](https://img.shields.io/github/repo-size/richardtaylordawson/calculator.svg)](https://github.com/richardtaylordawson/calculator/)
 [![GitHub Code Size in Size](https://img.shields.io/github/languages/code-size/richardtaylordawson/calculator.svg)](https://github.com/richardtaylordawson/calculator/)
 [![GitHub Top Language](https://img.shields.io/github/languages/top/richardtaylordawson/calculator.svg)](https://github.com/richardtaylordawson/calculator/)
