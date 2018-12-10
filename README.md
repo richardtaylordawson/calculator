@@ -11,7 +11,6 @@
 </p>
 
 ## Creator
-
 <a href="https://github.com/richardtaylordawson/">
    <img src="https://twitter.com/richard_codes/profile_image?size=original" alt="Richard's image" width=72 height=72>
 </a>
@@ -24,7 +23,6 @@
 <https://richardtaylordawson.github.io/calculator/>
 
 ## Status
-[![GitHub Release Date](https://img.shields.io/github/release-date/richardtaylordawson/calculator.svg)](https://github.com/richardtaylordawson/calculator/releases)
 [![GitHub Last Commit](https://img.shields.io/github/last-commit/richardtaylordawson/calculator.svg)](https://github.com/richardtaylordawson/calculator/commits/master)
 [![GitHub Search Hit Counter](https://img.shields.io/github/search/richardtaylordawson/calculator/goto.svg)](https://github.com/richardtaylordawson/calculator/)
 [![Codacy Grade Badge](https://api.codacy.com/project/badge/Grade/02ee35b7c3e14b6da802677e73fbdb32)](https://www.codacy.com/app/richardtaylordawson/calculator?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=richardtaylordawson/calculator&amp;utm_campaign=Badge_Grade)
