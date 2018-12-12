@@ -38,7 +38,12 @@ export default class Calculator {
         this.secondNumber = "0";
         this.currentNumber = "0";
         this.operator = "";
+    }
 
+    /**
+     * Initializes the theme class. Called by the user of the module.
+     */
+    initialize() {
         this.initializeCalculator();
 
         this.initializeClickEvents();
@@ -197,10 +202,10 @@ export default class Calculator {
      * @param {string} value - Either a number value between 0-9 or a decimal value
      */
     input(value) {
-        //todo negative doesnt work on 0
-        //todo keyboard still works for plu sminus
         // Need this check because although the buttons will be disabled the user can still use the keyboard
-        if((this.currentNumber.length !== this.maxNumberLength) || value === "plus-minus") {
+        const minusRegex = new RegExp(/-/, "g");
+
+        if((this.currentNumber.length !== this.maxNumberLength) || (value === "plus-minus" && minusRegex.test(this.currentNumber) && this.currentNumber.charAt(0) === '-')) {
             const decimalRegex = new RegExp(/\./, "g");
 
             if((!decimalRegex.test(this.currentNumber) && value === ".")) {
@@ -219,9 +224,11 @@ export default class Calculator {
                     : `${this.currentNumber}${value}`;
             }
 
-            this.operator === ""
-                ? this.firstNumber = this.currentNumber
-                : this.secondNumber = this.currentNumber;
+            if(this.operator === "") {
+                this.firstNumber = this.currentNumber;
+            } else {
+                this.secondNumber = this.currentNumber;
+            }
 
             this.display();
         }
@@ -237,9 +244,9 @@ export default class Calculator {
         if(computed) {
             let value = "";
 
-            if(this.operator === "%") {
+            if(this.operator === String.fromCharCode(37)) {
                 value = `${this.firstNumber}${this.operator} =`;
-            } else if(this.operator === "sqrt") {
+            } else if(this.operator === String.fromCharCode(8730)) {
                 value = `${this.operator}(${this.firstNumber}) =`;
             } else {
                 value = `${this.firstNumber} ${this.operator} ${this.secondNumber} =`;
@@ -285,7 +292,7 @@ export default class Calculator {
      */
     percentage() {
         if(this.currentNumber !== "0" && this.operator === "") {
-            this.operator = "%";
+            this.operator = String.fromCharCode(37);
             this.compute();
         }
     }
@@ -297,7 +304,7 @@ export default class Calculator {
         const minusRegex = new RegExp(/-/, "g");
 
         if(this.operator === "" && !minusRegex.test(this.currentNumber)) {
-            this.operator = "sqrt";
+            this.operator = String.fromCharCode(8730);
             this.compute();
         }
     }
@@ -307,7 +314,7 @@ export default class Calculator {
      * to the secondary display of the calculator.
      */
     add() {
-        this.operator = "+";
+        this.operator = String.fromCharCode(43);
         this.multiNumberFunctionInitiated();
     }
 
@@ -316,7 +323,7 @@ export default class Calculator {
      * to the secondary display of the calculator.
      */
     subtract() {
-        this.operator = "-";
+        this.operator = String.fromCharCode(8722);
         this.multiNumberFunctionInitiated();
     }
 
@@ -325,7 +332,7 @@ export default class Calculator {
      * to the secondary display of the calculator.
      */
     multiply() {
-        this.operator = "*";
+        this.operator = String.fromCharCode(215);
         this.multiNumberFunctionInitiated();
     }
 
@@ -334,7 +341,7 @@ export default class Calculator {
      * to the secondary display of the calculator.
      */
     divide() {
-        this.operator = "/";
+        this.operator = String.fromCharCode(247);
         this.multiNumberFunctionInitiated();
     }
 
@@ -352,43 +359,66 @@ export default class Calculator {
      * @param {boolean} early - If a computation button is clicked before equals, then computation occurs "early"
      */
     compute(early = false) {
-        //TODO Numbers like 0.45 don"t work in computations
-        const decimalRegex = new RegExp(/\./, "g");
+        // Javascript requires two different ones or else the ternary statement won't work
+        // Weirdest thing I've ever seen
+        const decimalRegexFirstNumber = new RegExp(/\./, "g");
+        const decimalRegexSecondNumber = new RegExp(/\./, "g");
 
-        const tempFirstNumber = decimalRegex.test(this.firstNumber)
+        let tempFirstNumber = decimalRegexFirstNumber.test(this.firstNumber)
             ? parseFloat(this.firstNumber)
-            : parseInt(this.firstNumber);
+            : parseInt(this.firstNumber, 10);
 
-        const tempSecondNumber = decimalRegex.test(this.secondNumber)
+        let tempSecondNumber = decimalRegexSecondNumber.test(this.secondNumber)
             ? parseFloat(this.secondNumber)
-            : parseInt(this.secondNumber);
+            : parseInt(this.secondNumber, 10);
 
         let value;
 
         switch(this.operator) {
-            case "%":
-                value = parseFloat(tempFirstNumber / 100).toString();
+            case String.fromCharCode(37):
+                value = parseFloat(tempFirstNumber / 100);
                 break;
-            case "sqrt":
-                value = Math.sqrt(tempFirstNumber).toString();
+            case String.fromCharCode(8730):
+                value = Math.sqrt(tempFirstNumber);
                 break;
-            case "+":
-                value = (tempFirstNumber + tempSecondNumber).toString();
+            case String.fromCharCode(43):
+                value = (tempFirstNumber + tempSecondNumber);
                 break;
-            case "-":
-                value = (tempFirstNumber - tempSecondNumber).toString();
+            case String.fromCharCode(8722):
+                value = (tempFirstNumber - tempSecondNumber);
                 break;
-            case "*":
-                value = (tempFirstNumber * tempSecondNumber).toString();
+            case String.fromCharCode(215):
+                value = (tempFirstNumber * tempSecondNumber);
                 break;
-            case "/":
-                value = (tempFirstNumber / tempSecondNumber).toString();
+            case String.fromCharCode(247):
+                value = (tempFirstNumber / tempSecondNumber);
                 break;
         }
+
+        value = value.toString();
 
         if(value.length > this.maxNumberLength) {
             value = value.slice(0, this.maxNumberLength);
         }
+
+        const decimalRegex = new RegExp(/\./, "g");
+
+        // Cut out any trailing 0's in decimal numbers
+        // if(decimalRegex.test(value)) {
+        //     let loop = true;
+        //
+        //     while(loop) {
+        //         for(let i = value.length - 1; i >= 0; i--) {
+        //             if(value[i] === '0') {
+        //                 value = value.substring(0, i);
+        //             } else {
+        //                 loop = false;
+        //             }
+        //         }
+        //     }
+        //
+        //     //TODO last character is a decimal need to strip
+        // }
 
         this.currentNumber = value;
 
