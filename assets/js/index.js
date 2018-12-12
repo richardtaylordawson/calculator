@@ -8,7 +8,7 @@ import Theme from "./modules/theme.js";
  * @param {object} all the options of the calculator
  * @constant Calculator
  */
-new Calculator(
+const calculator = new Calculator(
     {
         "numberButtons": [
             document.getElementById("btn-zero"),
@@ -41,6 +41,8 @@ new Calculator(
     }
 );
 
+calculator.initialize();
+
 
 /**
  * Initializes the theme object
@@ -48,7 +50,7 @@ new Calculator(
  * @param {object} All the DOM elements and identifiers for the application themes
  * @constant Theme
  */
-new Theme({
+const theme = new Theme({
     "themes": [
         {
             "element": document.getElementById("minty-theme"),
@@ -97,3 +99,5 @@ new Theme({
         }
     ]
 });
+
+theme.initialize();
