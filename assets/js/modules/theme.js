@@ -9,7 +9,12 @@ export default class Theme {
      */
     constructor(options) {
         this.themes = options.themes;
+    }
 
+    /**
+     * Initializes the theme class. Called by the user of the module.
+     */
+    initialize() {
         this.initializeDefaultTheme();
 
         this.initializeClickEvents();
