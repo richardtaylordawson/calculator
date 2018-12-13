@@ -44,87 +44,89 @@
     <div class="container-fluid">
         <div class="row" id="application">
             <div class="mb-4 mt-4 col-lg-5 col-md-12">
-                <div id="calculator">
-                    <div class="col-12" id="keypad">
-                        <div class="row">
-                            <div class="col-12 bg-dark text-white mb-2">
-                                <h6 class="text-right text-danger mt-2" id="secondary-display">0</h6>
-                                <h1 class="text-right" id="primary-display">0</h1>
+                <div class="card" id="calculator">
+                    <div class="card-body">
+                        <div class="col-12" id="keypad">
+                            <div class="row">
+                                <div class="col-12 bg-dark text-white mb-2" id="calculator-display">
+                                    <h6 class="text-right text-danger mt-2" id="secondary-display">0</h6>
+                                    <h1 class="text-right" id="primary-display">0</h1>
+                                </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-9">
-                                <button class="btn btn-lg btn-block btn-danger btn-raised mb-2" id="btn-clear">Clear</button>
+                            <div class="row">
+                                <div class="col-9">
+                                    <button class="btn btn-lg btn-block btn-danger btn-raised mb-2" id="btn-clear">Clear</button>
+                                </div>
+                                <div class="col-3">
+                                    <button class="btn btn-lg btn-block btn-danger btn-raised mb-2" id="btn-backspace"><i class="fas fa-backspace" id="backspace-icon"></i></button>
+                                </div>
                             </div>
-                            <div class="col-3">
-                                <button class="btn btn-lg btn-block btn-danger btn-raised mb-2" id="btn-backspace"><i class="fas fa-backspace" id="backspace-icon"></i></button>
+                            <div class="row">
+                                <div class="col-3">
+                                    <button class="btn btn-lg btn-block btn-info btn-raised mb-2" id="btn-plus-minus">&#xb1;</button>
+                                </div>
+                                <div class="col-3">
+                                    <button class="btn btn-lg btn-block btn-warning btn-raised mb-2" id="btn-percentage">&#37;</button>
+                                </div>
+                                <div class="col-3">
+                                    <button class="btn btn-lg btn-block btn-warning btn-raised mb-2" id="btn-square-root">&#8730;</button>
+                                </div>
+                                <div class="col-3">
+                                    <button class="btn btn-lg btn-block btn-warning btn-raised mb-2" id="btn-division">&#247;</button>
+                                </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-3">
-                                <button class="btn btn-lg btn-block btn-info btn-raised mb-2" id="btn-plus-minus">&#xb1;</button>
+                            <div class="row">
+                                <div class="col-3">
+                                    <button class="btn btn-lg btn-block btn-info btn-raised mb-2" id="btn-seven">7</button>
+                                </div>
+                                <div class="col-3">
+                                    <button class="btn btn-lg btn-block btn-info btn-raised mb-2" id="btn-eight">8</button>
+                                </div>
+                                <div class="col-3">
+                                    <button class="btn btn-lg btn-block btn-info btn-raised mb-2" id="btn-nine">9</button>
+                                </div>
+                                <div class="col-3">
+                                    <button class="btn btn-lg btn-block btn-warning btn-raised mb-2" id="btn-multiplication">&#215;</button>
+                                </div>
                             </div>
-                            <div class="col-3">
-                                <button class="btn btn-lg btn-block btn-warning btn-raised mb-2" id="btn-percentage">&#37;</button>
+                            <div class="row">
+                                <div class="col-3">
+                                    <button class="btn btn-lg btn-block btn-info btn-raised mb-2" id="btn-four">4</button>
+                                </div>
+                                <div class="col-3">
+                                    <button class="btn btn-lg btn-block btn-info btn-raised mb-2" id="btn-five">5</button>
+                                </div>
+                                <div class="col-3">
+                                    <button class="btn btn-lg btn-block btn-info btn-raised mb-2" id="btn-six">6</button>
+                                </div>
+                                <div class="col-3">
+                                    <button class="btn btn-lg btn-block btn-warning btn-raised mb-2" id="btn-subtraction">&#8722;</button>
+                                </div>
                             </div>
-                            <div class="col-3">
-                                <button class="btn btn-lg btn-block btn-warning btn-raised mb-2" id="btn-square-root">&#8730;</button>
+                            <div class="row">
+                                <div class="col-3">
+                                    <button class="btn btn-lg btn-block btn-info btn-raised mb-2" id="btn-one">1</button>
+                                </div>
+                                <div class="col-3">
+                                    <button class="btn btn-lg btn-block btn-info btn-raised mb-2" id="btn-two">2</button>
+                                </div>
+                                <div class="col-3">
+                                    <button class="btn btn-lg btn-block btn-info btn-raised mb-2" id="btn-three">3</button>
+                                </div>
+                                <div class="col-3">
+                                    <button class="btn btn-lg btn-block btn-warning btn-raised mb-2" id="btn-addition">&#43;</button>
+                                </div>
                             </div>
-                            <div class="col-3">
-                                <button class="btn btn-lg btn-block btn-warning btn-raised mb-2" id="btn-division">&#247;</button>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-3">
-                                <button class="btn btn-lg btn-block btn-info btn-raised mb-2" id="btn-seven">7</button>
-                            </div>
-                            <div class="col-3">
-                                <button class="btn btn-lg btn-block btn-info btn-raised mb-2" id="btn-eight">8</button>
-                            </div>
-                            <div class="col-3">
-                                <button class="btn btn-lg btn-block btn-info btn-raised mb-2" id="btn-nine">9</button>
-                            </div>
-                            <div class="col-3">
-                                <button class="btn btn-lg btn-block btn-warning btn-raised mb-2" id="btn-multiplication">&#215;</button>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-3">
-                                <button class="btn btn-lg btn-block btn-info btn-raised mb-2" id="btn-four">4</button>
-                            </div>
-                            <div class="col-3">
-                                <button class="btn btn-lg btn-block btn-info btn-raised mb-2" id="btn-five">5</button>
-                            </div>
-                            <div class="col-3">
-                                <button class="btn btn-lg btn-block btn-info btn-raised mb-2" id="btn-six">6</button>
-                            </div>
-                            <div class="col-3">
-                                <button class="btn btn-lg btn-block btn-warning btn-raised mb-2" id="btn-subtraction">&#8722;</button>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-3">
-                                <button class="btn btn-lg btn-block btn-info btn-raised mb-2" id="btn-one">1</button>
-                            </div>
-                            <div class="col-3">
-                                <button class="btn btn-lg btn-block btn-info btn-raised mb-2" id="btn-two">2</button>
-                            </div>
-                            <div class="col-3">
-                                <button class="btn btn-lg btn-block btn-info btn-raised mb-2" id="btn-three">3</button>
-                            </div>
-                            <div class="col-3">
-                                <button class="btn btn-lg btn-block btn-warning btn-raised mb-2" id="btn-addition">&#43;</button>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-6">
-                                <button class="btn btn-lg btn-block btn-info btn-raised mb-2" id="btn-zero">0</button>
-                            </div>
-                            <div class="col-3">
-                                <button class="btn btn-lg btn-block btn-info btn-raised mb-2" id="btn-decimal">.</button>
-                            </div>
-                            <div class="col-3">
-                                <button class="btn btn-lg btn-block btn-primary btn-raised mb-2" id="btn-equals">&#61;</button>
+                            <div class="row">
+                                <div class="col-6">
+                                    <button class="btn btn-lg btn-block btn-info btn-raised mb-2" id="btn-zero">0</button>
+                                </div>
+                                <div class="col-3">
+                                    <button class="btn btn-lg btn-block btn-info btn-raised mb-2" id="btn-decimal">.</button>
+                                </div>
+                                <div class="col-3">
+                                    <button class="btn btn-lg btn-block btn-primary btn-raised mb-2" id="btn-equals">&#61;</button>
+                                </div>
                             </div>
                         </div>
                     </div>

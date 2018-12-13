@@ -8,14 +8,21 @@ body {
 }
 
 #calculator {
-    /* Adds the border to the calculator */
-    border-radius: 15px;
-    border: 15px solid rgb(108, 117, 125);
+    background-color: rgb(108, 117, 125);
 }
 
 #keypad {
     /* Needed a gray that isn't part of the default Bootstrap 4 background colors */
     background-color: rgb(80, 80, 80);
+    border-radius: 10px;
+}
+
+#calculator-display {
+    border-radius: 10px;
+}
+
+#calculator .card-body {
+    padding: 10px;
 }
 
 .card {
