@@ -404,21 +404,15 @@ export default class Calculator {
         const decimalRegex = new RegExp(/\./, "g");
 
         // Cut out any trailing 0's in decimal numbers
-        // if(decimalRegex.test(value)) {
-        //     let loop = true;
-        //
-        //     while(loop) {
-        //         for(let i = value.length - 1; i >= 0; i--) {
-        //             if(value[i] === '0') {
-        //                 value = value.substring(0, i);
-        //             } else {
-        //                 loop = false;
-        //             }
-        //         }
-        //     }
-        //
-        //     //TODO last character is a decimal need to strip
-        // }
+        if(decimalRegex.test(value)) {
+            for(let i = value.length - 1; i >= 0; i--) {
+                if(value[i] === '0') {
+                    value = value.substring(0, i)
+                } else {
+                    break;
+                }
+            }
+        }
 
         this.currentNumber = value;
 
