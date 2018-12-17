@@ -421,7 +421,7 @@ export default class Calculator {
         // Test using this expression: 65.9 × 91
         if(decimalRegex.test(value)) {
             while(value.endsWith("0")) {
-                value = value.slice(0, -1)
+                value = value.slice(0, -1);
             }
         }
 
