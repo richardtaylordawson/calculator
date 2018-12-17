@@ -63,7 +63,7 @@ export default class Calculator {
             .set("*", () => { this.multiply(); })
             .set("/", () => { this.divide(); })
             .set("=", () => { this.compute(); })
-            .set("Enter", () => { this.compute(); })
+            .set("Enter", () => { this.compute(); });
     }
 
     /**
