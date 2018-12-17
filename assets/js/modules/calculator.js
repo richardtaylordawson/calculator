@@ -126,30 +126,43 @@ export default class Calculator {
      */
     initializeKeyboardEvents() {
         document.addEventListener("keydown", (event)  => {
-            if((event.key >= 0 && event.key <= 9) || event.key === ".") {
-                this.input(event.key);
-            } else if(event.key === "p") {
-                this.input("plus-minus");
-            } else if(event.key === "Escape" || event.key === "Clear") {
-                this.initializeCalculator();
-            } else if(event.key === "Backspace") {
-                this.backspace();
-            } else if(event.key === "%") {
-                this.percentage();
-            } else if(event.key === "s") {
-                this.squareRoot();
-            } else if(event.key === "+") {
-                this.add();
-            } else if(event.key === "-") {
-                this.subtract();
-            } else if(event.key === "*") {
-                this.multiply();
-            } else if(event.key === "/") {
-                this.divide();
-            } else if(event.key === "=") {
-                this.compute();
-            } else if(event.key === "Enter") {
-                this.compute();
+            switch(event.key) {
+                case (event.key >= 0 && event.key <= 9) || event.key === ".":
+                    this.input(event.key);
+                    break;
+                case (event.key === "p"):
+                    this.input("plus-minus");
+                    break;
+                case (event.key === "Escape" || event.key === "Clear"):
+                    this.initializeCalculator();
+                    break;
+                case (event.key === "Backspace"):
+                    this.backspace();
+                    break;
+                case (event.key === "%"):
+                    this.percentage();
+                    break;
+                case (event.key === "s"):
+                    this.squareRoot();
+                    break;
+                case (event.key === "+"):
+                    this.add();
+                    break;
+                case (event.key === "-"):
+                    this.subtract();
+                    break;
+                case (event.key === "*"):
+                    this.multiply();
+                    break;
+                case (event.key === "/"):
+                    this.divide();
+                    break;
+                case (event.key === "="):
+                    this.compute();
+                    break;
+                case (event.key === "Enter"):
+                    this.compute();
+                    break;
             }
         });
     }
@@ -361,6 +374,7 @@ export default class Calculator {
      * @param {boolean} early - If a computation button is clicked before equals, then computation occurs "early"
      */
     compute(early = false) {
+        console.log(early);
         // Javascript requires two different ones or else the ternary statement won't work
         // Weirdest thing I've ever seen
         const decimalRegexFirstNumber = new RegExp(/\./, "g");
