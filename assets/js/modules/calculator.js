@@ -40,31 +40,30 @@ export default class Calculator {
         this.operator = "";
 
         // Mapping of key events to reduce complexity
-        this.keyEvents = {
-            "0": () => { this.input("0"); },
-            "1": () => { this.input("1"); },
-            "2": () => { this.input("2"); },
-            "3": () => { this.input("3"); },
-            "4": () => { this.input("4"); },
-            "5": () => { this.input("5"); },
-            "6": () => { this.input("6"); },
-            "7": () => { this.input("7"); },
-            "8": () => { this.input("8"); },
-            "9": () => { this.input("9"); },
-            ".": () => { this.input("."); },
-            "p": () => { this.input("plus-minus"); },
-            "Escape": () => { this.initializeCalculator(); },
-            "Clear": () => { this.initializeCalculator(); },
-            "Backspace": () => { this.backspace(); },
-            "%": () => { this.percentage(); },
-            "s": () => { this.divide(); },
-            "+": () => { this.add(); },
-            "-": () => { this.subtract(); },
-            "*": () => { this.multiply(); },
-            "/": () => { this.divide(); },
-            "=": () => { this.compute(); },
-            "Enter": () => { this.compute(); }
-        };
+        this.keyEvents = new Map()
+            .set("0", () => { this.input("0"); })
+            .set("1", () => { this.input("1"); })
+            .set("2", () => { this.input("2"); })
+            .set("3", () => { this.input("3"); })
+            .set("4", () => { this.input("4"); })
+            .set("5", () => { this.input("5"); })
+            .set("6", () => { this.input("6"); })
+            .set("7", () => { this.input("7"); })
+            .set("8", () => { this.input("8"); })
+            .set("9", () => { this.input("9"); })
+            .set(".", () => { this.input("."); })
+            .set("p", () => { this.input("plus-minus"); })
+            .set("Escape", () => { this.initializeCalculator(); })
+            .set("Clear", () => { this.initializeCalculator(); })
+            .set("Backspace", () => { this.backspace(); })
+            .set("%", () => { this.percentage(); })
+            .set("s", () => { this.divide(); })
+            .set("+", () => { this.add(); })
+            .set("-", () => { this.subtract(); })
+            .set("*", () => { this.multiply(); })
+            .set("/", () => { this.divide(); })
+            .set("=", () => { this.compute(); })
+            .set("Enter", () => { this.compute(); })
     }
 
     /**
@@ -162,8 +161,8 @@ export default class Calculator {
      * @param {string} key - The string of the key that was pressed from the keydown event.
      */
     runKeyEvent(key) {
-        if(this.keyEvents.hasOwnProperty(key)) {
-            this.keyEvents.key();
+        if(this.keyEvents.get(key)) {
+            this.keyEvents.get(key)();
         }
     }
 
