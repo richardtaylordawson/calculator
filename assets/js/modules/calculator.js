@@ -163,7 +163,7 @@ export default class Calculator {
      */
     runKeyEvent(key) {
         if(this.keyEvents.hasOwnProperty(key)) {
-            this.keyEvents[key]();
+            this.keyEvents.key();
         }
     }
 
