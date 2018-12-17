@@ -205,7 +205,7 @@ export default class Calculator {
         // Need this check because although the buttons will be disabled the user can still use the keyboard
         const minusRegex = new RegExp(/-/, "g");
 
-        if((this.currentNumber.length !== this.maxNumberLength) || (value === "plus-minus" && minusRegex.test(this.currentNumber) && this.currentNumber.charAt(0) === '-')) {
+        if((this.currentNumber.length !== this.maxNumberLength) || (value === "plus-minus" && minusRegex.test(this.currentNumber) && this.currentNumber.charAt(0) === "-")) {
             const decimalRegex = new RegExp(/\./, "g");
 
             if((!decimalRegex.test(this.currentNumber) && value === ".")) {
@@ -279,9 +279,11 @@ export default class Calculator {
                 ? "0"
                 : slicedDisplay;
 
-            this.operator === ""
-                ? this.firstNumber = this.currentNumber
-                : this.secondNumber = this.currentNumber;
+            if(this.operator === "") {
+                this.firstNumber = this.currentNumber;
+            } else {
+                this.secondNumber = this.currentNumber;
+            }
 
             this.display();
         }
@@ -406,8 +408,8 @@ export default class Calculator {
         // Cut out any trailing 0's in decimal numbers
         if(decimalRegex.test(value)) {
             for(let i = value.length - 1; i >= 0; i--) {
-                if(value[i] === '0') {
-                    value = value.substring(0, i)
+                if(value[i] === "0") {
+                    value = value.substring(0, i);
                 } else {
                     break;
                 }
