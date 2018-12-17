@@ -418,13 +418,10 @@ export default class Calculator {
         const decimalRegex = new RegExp(/\./, "g");
 
         // Cut out any trailing 0's in decimal numbers
+        // Test using this expression: 65.9 × 91
         if(decimalRegex.test(value)) {
-            for(let i = value.length - 1; i >= 0; i--) {
-                if(value[i] === "0") {
-                    value = value.substring(0, i);
-                } else {
-                    break;
-                }
+            while(value.endsWith("0")) {
+                value = value.slice(0, -1)
             }
         }
 
