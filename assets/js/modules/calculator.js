@@ -39,8 +39,8 @@ export default class Calculator {
         this.currentNumber = "0";
         this.operator = "";
 
-        // Mapping of key events to reduce complexity
-        this.keyEvents = new Map()
+        // Mapping of calculator events to reduce complexity
+        this.calculatorEvents = new Map()
             .set("0", () => { this.input("0"); })
             .set("1", () => { this.input("1"); })
             .set("2", () => { this.input("2"); })
@@ -57,7 +57,7 @@ export default class Calculator {
             .set("Clear", () => { this.initializeCalculator(); })
             .set("Backspace", () => { this.backspace(); })
             .set("%", () => { this.percentage(); })
-            .set("s", () => { this.divide(); })
+            .set("s", () => { this.squareRoot(); })
             .set("+", () => { this.add(); })
             .set("-", () => { this.subtract(); })
             .set("*", () => { this.multiply(); })
@@ -89,7 +89,7 @@ export default class Calculator {
         this.primaryDisplay.innerText = this.currentNumber;
         this.secondaryDisplay.innerText = this.currentNumber;
         this.toggleInputButtons();
-        this.toggleSingleNumberButtons(false);
+        this.toggleSingleNumberFunctionButtons(false);
     }
 
     /**
@@ -98,52 +98,52 @@ export default class Calculator {
     initializeClickEvents() {
         this.numberButtons.forEach((numberButton) => {
             numberButton.addEventListener("click", (event) => {
-                this.input(this.getInputValue(event.target));
+                this.calculatorEvents.get(this.getInputValue(event.target))();
             });
         });
 
         this.decimalButton.addEventListener("click", () => {
-            this.input(".");
+            this.calculatorEvents.get(".")();
         });
 
         this.plusMinusButton.addEventListener("click", () => {
-            this.input("plus-minus");
+            this.calculatorEvents.get("plus-minus")();
         });
 
         this.clearButton.addEventListener("click", () => {
-            this.initializeCalculator();
+            this.calculatorEvents.get("Clear")();
         });
 
         this.backspaceButton.addEventListener("click", () => {
-           this.backspace();
+            this.calculatorEvents.get("Backspace")();
         });
 
         this.percentageButton.addEventListener("click", () => {
-            this.percentage();
+            this.calculatorEvents.get("%")();
         });
 
         this.squareRootButton.addEventListener("click", () => {
-            this.squareRoot();
+            this.calculatorEvents.get("s")();
         });
 
         this.additionButton.addEventListener("click", () => {
-            this.add();
+            this.calculatorEvents.get("+")();
         });
 
         this.subtractionButton.addEventListener("click", () => {
-            this.subtract();
+            this.calculatorEvents.get("-")();
         });
 
         this.multiplicationButton.addEventListener("click", () => {
-            this.multiply();
+            this.calculatorEvents.get("*")();
         });
 
         this.divisionButton.addEventListener("click", () => {
-            this.divide();
+            this.calculatorEvents.get("/")();
         });
 
         this.equalsButton.addEventListener("click", () => {
-            this.compute();
+            this.calculatorEvents.get("=")();
         });
     }
 
@@ -157,12 +157,12 @@ export default class Calculator {
     }
 
     /**
-     * Runs correct method depending on the key that was pressed
+     * Runs correct calculator event depending on the key that was pressed
      * @param {string} key - The string of the key that was pressed from the keydown event.
      */
     runKeyEvent(key) {
-        if(this.keyEvents.get(key)) {
-            this.keyEvents.get(key)();
+        if(this.calculatorEvents.get(key)) {
+            this.calculatorEvents.get(key)();
         }
     }
 
@@ -182,9 +182,7 @@ export default class Calculator {
 
         const minusRegex = new RegExp(/-/, "g");
 
-        if(!maxDisplayHit) {
-            this.plusMinusButton.disabled = false;
-        } else if(minusRegex.test(this.currentNumber)) {
+        if(!maxDisplayHit || minusRegex.test(this.currentNumber)) {
             this.plusMinusButton.disabled = false;
         } else {
             this.plusMinusButton.disabled = maxDisplayHit;
@@ -195,7 +193,7 @@ export default class Calculator {
      * Enables or disables the single number function buttons
      * @param {boolean} disable - Decides whether or not to enable or disable the buttons.
      */
-    toggleSingleNumberButtons(disable) {
+    toggleSingleNumberFunctionButtons(disable) {
         this.percentageButton.disabled = disable;
         this.squareRootButton.disabled = disable;
     }
@@ -236,12 +234,7 @@ export default class Calculator {
                     : `${this.currentNumber}${value}`;
             }
 
-            if(this.operator === "") {
-                this.firstNumber = this.currentNumber;
-            } else {
-                this.secondNumber = this.currentNumber;
-            }
-
+            this.setCurrentNumber();
             this.display();
         }
     }
@@ -270,7 +263,7 @@ export default class Calculator {
             this.operator = "";
             this.secondNumber = "0";
 
-            this.toggleSingleNumberButtons(false);
+            this.toggleSingleNumberFunctionButtons(false);
         } else {
             this.secondaryDisplay.innerText = (this.operator === "")
                 ? `${this.firstNumber}`
@@ -291,13 +284,20 @@ export default class Calculator {
                 ? "0"
                 : slicedDisplay;
 
-            if(this.operator === "") {
-                this.firstNumber = this.currentNumber;
-            } else {
-                this.secondNumber = this.currentNumber;
-            }
-
+            this.setCurrentNumber();
             this.display();
+        }
+    }
+
+    /**
+     * Sets the current number variable on the class based on if the user is on the firstNumber, or secondNumber
+     * of the expression they are trying to compute
+     */
+    setCurrentNumber() {
+        if(this.operator === "") {
+            this.firstNumber = this.currentNumber;
+        } else {
+            this.secondNumber = this.currentNumber;
         }
     }
 
@@ -363,7 +363,7 @@ export default class Calculator {
      * Performs actions that are similar for all buttons that need multiple numbers in order to perform
      */
     multiNumberFunctionInitiated() {
-        this.toggleSingleNumberButtons(this.operator !== "");
+        this.toggleSingleNumberFunctionButtons(this.operator !== "");
         this.currentNumber = "0";
         this.display();
     }
