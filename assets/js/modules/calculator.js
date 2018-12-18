@@ -107,7 +107,7 @@ export default class Calculator {
         });
 
         this.plusMinusButton.addEventListener("click", () => {
-            this.calculatorEvents.get("plus-minus")();
+            this.calculatorEvents.get("p")();
         });
 
         this.clearButton.addEventListener("click", () => {
@@ -240,36 +240,41 @@ export default class Calculator {
     }
 
     /**
-     * Displays the numbers correctly on the primary and secondary display
-     * @param {boolean} computed - lets the display know if the equation was just computed
+     * Displays the current numbers properly as input is given
      */
-    display(computed = false) {
+    display() {
         this.primaryDisplay.innerText = `${this.currentNumber}`;
 
-        if(computed) {
-            let value = "";
+        this.secondaryDisplay.innerText = (this.operator === "")
+            ? `${this.firstNumber}`
+            : `${this.firstNumber} ${this.operator} ${this.secondNumber}`;
 
-            if(this.operator === String.fromCharCode(37)) {
-                value = `${this.firstNumber}${this.operator} =`;
-            } else if(this.operator === String.fromCharCode(8730)) {
-                value = `${this.operator}(${this.firstNumber}) =`;
-            } else {
-                value = `${this.firstNumber} ${this.operator} ${this.secondNumber} =`;
-            }
+        this.toggleInputButtons();
+    }
 
-            this.secondaryDisplay.innerText = value;
+    /**
+     * Displays the computed equation properly on the primary and secondary displays
+     */
+    computedDisplay() {
+        this.primaryDisplay.innerText = `${this.currentNumber}`;
 
-            this.firstNumber = this.currentNumber;
-            this.operator = "";
-            this.secondNumber = "0";
+        let value = "";
 
-            this.toggleSingleNumberFunctionButtons(false);
+        if(this.operator === String.fromCharCode(37)) {
+            value = `${this.firstNumber}${this.operator} =`;
+        } else if(this.operator === String.fromCharCode(8730)) {
+            value = `${this.operator}(${this.firstNumber}) =`;
         } else {
-            this.secondaryDisplay.innerText = (this.operator === "")
-                ? `${this.firstNumber}`
-                : `${this.firstNumber} ${this.operator} ${this.secondNumber}`;
+            value = `${this.firstNumber} ${this.operator} ${this.secondNumber} =`;
         }
 
+        this.secondaryDisplay.innerText = value;
+
+        this.firstNumber = this.currentNumber;
+        this.operator = "";
+        this.secondNumber = "0";
+
+        this.toggleSingleNumberFunctionButtons(false);
         this.toggleInputButtons();
     }
 
@@ -369,6 +374,34 @@ export default class Calculator {
     }
 
     /**
+     * Strips all characters greater than the max number, then strips any trailing zero's if needed
+     * @param {string} value - The number that needs to be cleaned and returned.
+     * @return {string} - clean value with no trailing zeros and not longer than max length
+     */
+    cleanValue(value) {
+        if(value.length > this.maxNumberLength) {
+            value = value.slice(0, this.maxNumberLength);
+        }
+
+        const decimalRegex = new RegExp(/\./, "g");
+
+        // Cut out any trailing 0's in decimal numbers
+        // Test using this expression: 65.9 × 91
+        if(decimalRegex.test(value)) {
+            while(value.endsWith("0")) {
+                value = value.slice(0, -1);
+            }
+
+            if(value.endsWith(".")) {
+                value = value.slice(0, 1);
+            }
+        }
+
+        console.log(value);
+        return value;
+    }
+
+    /**
      * Computes the mathematical expression and displays it on the calculator
      * @param {boolean} early - If a computation button is clicked before equals, then computation occurs "early"
      */
@@ -411,22 +444,8 @@ export default class Calculator {
 
         value = value.toString();
 
-        if(value.length > this.maxNumberLength) {
-            value = value.slice(0, this.maxNumberLength);
-        }
+        this.currentNumber = this.cleanValue(value);
 
-        const decimalRegex = new RegExp(/\./, "g");
-
-        // Cut out any trailing 0's in decimal numbers
-        // Test using this expression: 65.9 × 91
-        if(decimalRegex.test(value)) {
-            while(value.endsWith("0")) {
-                value = value.slice(0, -1);
-            }
-        }
-
-        this.currentNumber = value;
-
-        this.display(true);
+        this.computedDisplay(true);
     }
 }
