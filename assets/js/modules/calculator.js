@@ -374,15 +374,33 @@ export default class Calculator {
     }
 
     /**
-     * Strips all characters greater than the max number, then strips any trailing zero's if needed
-     * @param {string} value - The number that needs to be cleaned and returned.
+     * Calls proper methods to clean the value inputted
+     * @param {string} value - The number that needs to be cleaned and returned
      * @return {string} - clean value with no trailing zeros and not longer than max length
      */
     cleanValue(value) {
+        return this.stripTrailingZeros(this.stripMaxNumberLimit(value));
+    }
+
+    /**
+     * Strips value until it is the max number length
+     * @param {string} value - The number that needs to be cut down to max length
+     * @return {string} - value not longer than max length
+     */
+    stripMaxNumberLimit(value) {
         if(value.length > this.maxNumberLength) {
             value = value.slice(0, this.maxNumberLength);
         }
 
+        return value;
+    }
+
+    /**
+     * Strips all trailing zeros and decimal point if the zero after a decimal was stripped
+     * @param {string} value - The number that needs trailing zeros stipped
+     * @return {string} - clean value with no trailing zeros
+     */
+    stripTrailingZeros(value) {
         const decimalRegex = new RegExp(/\./, "g");
 
         // Cut out any trailing 0's in decimal numbers
@@ -397,7 +415,6 @@ export default class Calculator {
             }
         }
 
-        console.log(value);
         return value;
     }
 
