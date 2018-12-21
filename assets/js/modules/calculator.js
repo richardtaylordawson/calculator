@@ -58,10 +58,22 @@ export default class Calculator {
             .set("Backspace", () => { this.backspace(); })
             .set("%", () => { this.percentage(); })
             .set("s", () => { this.squareRoot(); })
-            .set("+", () => { this.add(); })
-            .set("-", () => { this.subtract(); })
-            .set("*", () => { this.multiply(); })
-            .set("/", () => { this.divide(); })
+            .set("+", () => {
+                this.checkComputeEarly();
+                this.add();
+            })
+            .set("-", () => {
+                this.checkComputeEarly();
+                this.subtract();
+            })
+            .set("*", () => {
+                this.checkComputeEarly();
+                this.multiply();
+            })
+            .set("/", () => {
+                this.checkComputeEarly();
+                this.divide();
+            })
             .set("=", () => { this.compute(); })
             .set("Enter", () => { this.compute(); });
     }
@@ -205,6 +217,14 @@ export default class Calculator {
      */
     getInputValue(element) {
         return this.numberButtons.indexOf(element).toString();
+    }
+
+    /**
+     * Checks if the user is trying to compute "early" and run compute if so
+     */
+    checkComputeEarly() {
+        if(this.operator !== "")
+            this.compute();
     }
 
     /**
