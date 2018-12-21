@@ -223,8 +223,9 @@ export default class Calculator {
      * Checks if the user is trying to compute "early" and run compute if so
      */
     checkComputeEarly() {
-        if(this.operator !== "")
+        if(this.operator !== ""){
             this.compute();
+        }
     }
 
     /**
