@@ -10,9 +10,6 @@
   </p>
 </p>
 
-## View Project
-<https://richardtaylordawson.github.io/calculator/>
-
 ## Status
 [![GitHub Last Commit](https://img.shields.io/github/last-commit/richardtaylordawson/calculator.svg)](https://github.com/richardtaylordawson/calculator/commits/master)
 [![GitHub Search Hit Counter](https://img.shields.io/github/search/richardtaylordawson/calculator/goto.svg)](https://github.com/richardtaylordawson/calculator/)
@@ -21,3 +18,6 @@
 [![GitHub Code Size in Size](https://img.shields.io/github/languages/code-size/richardtaylordawson/calculator.svg)](https://github.com/richardtaylordawson/calculator/)
 [![GitHub Top Language](https://img.shields.io/github/languages/top/richardtaylordawson/calculator.svg)](https://github.com/richardtaylordawson/calculator/)
 [![GitHub Language Count](https://img.shields.io/github/languages/count/richardtaylordawson/calculator.svg)](https://github.com/richardtaylordawson/calculator/)
+
+## View Project
+<https://richardtaylordawson.github.io/calculator/>
