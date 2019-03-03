@@ -3,7 +3,7 @@ body {
 }
 
 #application {
-  min-width: 460px;
+  min-width: 400px;
 }
 
 #calculator {
@@ -33,10 +33,16 @@ body {
   font-size: 18px;
 }
 
+@media (max-width: 768px) {
+  body {
+    padding: 0;
+  }
+}
+
 @media (max-width: 425px) {
   .container-fluid {
-    padding-left: 0;
-    padding-right: 0;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 
   body {
@@ -52,10 +58,6 @@ body {
   }
 
   #calculator-container {
-    margin-top: 0 !important;
-  }
-
-  #keypad {
-    height: 97vh;
+    margin-top: 10px !important;
   }
 }
