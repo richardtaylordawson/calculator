@@ -54,4 +54,8 @@ body {
   #calculator-container {
     margin-top: 0 !important;
   }
+
+  #keypad {
+    height: 97vh;
+  }
 }
