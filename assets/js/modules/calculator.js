@@ -106,64 +106,28 @@ export default class Calculator {
    * Adds click event handlers to all DOM objects of the calculator.
    */
   initializeClickEvents() {
-    this.numberButtons.forEach((numberButton) => {
-      numberButton.addEventListener("click", (event) => {
-        this.calculatorEvents.get(this.getInputValue(event.target))();
-      });
+    this.numberButtons.map((numberButton) => {
+      numberButton.addEventListener("click", (event) => this.calculatorEvents.get(this.getInputValue(event.target))());
     });
 
-    this.decimalButton.addEventListener("click", () => {
-      this.calculatorEvents.get(".")();
-    });
-
-    this.plusMinusButton.addEventListener("click", () => {
-      this.calculatorEvents.get("p")();
-    });
-
-    this.clearButton.addEventListener("click", () => {
-      this.calculatorEvents.get("Clear")();
-    });
-
-    this.backspaceButton.addEventListener("click", () => {
-      this.calculatorEvents.get("Backspace")();
-    });
-
-    this.percentageButton.addEventListener("click", () => {
-      this.calculatorEvents.get("%")();
-    });
-
-    this.squareRootButton.addEventListener("click", () => {
-      this.calculatorEvents.get("s")();
-    });
-
-    this.additionButton.addEventListener("click", () => {
-      this.calculatorEvents.get("+")();
-    });
-
-    this.subtractionButton.addEventListener("click", () => {
-      this.calculatorEvents.get("-")();
-    });
-
-    this.multiplicationButton.addEventListener("click", () => {
-      this.calculatorEvents.get("*")();
-    });
-
-    this.divisionButton.addEventListener("click", () => {
-      this.calculatorEvents.get("/")();
-    });
-
-    this.equalsButton.addEventListener("click", () => {
-      this.calculatorEvents.get("=")();
-    });
+    this.decimalButton.addEventListener("click", () => this.calculatorEvents.get(".")());
+    this.plusMinusButton.addEventListener("click", () => this.calculatorEvents.get("p")());
+    this.clearButton.addEventListener("click", () => this.calculatorEvents.get("Clear")());
+    this.backspaceButton.addEventListener("click", () => this.calculatorEvents.get("Backspace")());
+    this.percentageButton.addEventListener("click", () => this.calculatorEvents.get("%")());
+    this.squareRootButton.addEventListener("click", () => this.calculatorEvents.get("s")());
+    this.additionButton.addEventListener("click", () => this.calculatorEvents.get("+")());
+    this.subtractionButton.addEventListener("click", () => this.calculatorEvents.get("-")());
+    this.multiplicationButton.addEventListener("click", () => this.calculatorEvents.get("*")());
+    this.divisionButton.addEventListener("click", () => this.calculatorEvents.get("/")());
+    this.equalsButton.addEventListener("click", () => this.calculatorEvents.get("=")());
   }
 
   /**
    * Adds a keydown handler to the document that listens for certain keystrokes used for calculations
    */
   initializeKeyboardEvents() {
-    document.addEventListener("keydown", (event)  => {
-      this.runKeyEvent(event.key);
-    });
+    document.addEventListener("keydown", (event)  => this.runKeyEvent(event.key));
   }
 
   /**
@@ -182,9 +146,7 @@ export default class Calculator {
   toggleInputButtons() {
     const maxDisplayHit = this.currentNumber.length === this.maxNumberLength;
 
-    this.numberButtons.forEach((numberButton) => {
-      numberButton.disabled = maxDisplayHit;
-    });
+    this.numberButtons.map((numberButton) => numberButton.disabled = maxDisplayHit);
 
     const decimalRegex = new RegExp(/\./, "g");
 
