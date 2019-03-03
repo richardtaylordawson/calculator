@@ -44,14 +44,19 @@ export default class Theme {
    * @param {element} chosenTheme - DOM element chosen as the next theme
    */
   toggleTheme(chosenTheme) {
+    let chosenIndex = 0;
+
     this.themes.map((theme, index) => {
       if(theme.element === chosenTheme) {
-        document.styleSheets[index].disabled = false;
+        chosenIndex = index;
         theme.element.classList.add("active");
       } else {
-        document.styleSheets[index].disabled = true;
         theme.element.classList.remove("active");
       }
     });
+
+    for(let i = 0; i < this.themes.length; i++) {
+      document.styleSheets[i].disabled = (i !== chosenIndex);
+    }
   }
 }
