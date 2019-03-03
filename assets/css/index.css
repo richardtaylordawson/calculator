@@ -32,3 +32,26 @@ body {
 #backspace-icon {
   font-size: 18px;
 }
+
+@media (max-width: 425px) {
+  .container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  body {
+    padding: 0;
+  }
+
+  #application {
+    min-width: 100%;
+  }
+
+  #keyboard-tips {
+    display: none;
+  }
+
+  #calculator-container {
+    margin-top: 0 !important;
+  }
+}
