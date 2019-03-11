@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://richardtaylordawson.github.io/calculator/">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Calculator_icon.svg/2000px-Calculator_icon.svg.png" alt="Calculator icon" width=72 height=72>
+    <img src="assets/img/calculator.png" alt="Calculator icon" width=72 height=72>
   </a>
 
   <h3 align="center">Calculator</h3>
