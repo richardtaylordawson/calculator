@@ -222,29 +222,40 @@ export default class Calculator {
    * Displays the current numbers properly as input is given
    */
   display() {
-    this.primaryDisplay.innerText = `${this.currentNumber}`;
+    this.primaryDisplay.innerText = `${this.formatNumberWithCommas(this.currentNumber)}`;
 
     this.secondaryDisplay.innerText = (this.operator === "")
-      ? `${this.firstNumber}`
-      : `${this.firstNumber} ${this.operator} ${this.secondNumber}`;
+      ? `${this.formatNumberWithCommas(this.firstNumber)}`
+      : `${this.formatNumberWithCommas(this.firstNumber)} ${this.operator} ${this.formatNumberWithCommas(this.secondNumber)}`;
 
     this.toggleInputButtons();
+  }
+
+  /**
+   * Converts the number passed in to have commas separating every 3 characters
+   * @param {number} number - number to be converted
+   * @return {string} - string that contains the number separated by commas
+   */
+  formatNumberWithCommas(number) {
+    const parts = number.toString().split(".");
+    return parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",") + (parts[1] ? "." + parts[1] : "");
   }
 
   /**
    * Displays the computed equation properly on the primary and secondary displays
    */
   computedDisplay() {
-    this.primaryDisplay.innerText = `${this.currentNumber}`;
+
+    this.primaryDisplay.innerText = `${this.formatNumberWithCommas(this.currentNumber)}`;
 
     let value = "";
 
     if(this.operator === String.fromCharCode(37)) {
-      value = `${this.firstNumber}${this.operator} =`;
+      value = `${this.formatNumberWithCommas(this.firstNumber)}${this.operator} =`;
     } else if(this.operator === String.fromCharCode(8730)) {
-      value = `${this.operator}(${this.firstNumber}) =`;
+      value = `${this.operator}(${this.formatNumberWithCommas(this.firstNumber)}) =`;
     } else {
-      value = `${this.firstNumber} ${this.operator} ${this.secondNumber} =`;
+      value = `${this.formatNumberWithCommas(this.firstNumber)} ${this.operator} ${this.formatNumberWithCommas(this.secondNumber)} =`;
     }
 
     this.secondaryDisplay.innerText = value;
