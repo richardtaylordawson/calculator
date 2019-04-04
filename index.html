@@ -1,260 +1,260 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="description" content="Simple calculator application to compute complex problems in many different color themes.">
-    <meta name="keywords" content="Calculator, Application, Calculate, Themes, Simple Calculator">
-    <meta name="author" content="Richard Taylor Dawson">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="description" content="Simple calculator application to compute complex problems in many different color themes.">
+  <meta name="keywords" content="Calculator, Application, Calculate, Themes, Simple Calculator">
+  <meta name="author" content="Richard Taylor Dawson">
 
-    <title>Calculator</title>
+  <title>Calculator</title>
 
-    <link rel="shortcut icon" type="image/png" href="assets/img/calculator.png">
-    <link rel="shortcut icon" sizes="196x196" href="assets/img/calculator.png">
-    <link rel="apple-touch-icon" href="assets/img/calculator.png">
+  <link rel="shortcut icon" type="image/png" href="assets/img/calculator.png">
+  <link rel="shortcut icon" sizes="196x196" href="assets/img/calculator.png">
+  <link rel="apple-touch-icon" href="assets/img/calculator.png">
 
-    <!-- Minty Theme -->
-    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.3/minty/bootstrap.min.css" rel="stylesheet" integrity="sha384-Qt9Hug5NfnQDGMoaQYXN1+PiQvda7poO7/5k4qAmMN6evu0oDFMJTyjqaoTGHdqf" crossorigin="anonymous">
+  <!-- Minty Theme -->
+  <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.3/minty/bootstrap.min.css" rel="stylesheet" integrity="sha384-Qt9Hug5NfnQDGMoaQYXN1+PiQvda7poO7/5k4qAmMN6evu0oDFMJTyjqaoTGHdqf" crossorigin="anonymous">
 
-    <!-- Sandstone Theme -->
-    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.3/sandstone/bootstrap.min.css" rel="stylesheet" integrity="sha384-CfCAYEgrdtRrpvjGKxoaRy5ge1ggMbxNSpEkY+XqdfdRTUkRrYZVB2z99E7BsEDZ" crossorigin="anonymous">
+  <!-- Sandstone Theme -->
+  <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.3/sandstone/bootstrap.min.css" rel="stylesheet" integrity="sha384-CfCAYEgrdtRrpvjGKxoaRy5ge1ggMbxNSpEkY+XqdfdRTUkRrYZVB2z99E7BsEDZ" crossorigin="anonymous">
 
-    <!-- Pulse Theme -->
-    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.3/pulse/bootstrap.min.css" rel="stylesheet" integrity="sha384-c0rj6xRl6Zm4U4BwLaWhUoP/xPI8Sq+9Gt0F+JO5DSLZN0Ur0Ihc6rU59Rbgk1zV" crossorigin="anonymous">
+  <!-- Pulse Theme -->
+  <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.3/pulse/bootstrap.min.css" rel="stylesheet" integrity="sha384-c0rj6xRl6Zm4U4BwLaWhUoP/xPI8Sq+9Gt0F+JO5DSLZN0Ur0Ihc6rU59Rbgk1zV" crossorigin="anonymous">
 
-    <!-- Journal Theme -->
-    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.3/journal/bootstrap.min.css" rel="stylesheet" integrity="sha384-5C8TGNupopdjruopVTTrVJacBbWqxHK9eis5DB+DYE6RfqIJapdLBRUdaZBTq7mE" crossorigin="anonymous">
+  <!-- Journal Theme -->
+  <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.3/journal/bootstrap.min.css" rel="stylesheet" integrity="sha384-5C8TGNupopdjruopVTTrVJacBbWqxHK9eis5DB+DYE6RfqIJapdLBRUdaZBTq7mE" crossorigin="anonymous">
 
-    <!-- Solar Theme -->
-    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.3/solar/bootstrap.min.css" rel="stylesheet" integrity="sha384-h5kYMLFNMyLXdVYK3MKZeOfXMdU6XqV1do5KyjoYZGlW1FJOj+5qr9u1d7NNCH4N" crossorigin="anonymous">
+  <!-- Solar Theme -->
+  <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.3/solar/bootstrap.min.css" rel="stylesheet" integrity="sha384-h5kYMLFNMyLXdVYK3MKZeOfXMdU6XqV1do5KyjoYZGlW1FJOj+5qr9u1d7NNCH4N" crossorigin="anonymous">
 
-    <!-- Slate Theme -->
-    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.3/slate/bootstrap.min.css" rel="stylesheet" integrity="sha384-ywjdn7N8uoxzIfGl7jlEBlqw2BNicOSzZDgo7A2ffvbM24Ct9plRp7KwtaIqZ33j" crossorigin="anonymous">
+  <!-- Slate Theme -->
+  <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.3/slate/bootstrap.min.css" rel="stylesheet" integrity="sha384-ywjdn7N8uoxzIfGl7jlEBlqw2BNicOSzZDgo7A2ffvbM24Ct9plRp7KwtaIqZ33j" crossorigin="anonymous">
 
-    <!-- Dark Theme -->
-    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.3/darkly/bootstrap.min.css" rel="stylesheet" integrity="sha384-w+yWASP3zYNxxvwoQBD5fUSc1tctKq4KUiZzxgkBSJACiUp+IbweVKvsEhMI+gz7" crossorigin="anonymous">
+  <!-- Dark Theme -->
+  <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.3/darkly/bootstrap.min.css" rel="stylesheet" integrity="sha384-w+yWASP3zYNxxvwoQBD5fUSc1tctKq4KUiZzxgkBSJACiUp+IbweVKvsEhMI+gz7" crossorigin="anonymous">
 
-    <!-- School Theme-->
-    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.3/sketchy/bootstrap.min.css" rel="stylesheet" integrity="sha384-5cy8WdlNAGqQwyB33aLiqJoRQQxZsc3TDUkSTahHAx2gMK3o0te7Xqm+nNLe4Ou3" crossorigin="anonymous">
+  <!-- School Theme-->
+  <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.3/sketchy/bootstrap.min.css" rel="stylesheet" integrity="sha384-5cy8WdlNAGqQwyB33aLiqJoRQQxZsc3TDUkSTahHAx2gMK3o0te7Xqm+nNLe4Ou3" crossorigin="anonymous">
 
-    <!-- Material Theme -->
-    <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+  <!-- Material Theme -->
+  <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
 
-    <!-- Font Awesome 5 -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <!-- Font Awesome 5 -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 
-    <!-- Page Specific CSS -->
-    <link rel="stylesheet" href="assets/css/index.css"/>
-  </head>
-  <body class="bg-light">
-    <div class="container-fluid">
-      <div class="row" id="application">
-        <div class="mb-4 mt-4 col-lg-5 col-md-12" id="calculator-container">
-          <div class="card" id="calculator">
-            <div class="card-body">
-              <div class="col-12" id="keypad">
-                <div class="row">
-                  <div class="col-12 bg-dark text-white mb-2" id="calculator-display">
-                    <h6 class="text-right text-danger mt-2" id="secondary-display">0</h6>
-                    <h1 class="text-right" id="primary-display">0</h1>
-                  </div>
+  <!-- Page Specific CSS -->
+  <link rel="stylesheet" href="assets/css/index.css"/>
+</head>
+<body class="bg-light">
+  <main class="container-fluid">
+    <div class="row" id="application">
+      <section class="mb-4 mt-4 col-lg-5 col-md-12" id="calculator-container">
+        <div class="card" id="calculator">
+          <div class="card-body">
+            <div class="col-12" id="keypad">
+              <div class="row">
+                <div class="col-12 bg-dark text-white mb-2" id="calculator-display">
+                  <h6 class="text-right text-danger mt-2" id="secondary-display">0</h6>
+                  <h1 class="text-right" id="primary-display">0</h1>
                 </div>
-                <div class="row">
-                  <div class="col-9">
-                    <button class="btn btn-lg btn-block btn-danger btn-raised mb-2" id="btn-clear">Clear</button>
-                  </div>
-                  <div class="col-3">
-                    <button class="btn btn-lg btn-block btn-danger btn-raised mb-2" id="btn-backspace"><i class="fas fa-backspace" id="backspace-icon"></i></button>
-                  </div>
+              </div>
+              <div class="row">
+                <div class="col-9">
+                  <button class="btn btn-lg btn-block btn-danger btn-raised mb-2" id="btn-clear">Clear</button>
                 </div>
-                <div class="row">
-                  <div class="col-3">
-                    <button class="btn btn-lg btn-block btn-info btn-raised mb-2" id="btn-plus-minus">&#xb1;</button>
-                  </div>
-                  <div class="col-3">
-                    <button class="btn btn-lg btn-block btn-warning btn-raised mb-2" id="btn-percentage">&#37;</button>
-                  </div>
-                  <div class="col-3">
-                    <button class="btn btn-lg btn-block btn-warning btn-raised mb-2" id="btn-square-root">&#8730;</button>
-                  </div>
-                  <div class="col-3">
-                    <button class="btn btn-lg btn-block btn-warning btn-raised mb-2" id="btn-division">&#247;</button>
-                  </div>
+                <div class="col-3">
+                  <button class="btn btn-lg btn-block btn-danger btn-raised mb-2" id="btn-backspace"><i class="fas fa-backspace" id="backspace-icon"></i></button>
                 </div>
-                <div class="row">
-                  <div class="col-3">
-                    <button class="btn btn-lg btn-block btn-info btn-raised mb-2" id="btn-seven">7</button>
-                  </div>
-                  <div class="col-3">
-                    <button class="btn btn-lg btn-block btn-info btn-raised mb-2" id="btn-eight">8</button>
-                  </div>
-                  <div class="col-3">
-                    <button class="btn btn-lg btn-block btn-info btn-raised mb-2" id="btn-nine">9</button>
-                  </div>
-                  <div class="col-3">
-                    <button class="btn btn-lg btn-block btn-warning btn-raised mb-2" id="btn-multiplication">&#215;</button>
-                  </div>
+              </div>
+              <div class="row">
+                <div class="col-3">
+                  <button class="btn btn-lg btn-block btn-info btn-raised mb-2" id="btn-plus-minus">&#xb1;</button>
                 </div>
-                <div class="row">
-                  <div class="col-3">
-                    <button class="btn btn-lg btn-block btn-info btn-raised mb-2" id="btn-four">4</button>
-                  </div>
-                  <div class="col-3">
-                    <button class="btn btn-lg btn-block btn-info btn-raised mb-2" id="btn-five">5</button>
-                  </div>
-                  <div class="col-3">
-                    <button class="btn btn-lg btn-block btn-info btn-raised mb-2" id="btn-six">6</button>
-                  </div>
-                  <div class="col-3">
-                    <button class="btn btn-lg btn-block btn-warning btn-raised mb-2" id="btn-subtraction">&#8722;</button>
-                  </div>
+                <div class="col-3">
+                  <button class="btn btn-lg btn-block btn-warning btn-raised mb-2" id="btn-percentage">&#37;</button>
                 </div>
-                <div class="row">
-                  <div class="col-3">
-                    <button class="btn btn-lg btn-block btn-info btn-raised mb-2" id="btn-one">1</button>
-                  </div>
-                  <div class="col-3">
-                    <button class="btn btn-lg btn-block btn-info btn-raised mb-2" id="btn-two">2</button>
-                  </div>
-                  <div class="col-3">
-                    <button class="btn btn-lg btn-block btn-info btn-raised mb-2" id="btn-three">3</button>
-                  </div>
-                  <div class="col-3">
-                    <button class="btn btn-lg btn-block btn-warning btn-raised mb-2" id="btn-addition">&#43;</button>
-                  </div>
+                <div class="col-3">
+                  <button class="btn btn-lg btn-block btn-warning btn-raised mb-2" id="btn-square-root">&#8730;</button>
                 </div>
-                <div class="row">
-                  <div class="col-6">
-                    <button class="btn btn-lg btn-block btn-info btn-raised mb-2" id="btn-zero">0</button>
-                  </div>
-                  <div class="col-3">
-                    <button class="btn btn-lg btn-block btn-info btn-raised mb-2" id="btn-decimal">.</button>
-                  </div>
-                  <div class="col-3">
-                    <button class="btn btn-lg btn-block btn-primary btn-raised mb-2" id="btn-equals">&#61;</button>
-                  </div>
+                <div class="col-3">
+                  <button class="btn btn-lg btn-block btn-warning btn-raised mb-2" id="btn-division">&#247;</button>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-3">
+                  <button class="btn btn-lg btn-block btn-info btn-raised mb-2" id="btn-seven">7</button>
+                </div>
+                <div class="col-3">
+                  <button class="btn btn-lg btn-block btn-info btn-raised mb-2" id="btn-eight">8</button>
+                </div>
+                <div class="col-3">
+                  <button class="btn btn-lg btn-block btn-info btn-raised mb-2" id="btn-nine">9</button>
+                </div>
+                <div class="col-3">
+                  <button class="btn btn-lg btn-block btn-warning btn-raised mb-2" id="btn-multiplication">&#215;</button>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-3">
+                  <button class="btn btn-lg btn-block btn-info btn-raised mb-2" id="btn-four">4</button>
+                </div>
+                <div class="col-3">
+                  <button class="btn btn-lg btn-block btn-info btn-raised mb-2" id="btn-five">5</button>
+                </div>
+                <div class="col-3">
+                  <button class="btn btn-lg btn-block btn-info btn-raised mb-2" id="btn-six">6</button>
+                </div>
+                <div class="col-3">
+                  <button class="btn btn-lg btn-block btn-warning btn-raised mb-2" id="btn-subtraction">&#8722;</button>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-3">
+                  <button class="btn btn-lg btn-block btn-info btn-raised mb-2" id="btn-one">1</button>
+                </div>
+                <div class="col-3">
+                  <button class="btn btn-lg btn-block btn-info btn-raised mb-2" id="btn-two">2</button>
+                </div>
+                <div class="col-3">
+                  <button class="btn btn-lg btn-block btn-info btn-raised mb-2" id="btn-three">3</button>
+                </div>
+                <div class="col-3">
+                  <button class="btn btn-lg btn-block btn-warning btn-raised mb-2" id="btn-addition">&#43;</button>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-6">
+                  <button class="btn btn-lg btn-block btn-info btn-raised mb-2" id="btn-zero">0</button>
+                </div>
+                <div class="col-3">
+                  <button class="btn btn-lg btn-block btn-info btn-raised mb-2" id="btn-decimal">.</button>
+                </div>
+                <div class="col-3">
+                  <button class="btn btn-lg btn-block btn-primary btn-raised mb-2" id="btn-equals">&#61;</button>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="mb-4 mt-4 col-lg-7 col-md-12" id="keyboard-tips">
-          <div class="card bg-gradient-info text-muted">
-            <div class="card-body">
-              <h5 class="card-title">Theme</h5>
-              <div class="card-text mb-4">
-                <div class="row">
-                  <div class="col-12">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-secondary btn-raised theme-button active" id="default-theme">Default</button>
-                      <button type="button" class="btn btn-secondary btn-raised theme-button" id="school-theme">School</button>
-                      <button type="button" class="btn btn-secondary btn-raised theme-button" id="dark-theme">Dark</button>
-                      <button type="button" class="btn btn-secondary btn-raised theme-button" id="slate-theme">Slate</button>
-                      <button type="button" class="btn btn-secondary btn-raised theme-button" id="solar-theme">Solar</button>
-                    </div>
-                  </div>
-                </div>
-                <div class="row mt-2">
-                  <div class="col-12">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-secondary btn-raised theme-button" id="journal-theme">Journal</button>
-                      <button type="button" class="btn btn-secondary btn-raised theme-button" id="pulse-theme">Pulse</button>
-                      <button type="button" class="btn btn-secondary btn-raised theme-button" id="sandstone-theme">Sandstone</button>
-                      <button type="button" class="btn btn-secondary btn-raised theme-button" id="minty-theme">Minty</button>
-                    </div>
+      </section>
+      <section class="mb-4 mt-4 col-lg-7 col-md-12" id="keyboard-tips">
+        <div class="card bg-gradient-info text-muted">
+          <div class="card-body">
+            <h5 class="card-title">Theme</h5>
+            <div class="card-text mb-4">
+              <div class="row">
+                <div class="col-12">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-secondary btn-raised theme-button active" id="default-theme">Default</button>
+                    <button type="button" class="btn btn-secondary btn-raised theme-button" id="school-theme">School</button>
+                    <button type="button" class="btn btn-secondary btn-raised theme-button" id="dark-theme">Dark</button>
+                    <button type="button" class="btn btn-secondary btn-raised theme-button" id="slate-theme">Slate</button>
+                    <button type="button" class="btn btn-secondary btn-raised theme-button" id="solar-theme">Solar</button>
                   </div>
                 </div>
               </div>
-              <h5 class="card-title">Color Coding</h5>
-              <div class="card-text">
-                <div class="row">
-                  <div class="col-md-6 col-sm-12">
-                    <button type="button" class="btn btn-danger bmd-btn-fab bmd-btn-fab-sm"></button>
-                    <p class="d-inline font-italic">Clears memory</p>
-                  </div>
-                  <div class="col-md-6 col-sm-12">
-                    <button type="button" class="btn btn-warning bmd-btn-fab bmd-btn-fab-sm"></button>
-                    <p class="d-inline font-italic">Action that involves two numbers</p>
+              <div class="row mt-2">
+                <div class="col-12">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-secondary btn-raised theme-button" id="journal-theme">Journal</button>
+                    <button type="button" class="btn btn-secondary btn-raised theme-button" id="pulse-theme">Pulse</button>
+                    <button type="button" class="btn btn-secondary btn-raised theme-button" id="sandstone-theme">Sandstone</button>
+                    <button type="button" class="btn btn-secondary btn-raised theme-button" id="minty-theme">Minty</button>
                   </div>
                 </div>
               </div>
-              <div class="card-text">
-                <div class="row">
-                  <div class="col-md-6 col-sm-12">
-                    <button type="button" class="btn btn-info bmd-btn-fab bmd-btn-fab-sm"></button>
-                    <p class="d-inline font-italic">Simple number or constant</p>
-                  </div>
-                  <div class="col-md-6 col-sm-12">
-                    <button type="button" class="btn btn-primary bmd-btn-fab bmd-btn-fab-sm"></button>
-                    <p class="d-inline font-italic">Gives a result</p>
-                  </div>
+            </div>
+            <h5 class="card-title">Color Coding</h5>
+            <div class="card-text">
+              <div class="row">
+                <div class="col-md-6 col-sm-12">
+                  <button type="button" class="btn btn-danger bmd-btn-fab bmd-btn-fab-sm"></button>
+                  <p class="d-inline font-italic">Clears memory</p>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                  <button type="button" class="btn btn-warning bmd-btn-fab bmd-btn-fab-sm"></button>
+                  <p class="d-inline font-italic">Action that involves two numbers</p>
                 </div>
               </div>
-              <h5 class="card-title mt-4">Keyboard Shortcuts</h5>
-              <div class="card-text">
-                <div class="row mb-2">
-                  <div class="col-md-12 col-sm-12">
-                    <button class="btn btn-secondary btn-raised">Backspace</button>
-                    <div class="d-inline font-italic">Deletes last inputted character</div>
-                  </div>
+            </div>
+            <div class="card-text">
+              <div class="row">
+                <div class="col-md-6 col-sm-12">
+                  <button type="button" class="btn btn-info bmd-btn-fab bmd-btn-fab-sm"></button>
+                  <p class="d-inline font-italic">Simple number or constant</p>
                 </div>
-                <div class="row mb-2">
-                  <div class="col-md-6 col-sm-12">
-                    <button class="btn btn-secondary btn-raised">0-9</button> OR <button class="btn btn-secondary btn-raised">.</button>
-                    <div class="d-inline font-italic">Gives input</div>
-                  </div>
-                  <div class="col-md-6 col-sm-12">
-                    <button class="btn btn-secondary btn-raised">Esc</button> OR <button class="btn btn-secondary btn-raised">Clear</button>
-                    <div class="d-inline font-italic">Clears memory</div>
-                  </div>
+                <div class="col-md-6 col-sm-12">
+                  <button type="button" class="btn btn-primary bmd-btn-fab bmd-btn-fab-sm"></button>
+                  <p class="d-inline font-italic">Gives a result</p>
                 </div>
-                <div class="row mb-2">
-                  <div class="col-md-6 col-sm-12">
-                    <button class="btn btn-secondary btn-raised">+ / * -</button>
-                    <div class="d-inline font-italic">Executes given action</div>
-                  </div>
-                  <div class="col-md-6 col-sm-12">
-                    <button class="btn btn-secondary btn-raised">Return</button> OR <button class="btn btn-secondary btn-raised">=</button>
-                    <div class="d-inline font-italic">Calculates result</div>
-                  </div>
+              </div>
+            </div>
+            <h5 class="card-title mt-4">Keyboard Shortcuts</h5>
+            <div class="card-text">
+              <div class="row mb-2">
+                <div class="col-md-12 col-sm-12">
+                  <button class="btn btn-secondary btn-raised">Backspace</button>
+                  <div class="d-inline font-italic">Deletes last inputted character</div>
                 </div>
-                <div class="row mb-2">
-                  <div class="col-md-6 col-sm-12">
-                    <button class="btn btn-secondary btn-raised">%</button>
-                    <div class="d-inline font-italic">Performs percentage function</div>
-                  </div>
-                  <div class="col-md-6 col-sm-12">
-                    <button class="btn btn-secondary btn-raised">S</button>
-                    <div class="d-inline font-italic">Performs the square root function</div>
-                  </div>
+              </div>
+              <div class="row mb-2">
+                <div class="col-md-6 col-sm-12">
+                  <button class="btn btn-secondary btn-raised">0-9</button> OR <button class="btn btn-secondary btn-raised">.</button>
+                  <div class="d-inline font-italic">Gives input</div>
                 </div>
-                <div class="row mb-2">
-                  <div class="col-md-12 col-sm-12">
-                    <button class="btn btn-secondary btn-raised">P</button>
-                    <div class="d-inline font-italic">Changes current input to negative or positive</div>
-                  </div>
+                <div class="col-md-6 col-sm-12">
+                  <button class="btn btn-secondary btn-raised">Esc</button> OR <button class="btn btn-secondary btn-raised">Clear</button>
+                  <div class="d-inline font-italic">Clears memory</div>
+                </div>
+              </div>
+              <div class="row mb-2">
+                <div class="col-md-6 col-sm-12">
+                  <button class="btn btn-secondary btn-raised">+ / * -</button>
+                  <div class="d-inline font-italic">Executes given action</div>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                  <button class="btn btn-secondary btn-raised">Return</button> OR <button class="btn btn-secondary btn-raised">=</button>
+                  <div class="d-inline font-italic">Calculates result</div>
+                </div>
+              </div>
+              <div class="row mb-2">
+                <div class="col-md-6 col-sm-12">
+                  <button class="btn btn-secondary btn-raised">%</button>
+                  <div class="d-inline font-italic">Performs percentage function</div>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                  <button class="btn btn-secondary btn-raised">S</button>
+                  <div class="d-inline font-italic">Performs the square root function</div>
+                </div>
+              </div>
+              <div class="row mb-2">
+                <div class="col-md-12 col-sm-12">
+                  <button class="btn btn-secondary btn-raised">P</button>
+                  <div class="d-inline font-italic">Changes current input to negative or positive</div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
     </div>
+  </main>
 
-    <!-- Bootstrap 4 JS & jQuery -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
-    <script>$(document).ready(function() { $('body').bootstrapMaterialDesign(); });</script>
+  <!-- Bootstrap 4 JS & jQuery -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
+  <script>$(document).ready(function() { $('body').bootstrapMaterialDesign(); });</script>
 
-    <!-- Calculator Module -->
-    <script type="module" src="assets/js/modules/calculator.js"></script>
+  <!-- Calculator Module -->
+  <script type="module" src="assets/js/modules/calculator.js"></script>
 
-    <!-- Theme Module -->
-    <script type="module" src="assets/js/modules/theme.js"></script>
+  <!-- Theme Module -->
+  <script type="module" src="assets/js/modules/theme.js"></script>
 
-    <!-- Page Specific JS -->
-    <script type="module" src="assets/js/index.js"></script>
-  </body>
+  <!-- Page Specific JS -->
+  <script type="module" src="assets/js/index.js"></script>
+</body>
 </html>
