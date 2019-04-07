@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://richardtaylordawson.github.io/calculator/">
+  <a href="http://calculator.richarddawson.codes/">
     <img src="assets/img/calculator.png" alt="Calculator icon" width=72 height=72>
   </a>
 
