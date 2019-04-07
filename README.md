@@ -20,4 +20,4 @@
 [![GitHub Language Count](https://img.shields.io/github/languages/count/richardtaylordawson/calculator.svg)](https://github.com/richardtaylordawson/calculator/)
 
 ## View Project
-<https://richardtaylordawson.github.io/calculator/>
+<http://calculator.richarddawson.codes/>
