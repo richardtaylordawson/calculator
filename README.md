@@ -1,23 +1,14 @@
-<p align="center">
-  <a href="http://calculator.richarddawson.codes/">
-    <img src="assets/img/calculator.png" alt="Calculator icon" width=72 height=72>
-  </a>
+# Calculator
+> Simple calculator application built using Bootstrap 4, HTML, ES6 Modules and multiple Bootstrap Themes from Bootswatch.
 
-  <h3 align="center">Calculator</h3>
+## Credits
+Several projects aided in inspiring this project. Notably they are:
 
-  <p align="center">
-    Simple calculator application built using Bootstrap 4, HTML, ES6 Modules and multiple Bootstrap Themes from Bootswatch.
-  </p>
-</p>
+- [Bootstrap 4](https://getbootstrap.com/)
+- [Bootswatch](https://bootswatch.com/)
 
-## Status
-[![GitHub Last Commit](https://img.shields.io/github/last-commit/richardtaylordawson/calculator.svg)](https://github.com/richardtaylordawson/calculator/commits/master)
-[![GitHub Search Hit Counter](https://img.shields.io/github/search/richardtaylordawson/calculator/goto.svg)](https://github.com/richardtaylordawson/calculator/)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/02ee35b7c3e14b6da802677e73fbdb32)](https://www.codacy.com/app/richardtaylordawson/calculator?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=richardtaylordawson/calculator&amp;utm_campaign=Badge_Grade)
-[![GitHub Repo Size in Size](https://img.shields.io/github/repo-size/richardtaylordawson/calculator.svg)](https://github.com/richardtaylordawson/calculator/)
-[![GitHub Code Size in Size](https://img.shields.io/github/languages/code-size/richardtaylordawson/calculator.svg)](https://github.com/richardtaylordawson/calculator/)
-[![GitHub Top Language](https://img.shields.io/github/languages/top/richardtaylordawson/calculator.svg)](https://github.com/richardtaylordawson/calculator/)
-[![GitHub Language Count](https://img.shields.io/github/languages/count/richardtaylordawson/calculator.svg)](https://github.com/richardtaylordawson/calculator/)
+## Deployment
+[![Netlify Status](https://api.netlify.com/api/v1/badges/f970b2f3-e7f9-4eb3-89c5-0ff58a590c4e/deploy-status)](https://app.netlify.com/sites/calculator-richardtaylordawson/deploys)
 
 ## View Project
-<http://calculator.richarddawson.codes/>
+<https://calculator.richarddawson.codes>
