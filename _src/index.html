@@ -10,9 +10,9 @@
 
   <title>Calculator</title>
 
-  <link rel="shortcut icon" type="image/png" href="assets/img/calculator.png">
-  <link rel="shortcut icon" sizes="196x196" href="assets/img/calculator.png">
-  <link rel="apple-touch-icon" href="assets/img/calculator.png">
+  <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  <link rel="shortcut icon" sizes="196x196" href="images/favicon.png">
+  <link rel="apple-touch-icon" href="images/favicon.png">
 
   <!-- Minty Theme -->
   <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.3/minty/bootstrap.min.css" rel="stylesheet" integrity="sha384-Qt9Hug5NfnQDGMoaQYXN1+PiQvda7poO7/5k4qAmMN6evu0oDFMJTyjqaoTGHdqf" crossorigin="anonymous">
@@ -45,7 +45,7 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 
   <!-- Page Specific CSS -->
-  <link rel="stylesheet" href="assets/css/index.css"/>
+  <link rel="stylesheet" href="css/index.css"/>
 </head>
 <body class="bg-light">
   <main class="container-fluid">
@@ -171,11 +171,11 @@
               <div class="row">
                 <div class="col-md-6 col-sm-12">
                   <button type="button" class="btn btn-danger bmd-btn-fab bmd-btn-fab-sm"></button>
-                  <p class="d-inline font-italic">Clears memory</p>
+                  <p class="ml-2 d-inline font-italic">Clears memory</p>
                 </div>
                 <div class="col-md-6 col-sm-12">
                   <button type="button" class="btn btn-warning bmd-btn-fab bmd-btn-fab-sm"></button>
-                  <p class="d-inline font-italic">Action that involves two numbers</p>
+                  <p class="ml-2 d-inline font-italic">Action that involves two numbers</p>
                 </div>
               </div>
             </div>
@@ -183,11 +183,11 @@
               <div class="row">
                 <div class="col-md-6 col-sm-12">
                   <button type="button" class="btn btn-info bmd-btn-fab bmd-btn-fab-sm"></button>
-                  <p class="d-inline font-italic">Simple number or constant</p>
+                  <p class="ml-2 d-inline font-italic">Simple number or constant</p>
                 </div>
                 <div class="col-md-6 col-sm-12">
                   <button type="button" class="btn btn-primary bmd-btn-fab bmd-btn-fab-sm"></button>
-                  <p class="d-inline font-italic">Gives a result</p>
+                  <p class="ml-2 d-inline font-italic">Gives a result</p>
                 </div>
               </div>
             </div>
@@ -196,43 +196,43 @@
               <div class="row mb-2">
                 <div class="col-md-12 col-sm-12">
                   <button class="btn btn-secondary btn-raised">Backspace</button>
-                  <div class="d-inline font-italic">Deletes last inputted character</div>
+                  <div class="ml-2 d-inline font-italic">Deletes last inputted character</div>
                 </div>
               </div>
               <div class="row mb-2">
                 <div class="col-md-6 col-sm-12">
                   <button class="btn btn-secondary btn-raised">0-9</button> OR <button class="btn btn-secondary btn-raised">.</button>
-                  <div class="d-inline font-italic">Gives input</div>
+                  <div class="ml-2 d-inline font-italic">Gives input</div>
                 </div>
                 <div class="col-md-6 col-sm-12">
                   <button class="btn btn-secondary btn-raised">Esc</button> OR <button class="btn btn-secondary btn-raised">Clear</button>
-                  <div class="d-inline font-italic">Clears memory</div>
+                  <div class="ml-2 d-inline font-italic">Clears memory</div>
                 </div>
               </div>
               <div class="row mb-2">
                 <div class="col-md-6 col-sm-12">
                   <button class="btn btn-secondary btn-raised">+ / * -</button>
-                  <div class="d-inline font-italic">Executes given action</div>
+                  <div class="ml-2 d-inline font-italic">Executes given action</div>
                 </div>
                 <div class="col-md-6 col-sm-12">
                   <button class="btn btn-secondary btn-raised">Return</button> OR <button class="btn btn-secondary btn-raised">=</button>
-                  <div class="d-inline font-italic">Calculates result</div>
+                  <div class="ml-2 d-inline font-italic">Calculates result</div>
                 </div>
               </div>
               <div class="row mb-2">
                 <div class="col-md-6 col-sm-12">
                   <button class="btn btn-secondary btn-raised">%</button>
-                  <div class="d-inline font-italic">Performs percentage function</div>
+                  <div class="ml-2 d-inline font-italic">Performs percentage function</div>
                 </div>
                 <div class="col-md-6 col-sm-12">
                   <button class="btn btn-secondary btn-raised">S</button>
-                  <div class="d-inline font-italic">Performs the square root function</div>
+                  <div class="ml-2 d-inline font-italic">Performs the square root function</div>
                 </div>
               </div>
               <div class="row mb-2">
                 <div class="col-md-12 col-sm-12">
                   <button class="btn btn-secondary btn-raised">P</button>
-                  <div class="d-inline font-italic">Changes current input to negative or positive</div>
+                  <div class="ml-2 d-inline font-italic">Changes current input to negative or positive</div>
                 </div>
               </div>
             </div>
@@ -248,15 +248,9 @@
   <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
   <script>$(document).ready(function() { $('body').bootstrapMaterialDesign(); });</script>
 
-  <!-- Calculator Module -->
-  <script type="module" src="assets/js/modules/calculator.js"></script>
-
-  <!-- Theme Module -->
-  <script type="module" src="assets/js/modules/theme.js"></script>
-
   <!-- Page Specific JS -->
-  <script type="module" src="assets/js/index.js"></script>
-  
+  <script type="text/javascript" src="js/index.js"></script>
+
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-142408596-1"></script>
   <script>

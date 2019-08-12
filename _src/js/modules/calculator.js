@@ -410,9 +410,8 @@ export default class Calculator {
 
   /**
    * Computes the mathematical expression and displays it on the calculator
-   * @param {boolean} early - If a computation button is clicked before equals, then computation occurs "early"
    */
-  compute(early = false) {
+  compute() {
     // Javascript requires two different ones or else the ternary statement won't work
     // Weirdest thing I've ever seen
     const decimalRegexFirstNumber = new RegExp(/\./, "g");
