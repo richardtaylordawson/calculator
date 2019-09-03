@@ -7,6 +7,11 @@ Several projects aided in inspiring this project. Notably they are:
 - [Bootstrap 4](https://getbootstrap.com/)
 - [Bootswatch](https://bootswatch.com/)
 
+## Features
+I added a feature to change the theme being applied to the page by using the options to the right of the calculator on desktop. I learned a lot from this on how to perform this action and how fun it is to see it change instantly.
+
+In addition to click events, I added keyboard events for everything so a user can quickly calculate complicated equations.
+
 ## Run Project
 ```shell
 $ npm install
