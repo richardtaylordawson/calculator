@@ -7,10 +7,12 @@ Several projects aided in inspiring this project. Notably they are:
 - [Bootstrap 4](https://getbootstrap.com/)
 - [Bootswatch](https://bootswatch.com/)
 
-## Features
+## Things I Learned
+This was my first project using an es6 `class` to contain all my logic that would manipulate the `DOM` and perform the necessary actions the user requested. It was very fun and was built in a way that I can upload that class as an npm package later if wanted so that someone could build the frontend of a calculator then use the module to perform all the logic for them.
+
 I added a feature to change the theme being applied to the page by using the options to the right of the calculator on desktop. I learned a lot from this on how to perform this action and how fun it is to see it change instantly.
 
-In addition to click events, I added keyboard events for everything so a user can quickly calculate complicated equations.
+Last, I learned how to structure my code so that whether or not the user was clicking or using the keyboard or both that the state and calculations of the app stayed the same.
 
 ## Run Project
 ```shell
