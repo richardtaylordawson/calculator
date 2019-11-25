@@ -28,6 +28,9 @@ gulp.task('js', function() {
       }))
     .pipe(uglify())
     .pipe(gulp.dest('dist/js'))
+    .pipe(browserSync.reload({
+      stream: true
+    }))
 });
 
 gulp.task('html', function() {
@@ -62,7 +65,7 @@ gulp.task('watch', ['browserSync', 'css'], function() {
   gulp.watch('_src/css/**/*.css', ['css']);
   gulp.watch('_src/images/**/*.+(png|jpg|jpeg|gif|svg)', ['images']);
   gulp.watch('_src/**/*.html', ['html']);
-  gulp.watch('_src/js/**/*.js', browserSync.reload);
+  gulp.watch('_src/js/**/*.js', ['js']);
 });
 
 gulp.task('clean:dist', function() {

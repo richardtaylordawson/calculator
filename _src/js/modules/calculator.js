@@ -5,8 +5,8 @@
 export default class Calculator {
   /**
    * Create a Calculator.
-   * @param {object} elements - All the DOM objects of the calculator.
-   * @param {object} options - All the possible options & settings for the calculator.
+   * @param {object} elements - all the DOM objects of the calculator.
+   * @param {object} options - all the possible options & settings for the calculator.
    */
   constructor(elements, options) {
     this.numberButtons = elements.numberButtons;
@@ -132,7 +132,7 @@ export default class Calculator {
 
   /**
    * Runs correct calculator event depending on the key that was pressed
-   * @param {string} key - The string of the key that was pressed from the keydown event.
+   * @param {string} key - the string of the key that was pressed from the keydown event.
    */
   runKeyEvent(key) {
     if(this.calculatorEvents.get(key)) {
@@ -161,7 +161,7 @@ export default class Calculator {
 
   /**
    * Enables or disables the single number function buttons
-   * @param {boolean} disable - Decides whether or not to enable or disable the buttons.
+   * @param {boolean} disable - decides whether or not to enable or disable the buttons.
    */
   toggleSingleNumberFunctionButtons(disable) {
     this.percentageButton.disabled = disable;
@@ -171,7 +171,7 @@ export default class Calculator {
   /**
    * Searches and finds the input value of a number button
    * @param {element} element - DOM element that was clicked or keystroked.
-   * @return {string} Returns the index of the matched element as a string
+   * @return {string} returns the index of the matched element as a string
    */
   getInputValue(element) {
     return this.numberButtons.indexOf(element).toString();
@@ -181,14 +181,14 @@ export default class Calculator {
    * Checks if the user is trying to compute "early" and run compute if so
    */
   checkComputeEarly() {
-    if(this.operator !== ""){
-      this.compute();
+    if(this.operator !== "") {
+      this.compute(true);
     }
   }
 
   /**
    * Adds the input value to the current number and calls the display
-   * @param {string} value - Either a number value between 0-9 or a decimal value
+   * @param {string} value - either a number value between 0-9 or a decimal value
    */
   input(value) {
     // Need this check because although the buttons will be disabled the user can still use the keyboard
@@ -243,9 +243,9 @@ export default class Calculator {
 
   /**
    * Displays the computed equation properly on the primary and secondary displays
+   * @param {bool} early - tells function whether calculation is early or not
    */
-  computedDisplay() {
-
+  computedDisplay(early = false) {
     this.primaryDisplay.innerText = `${this.formatNumberWithCommas(this.currentNumber)}`;
 
     let value = "";
@@ -261,8 +261,11 @@ export default class Calculator {
     this.secondaryDisplay.innerText = value;
 
     this.firstNumber = this.currentNumber;
-    this.operator = "";
     this.secondNumber = "0";
+
+    if(!early) {
+      this.operator = "";
+    }
 
     this.toggleSingleNumberFunctionButtons(false);
     this.toggleInputButtons();
@@ -365,7 +368,7 @@ export default class Calculator {
 
   /**
    * Calls proper methods to clean the value inputted
-   * @param {string} value - The number that needs to be cleaned and returned
+   * @param {string} value - the number that needs to be cleaned and returned
    * @return {string} - clean value with no trailing zeros and not longer than max length
    */
   cleanValue(value) {
@@ -374,7 +377,7 @@ export default class Calculator {
 
   /**
    * Strips value until it is the max number length
-   * @param {string} value - The number that needs to be cut down to max length
+   * @param {string} value - the number that needs to be cut down to max length
    * @return {string} - value not longer than max length
    */
   stripMaxNumberLimit(value) {
@@ -387,7 +390,7 @@ export default class Calculator {
 
   /**
    * Strips all trailing zeros and decimal point if the zero after a decimal was stripped
-   * @param {string} value - The number that needs trailing zeros stipped
+   * @param {string} value - the number that needs trailing zeros stipped
    * @return {string} - clean value with no trailing zeros
    */
   stripTrailingZeros(value) {
@@ -410,8 +413,14 @@ export default class Calculator {
 
   /**
    * Computes the mathematical expression and displays it on the calculator
+   * @param {bool} early - tells function whether calculation is early or not
    */
-  compute() {
+  compute(early = false) {
+    // Disallow division by 0
+    if(this.secondNumber === "0" && this.operator === String.fromCharCode(247)) {
+      return;
+    }
+
     // Javascript requires two different ones or else the ternary statement won't work
     // Weirdest thing I've ever seen
     const decimalRegexFirstNumber = new RegExp(/\./, "g");
@@ -448,10 +457,15 @@ export default class Calculator {
         break;
     }
 
-    value = value.toString();
+    // Fixes error if user presses enter before a calculation can occur
+    try {
+      value = value.toString();
+    } catch {
+      return;
+    }
 
     this.currentNumber = this.cleanValue(value);
 
-    this.computedDisplay(true);
+    this.computedDisplay(early);
   }
 }
