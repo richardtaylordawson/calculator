@@ -69,19 +69,19 @@ gulp.task('watch', function() {
   gulp.watch('_src/css/**/*.css', ['css', 'clean:dist']);
   gulp.watch('_src/images/**/*.+(png|jpg|jpeg|gif|svg)', ['images', 'clean:dist']);
   gulp.watch('_src/js/**/*.js', ['js', 'clean:dist']);
-  gulp.watch('_src/**/*.+(json|txt|xml)', ['files', 'clean:dist']);
   gulp.watch('_src/**/*.html', ['html', 'clean:dist']);
+  gulp.watch('_src/**/*.+(json|txt|xml)', ['files', 'clean:dist']);
 });
 
 gulp.task('build', function (callback) {
   runSequence('clean:dist',
-    ['css', 'js', 'html', 'files', 'images'],
+    ['css', 'images', 'js', 'html', 'files'],
     callback
   )
 });
 
 gulp.task('default', function (callback) {
-  runSequence(['css', 'js', 'html', 'files', 'images', 'clean:dist', 'browserSync', 'watch'],
+  runSequence(['css', 'images', 'js', 'html', 'files', 'clean:dist', 'browserSync', 'watch'],
     callback
   )
 });
