@@ -20,6 +20,15 @@ gulp.task('css', function() {
 });
 
 gulp.task('js', function() {
+  gulp.src('_src/service-worker.js')
+      .pipe(rollup({
+        plugins: [babel()]
+      }, {
+        format: 'cjs',
+      }))
+    .pipe(uglify())
+    .pipe(gulp.dest('dist'))
+
   return gulp.src('_src/js/index.js')
       .pipe(rollup({
         plugins: [babel()]
@@ -65,7 +74,7 @@ gulp.task('watch', ['browserSync', 'css'], function() {
   gulp.watch('_src/css/**/*.css', ['css']);
   gulp.watch('_src/images/**/*.+(png|jpg|jpeg|gif|svg)', ['images']);
   gulp.watch('_src/**/*.html', ['html']);
-  gulp.watch('_src/js/**/*.js', ['js']);
+  gulp.watch('_src/**/*.js', ['js']);
 });
 
 gulp.task('clean:dist', function() {
