@@ -1,14 +1,6 @@
-body {
-  padding: 50px;
-}
-
-#application {
-  min-width: 400px;
-}
-
-#calculator {
-  background-color: rgb(108, 117, 125);
-}
+body { padding: 50px; background-color: orange; }
+#application { min-width: 400px; }
+#calculator { background-color: rgb(108, 117, 125); }
 
 #keypad {
   /* Needed a gray that isn't part of the default Bootstrap 4 background colors */
@@ -21,22 +13,14 @@ body {
   border-top-right-radius: 10px;
 }
 
-#calculator .card-body {
-  padding: 10px;
-}
+#calculator .card-body { padding: 10px; }
 
-.card {
-  border-radius: 15px;
-}
+.card { border-radius: 15px; }
 
-#backspace-icon {
-  font-size: 18px;
-}
+#backspace-icon { font-size: 18px; }
 
 @media (max-width: 768px) {
-  body {
-    padding: 0;
-  }
+  body { padding: 0; }
 }
 
 @media (max-width: 425px) {
@@ -45,19 +29,8 @@ body {
     padding-right: 10px;
   }
 
-  body {
-    padding: 0;
-  }
-
-  #application {
-    min-width: 100%;
-  }
-
-  #keyboard-tips {
-    display: none;
-  }
-
-  #calculator-container {
-    margin-top: 10px !important;
-  }
+  body { padding: 0; }
+  #application { min-width: 100%; }
+  #keyboard-tips { display: none; }
+  #calculator-container { margin-top: 10px !important; }
 }
