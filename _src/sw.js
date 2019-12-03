@@ -1,9 +1,9 @@
-var cacheName = 'calculator';
+var cacheName = 'calculator-test';
 var filesToCache = [
   '/',
   '/index.html',
   '/css/index.css',
-  '/js/index.css'
+  '/js/index.js'
 ];
 
 self.addEventListener('install', function(e) {
