@@ -1,7 +1,7 @@
 {
   "name": "Calculator - Richard Taylor Dawson",
   "short_name": "Calculator",
-  "start_url": "/",
+  "start_url": "https://calculator.richarddawson.codes/",
   "background-color": "#ffffff",
   "theme_color": "#000000",
   "display": "standalone",
