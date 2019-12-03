@@ -278,6 +278,15 @@
   <!-- Page Specific JS -->
   <script type="module" src="js/index.js"></script>
 
+  <script>
+    if('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js')
+        .then(function() {
+              console.log('Service Worker Registered');
+        });
+    }
+  </script>
+
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-142412414-2"></script>
   <script>
