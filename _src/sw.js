@@ -1,4 +1,4 @@
-var cacheName = 'calculator-test';
+var cacheName = 'rtd-calculator';
 var filesToCache = [
   '/',
   '/index.html',
@@ -6,17 +6,15 @@ var filesToCache = [
   '/js/index.js'
 ];
 
-self.addEventListener('install', function(e) {
-  console.log('[ServiceWorker] Install');
+self.addEventListener('install', (e) => {
   e.waitUntil(
     caches.open(cacheName).then(function(cache) {
-      console.log('[ServiceWorker] Caching app shell');
       return cache.addAll(filesToCache);
     })
   );
 });
 
-self.addEventListener('activate',  event => {
+self.addEventListener('activate', event => {
   event.waitUntil(self.clients.claim());
 });
 
