@@ -1,4 +1,4 @@
-# Calculator [![PWA Certified](https://calculator.richarddawson.codes/images/pwa-certified.svg)](https://calculator.richarddawson.codes/images/pwa-certified.svg)
+# Calculator - [![PWA Certified](https://calculator.richarddawson.codes/images/pwa-certified.svg)](https://calculator.richarddawson.codes/images/pwa-certified.svg)
 > Simple calculator application built using Bootstrap 4, HTML, ES6 Modules and multiple Bootstrap Themes from Bootswatch.
 
 ## Credits
