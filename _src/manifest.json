@@ -1,10 +1,10 @@
 {
-  "name": "Calculator - Richard Taylor Dawson",
+  "name": "Calculator",
   "short_name": "Calculator",
   "lang": "en-US",
   "start_url": "/",
   "background_color": "#ffffff",
-  "theme_color": "#6e757c",
+  "theme_color": "#f5f5f5",
   "display": "standalone",
   "orientation": "any",
   "description": "Simple calculator application built using Bootstrap 4, HTML, ES6 Modules and multiple Bootstrap Themes from Bootswatch.",
