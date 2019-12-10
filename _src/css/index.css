@@ -30,7 +30,7 @@ body { padding: 50px; background-color: orange; }
   }
 
   body { padding: 0; }
-  #application { min-width: 100%; }
+  #application { min-width: 375px; }
   #keyboard-tips { display: none; }
   #calculator-container { margin-top: 10px !important; }
 }
