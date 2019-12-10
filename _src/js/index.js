@@ -72,11 +72,6 @@ const theme = new Theme({
       "default": false
     },
     {
-      "element": document.getElementById("solar-theme"),
-      "identifier": "solar-theme",
-      "default": false
-    },
-    {
       "element": document.getElementById("slate-theme"),
       "identifier": "slate-theme",
       "default": false
