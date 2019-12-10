@@ -1,8 +1,8 @@
 <svg width="76" height="20" viewBox="0 0 76 20" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<path d="M52 0H74C75.1046 0 76 0.895431 76 2V18C76 19.1046 75.1046 20 74 20H52V0Z" fill="#3D3D3D"/>
-<rect x="55" y="2" width="19" height="16" fill="url(#pattern0)"/>
-<path d="M0 2C0 0.895431 0.895431 0 2 0H52V20H2C0.895432 20 0 19.1046 0 18V2Z" fill="#EFF5F5"/>
-<rect x="7" y="2" width="38" height="15" fill="url(#pattern1)"/>
+<path d="M52 0H71C73.7614 0 76 2.23858 76 5V15C76 17.7614 73.7614 20 71 20H52V0Z" fill="#3D3D3D"/>
+<rect x="54" y="2" width="19" height="16" fill="url(#pattern0)"/>
+<path d="M5 0.5H51.5V19.5H5C2.51472 19.5 0.5 17.4853 0.5 15V5C0.5 2.51472 2.51472 0.5 5 0.5Z" fill="white" stroke="#3D3D3D"/>
+<rect x="6" y="2" width="40.5333" height="16" fill="url(#pattern1)"/>
 <defs>
 <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
 <use xlink:href="#image0" transform="translate(-0.00526316) scale(0.00701754 0.00833333)"/>
