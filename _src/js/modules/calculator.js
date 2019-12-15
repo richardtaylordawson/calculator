@@ -171,7 +171,7 @@ export default class Calculator {
   /**
    * Searches and finds the input value of a number button
    * @param {element} element - DOM element that was clicked or keystroked.
-   * @return {string} returns the index of the matched element as a string
+   * @return {string} - returns the index of the matched element as a string
    */
   getInputValue(element) {
     return this.numberButtons.indexOf(element).toString();
