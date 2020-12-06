@@ -1,0 +1,40 @@
+{
+  "name": "Calculator",
+  "short_name": "Calculator",
+  "lang": "en-US",
+  "start_url": "/",
+  "background_color": "#ffffff",
+  "theme_color": "#f5f5f5",
+  "display": "standalone",
+  "orientation": "any",
+  "description": "Simple calculator application built using Bootstrap 4, HTML, ES6 Modules and multiple Bootstrap Themes from Bootswatch.",
+  "icons": [{
+    "src": "https://calculator.richardtaylordawson.com/images/favicon.png",
+    "sizes": "48x48",
+    "type": "image/png"
+  }, {
+    "src": "https://calculator.richardtaylordawson.com/images/favicon.png",
+    "sizes": "72x72",
+    "type": "image/png"
+  }, {
+    "src": "https://calculator.richardtaylordawson.com/images/favicon.png",
+    "sizes": "96x96",
+    "type": "image/png"
+  }, {
+    "src": "https://calculator.richardtaylordawson.com/images/favicon.png",
+    "sizes": "144x144",
+    "type": "image/png"
+  }, {
+    "src": "https://calculator.richardtaylordawson.com/images/favicon.png",
+    "sizes": "168x168",
+    "type": "image/png"
+  }, {
+    "src": "https://calculator.richardtaylordawson.com/images/favicon.png",
+    "sizes": "192x192",
+    "type": "image/png"
+  }, {
+    "src": "https://calculator.richardtaylordawson.com/images/favicon.png",
+    "sizes": "512x512",
+    "type": "image/png"
+  }]
+}

@@ -1,0 +1,64 @@
+body {
+  padding: 50px;
+  background-color: orange;
+}
+
+#application {
+  min-width: 400px;
+}
+
+#calculator {
+  background-color: rgb(108, 117, 125);
+}
+
+#keypad {
+  /* Needed a gray that isn't part of the default Bootstrap 4 background colors */
+  background-color: rgb(80, 80, 80);
+  border-radius: 10px;
+}
+
+#calculator-display {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+#calculator .card-body {
+  padding: 10px;
+}
+
+.card {
+  border-radius: 15px;
+}
+
+#backspace-icon {
+  font-size: 18px;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 0;
+  }
+}
+
+@media (max-width: 425px) {
+  .container-fluid {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  body {
+    padding: 0;
+  }
+
+  #application {
+    min-width: 375px;
+  }
+
+  #keyboard-tips {
+    display: none;
+  }
+
+  #calculator-container {
+    margin-top: 10px !important;
+  }
+}
