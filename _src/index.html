@@ -77,9 +77,25 @@
 
   <!-- Page Specific CSS -->
   <link rel="stylesheet" href="css/index.css"/>
+
+  <!-- PWA Install Button -->
+  <script
+    type="module"
+    src="https://cdn.jsdelivr.net/npm/@pwabuilder/pwainstall"
+  ></script>
 </head>
 <body class="bg-light">
   <main class="container-fluid">
+    <div class="row">
+      <section class="col-12 d-flex justify-content-end">
+        <button class="btn btn-outline-info btn-raised theme-button active" id="install-button">Install +</button>
+        <pwa-install
+          usecustom
+          iconpath="https://calculator.richardtaylordawson.com/images/favicon.svg"
+          manifestpath="/manifest.json"
+        ></pwa-install>
+      </section>
+    </div>
     <div class="row" id="application">
       <section class="mb-4 mt-4 col-lg-5 col-md-12" id="calculator-container">
         <div class="card" id="calculator">

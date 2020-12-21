@@ -100,3 +100,39 @@ theme.initialize()
 if ("serviceWorker" in navigator) {
   navigator.serviceWorker.register("/sw.js")
 }
+
+const setShowInstallBtn = (setBtn) => {
+  if (setBtn) {
+  } else {
+  }
+}
+
+const isIOS =
+  navigator.userAgent.includes("iPhone") ||
+  navigator.userAgent.includes("iPad") ||
+  (navigator.userAgent.includes("Macintosh") &&
+    typeof navigator.maxTouchPoints === "number" &&
+    navigator.maxTouchPoints > 2)
+
+const isSupportingBrowser = window.hasOwnProperty("BeforeInstallPromptEvent")
+
+setShowInstallBtn(
+  (isIOS && isSupportingBrowser) ||
+    (isSupportingBrowser &&
+      (localStorage.getItem("calculatorInstalled") === "" ||
+        localStorage.getItem("calculatorInstalled") === "false"))
+)
+
+// This will only be called if the browser is eligible and PWA has NOT been installed yet
+window.addEventListener("beforeinstallprompt", () => {
+  localStorage.setItem("calculatorInstalled", "false")
+  setShowInstallBtn(true)
+})
+
+window.addEventListener("appinstalled", () => {
+  localStorage.setItem("calculatorInstalled", "true")
+})
+
+document.getElementById("install-button").addEventListener("click", () => {
+  document.querySelector("pwa-install").openPrompt()
+})

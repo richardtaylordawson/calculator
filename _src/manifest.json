@@ -1,13 +1,28 @@
 {
   "name": "Calculator",
   "short_name": "Calculator",
-  "lang": "en-US",
   "start_url": "/",
   "background_color": "#ffffff",
   "theme_color": "#f5f5f5",
   "display": "standalone",
   "orientation": "any",
   "description": "Simple calculator application built using Bootstrap 4, HTML, ES6 Modules and multiple Bootstrap Themes from Bootswatch.",
+  "features": [
+    "Calculate simple equations",
+    "Save to phone for easy and quick access",
+    "No network connection needed"
+  ],
+  "screenshots": [
+    {
+      "src":"https://www.pwa-shields.com/images/screenshots/home-screen.png"
+    },
+    {
+      "src":"https://www.pwa-shields.com/images/screenshots/series.png"
+    },
+    {
+      "src":"https://www.pwa-shields.com/images/screenshots/create.png"
+    }
+  ],
   "icons": [{
     "src": "https://calculator.richardtaylordawson.com/images/favicon.png",
     "sizes": "48x48",

@@ -5,8 +5,8 @@
 ## Run Project
 
 ```shell
-$ npm install
-$ npm start
+$ yarn
+$ yarn develop
 ```
 
 ## Deployment
