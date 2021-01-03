@@ -87,7 +87,6 @@ body {
   }
 
   #calculator .card-body {
-    height: 100vh;
     padding: 0;
   }
 
@@ -96,7 +95,7 @@ body {
   }
 
   #keypad {
-    height: calc(100vh);
+    min-height: -webkit-fill-available;
     border-radius: 0;
     display: flex;
     flex-direction: column;
