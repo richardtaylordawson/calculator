@@ -45,6 +45,12 @@ body {
 }
 
 @media (max-width: 425px) {
+  @media all and (display-mode: standalone) {
+    body {
+      position: fixed;
+    }
+  }
+
   html,
   body {
     margin: 0;
@@ -87,6 +93,10 @@ body {
   #keypad {
     height: calc(100vh);
     border-radius: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background-color: #424242;
   }
 
   .card {
