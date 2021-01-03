@@ -102,10 +102,10 @@ if ("serviceWorker" in navigator) {
 }
 
 const setShowInstallBtn = (showBtn) => {
-  if (!showBtn) {
-    document.getElementById("install-button").style.display = "none"
-  } else {
+  if (showBtn) {
     document.getElementById("install-button").style.display = "block"
+  } else {
+    document.getElementById("install-button").style.display = "none"
   }
 }
 
@@ -128,12 +128,11 @@ setShowInstallBtn(
 // This will only be called if the browser is eligible and PWA has NOT been installed yet
 window.addEventListener("beforeinstallprompt", () => {
   localStorage.setItem("calculatorInstalled", "false")
-  setShowInstallBtn(false)
+  setShowInstallBtn(true)
 })
 
 window.addEventListener("appinstalled", () => {
   localStorage.setItem("calculatorInstalled", "true")
-  setShowInstallBtn(true)
 })
 
 document.getElementById("install-button").addEventListener("click", () => {
