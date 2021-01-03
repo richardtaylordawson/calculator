@@ -103,11 +103,9 @@ if ("serviceWorker" in navigator) {
 
 const setShowInstallBtn = (showBtn) => {
   if (!showBtn) {
-    document.getElementById("install-button").classList.add("hidden")
-    console.log("got here")
+    document.getElementById("install-button").style.display = "none"
   } else {
-    document.getElementById("install-button").classList.remove("hidden")
-    console.log("got asdf")
+    document.getElementById("install-button").style.display = "block"
   }
 }
 
