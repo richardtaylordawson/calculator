@@ -101,9 +101,11 @@ if ("serviceWorker" in navigator) {
   navigator.serviceWorker.register("/sw.js")
 }
 
-const setShowInstallBtn = (setBtn) => {
-  if (setBtn) {
+const setShowInstallBtn = (showBtn) => {
+  if (!showBtn) {
+    document.getElementById("install-button").classList.add("hidden")
   } else {
+    document.getElementById("install-button").classList.remove("hidden")
   }
 }
 
