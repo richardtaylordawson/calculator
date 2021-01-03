@@ -65,10 +65,16 @@ body {
 
   #calculator .card-body {
     height: 100vh;
+    padding: 0;
+  }
+
+  #mobile-keypad {
+    padding-left: 10px;
+    padding-right: 10px;
   }
 
   #keypad {
-    height: calc(100vh - 20px);
+    height: calc(100vh);
     border-radius: 0;
   }
 
