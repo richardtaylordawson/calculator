@@ -45,6 +45,13 @@ body {
 }
 
 @media (max-width: 425px) {
+  html,
+  body {
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+  }
+
   #calculator-container {
     margin: 0 !important;
     padding: 0 !important;
@@ -52,6 +59,10 @@ body {
 
   #calculator {
     background-color: transparent;
+  }
+
+  #calculator-display {
+    padding-right: 30px;
   }
 
   .container-fluid {
