@@ -101,6 +101,10 @@ if ("serviceWorker" in navigator) {
   navigator.serviceWorker.register("/sw.js")
 }
 
+document.getElementById("install-button").addEventListener("click", () => {
+  document.querySelector("pwa-install").openPrompt()
+})
+
 const setShowInstallBtn = (showBtn) => {
   if (showBtn) {
     document.getElementById("install-button").style.display = "block"
@@ -118,23 +122,33 @@ const isIOS =
 
 const isSupportingBrowser = window.hasOwnProperty("BeforeInstallPromptEvent")
 
-setShowInstallBtn(
-  (isIOS && isSupportingBrowser) ||
-    (isSupportingBrowser &&
-      (localStorage.getItem("calculatorInstalled") === "" ||
-        localStorage.getItem("calculatorInstalled") === "false"))
-)
+const isStandalone = window.matchMedia("(display-mode: standalone)").matches
 
-// This will only be called if the browser is eligible and PWA has NOT been installed yet
-window.addEventListener("beforeinstallprompt", () => {
-  localStorage.setItem("calculatorInstalled", "false")
-  setShowInstallBtn(true)
-})
+if (isStandalone) {
+  setShowInstallBtn(false)
+} else {
+  console.log(
+    (isIOS && isSupportingBrowser) ||
+      (isSupportingBrowser &&
+        (localStorage.getItem("calculatorInstalled") === "" ||
+          localStorage.getItem("calculatorInstalled") === "false"))
+  )
 
-window.addEventListener("appinstalled", () => {
-  localStorage.setItem("calculatorInstalled", "true")
-})
+  setShowInstallBtn(
+    (isIOS && isSupportingBrowser) ||
+      (isSupportingBrowser &&
+        (localStorage.getItem("calculatorInstalled") === "" ||
+          localStorage.getItem("calculatorInstalled") === "false"))
+  )
 
-document.getElementById("install-button").addEventListener("click", () => {
-  document.querySelector("pwa-install").openPrompt()
-})
+  // This will only be called if the browser is eligible and PWA has NOT been installed yet
+  window.addEventListener("beforeinstallprompt", () => {
+    localStorage.setItem("calculatorInstalled", "false")
+    setShowInstallBtn(true)
+    console.log("beforeinstallprompt")
+  })
+
+  window.addEventListener("appinstalled", () => {
+    localStorage.setItem("calculatorInstalled", "true")
+  })
+}

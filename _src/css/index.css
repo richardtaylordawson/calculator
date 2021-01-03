@@ -44,12 +44,6 @@ body {
   right: 20px;
 }
 
-@media all and (display-mode: standalone) {
-  #install-button {
-    display: none;
-  }
-}
-
 @media (max-width: 768px) {
   body {
     padding: 0;
