@@ -129,11 +129,6 @@ if (installBtn !== null) {
 
   if (isStandalone) {
     setShowInstallBtn(false)
-
-    window.addEventListener("scroll", (e) => {
-      e.preventDefault()
-      window.scrollTo(0, 0)
-    })
   } else {
     setShowInstallBtn(
       (isIOS && isSupportingBrowser) ||

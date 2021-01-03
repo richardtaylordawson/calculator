@@ -1,6 +1,6 @@
 body {
   padding: 50px;
-  background-color: orange;
+  touch-action: manipulation;
 }
 
 #application {
@@ -45,12 +45,6 @@ body {
 }
 
 @media (max-width: 425px) {
-  @media all and (display-mode: standalone) {
-    body {
-      position: fixed;
-    }
-  }
-
   html,
   body {
     margin: 0;
@@ -86,8 +80,7 @@ body {
   }
 
   #mobile-keypad {
-    padding-left: 10px;
-    padding-right: 10px;
+    padding: 0 10px 20px 10px;
   }
 
   #keypad {
