@@ -65,6 +65,18 @@ body {
     padding-right: 30px;
   }
 
+  h1 {
+    font-size: 3.5rem;
+  }
+
+  h6 {
+    font-size: 1.5rem;
+  }
+
+  .btn.btn-lg {
+    font-size: 2rem;
+  }
+
   .container-fluid {
     padding-left: 0;
     padding-right: 0;
