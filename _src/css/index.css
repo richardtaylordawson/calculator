@@ -34,6 +34,16 @@ body {
   font-size: 18px;
 }
 
+#keyboard-tips .card-body {
+  position: relative;
+}
+
+#install-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
 @media (max-width: 768px) {
   body {
     padding: 0;

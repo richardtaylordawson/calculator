@@ -86,16 +86,6 @@
 </head>
 <body class="bg-light">
   <main class="container-fluid">
-    <div class="row">
-      <section class="col-12 d-flex justify-content-end">
-        <button class="btn btn-outline-info btn-raised theme-button active" id="install-button">Install +</button>
-        <pwa-install
-          usecustom
-          iconpath="https://calculator.richardtaylordawson.com/images/favicon.svg"
-          manifestpath="/manifest.json"
-        ></pwa-install>
-      </section>
-    </div>
     <div class="row" id="application">
       <section class="mb-4 mt-4 col-lg-5 col-md-12" id="calculator-container">
         <div class="card" id="calculator">
@@ -212,6 +202,12 @@
                 </div>
               </div>
             </div>
+            <button class="btn btn-info btn-raised theme-button" id="install-button">Install +</button>
+            <pwa-install
+              usecustom
+              iconpath="https://calculator.richardtaylordawson.com/images/favicon.svg"
+              manifestpath="/manifest.json"
+            ></pwa-install>
             <h5 class="card-title">Color Coding</h5>
             <div class="card-text">
               <div class="row">
