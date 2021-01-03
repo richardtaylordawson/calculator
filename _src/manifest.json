@@ -44,13 +44,18 @@
     "type": "image/svg",
     "purpose": "any maskable"
   }, {
-    "src": "https://calculator.richardtaylordawson.com/images/favicon-168x168.svg",
-    "sizes": "168x168",
+    "src": "https://calculator.richardtaylordawson.com/images/favicon-192x192.svg",
+    "sizes": "192x192",
     "type": "image/svg",
     "purpose": "any maskable"
   }, {
-    "src": "https://calculator.richardtaylordawson.com/images/favicon-192x192.svg",
-    "sizes": "192x192",
+    "src": "https://calculator.richardtaylordawson.com/images/favicon-256x256.svg",
+    "sizes": "256x256",
+    "type": "image/svg",
+    "purpose": "any maskable"
+  }, {
+    "src": "https://calculator.richardtaylordawson.com/images/favicon-384x384.svg",
+    "sizes": "384x384",
     "type": "image/svg",
     "purpose": "any maskable"
   }, {
