@@ -73,8 +73,8 @@ const theme = new Theme({
       default: false,
     },
     {
-      element: document.getElementById("spacelab-theme"),
-      identifier: "spacelab-theme",
+      element: document.getElementById("yeti-theme"),
+      identifier: "yeti-theme",
       default: false,
     },
     {

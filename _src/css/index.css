@@ -73,6 +73,7 @@ body {
     position: absolute;
     top: 0.5rem;
     left: 25px;
+    width: 200px;
     z-index: 999;
     background-color: transparent;
     color: white;
@@ -81,7 +82,7 @@ body {
 
   #select-theme-caret {
     position: absolute;
-    left: 185px;
+    left: 220px;
     top: 18px;
     z-index: 999;
     color: white;
