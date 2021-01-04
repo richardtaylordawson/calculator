@@ -147,6 +147,7 @@ body {
   }
 
   #keypad {
+    background-color: inherit !important;
     min-height: -webkit-fill-available;
     border-radius: 0;
     display: flex;
