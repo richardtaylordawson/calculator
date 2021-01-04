@@ -58,8 +58,8 @@ const theme = new Theme({
       default: false,
     },
     {
-      element: document.getElementById("sandstone-theme"),
-      identifier: "sandstone-theme",
+      element: document.getElementById("united-theme"),
+      identifier: "united-theme",
       default: false,
     },
     {
@@ -73,8 +73,8 @@ const theme = new Theme({
       default: false,
     },
     {
-      element: document.getElementById("united-theme"),
-      identifier: "united-theme",
+      element: document.getElementById("sandstone-theme"),
+      identifier: "sandstone-theme",
       default: false,
     },
     {
