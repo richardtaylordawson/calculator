@@ -12,8 +12,6 @@ body {
 }
 
 #keypad {
-  /* Needed a gray that isn't part of the default Bootstrap 4 background colors */
-  background-color: rgb(80, 80, 80) !important;
   border-radius: 10px;
 }
 
@@ -48,6 +46,13 @@ body {
 #select-theme,
 #select-theme-caret {
   display: none;
+}
+
+@media (min-width: 426px) {
+  #keypad {
+    /* Needed a gray that isn't part of the default Bootstrap 4 background colors */
+    background-color: rgb(80, 80, 80) !important;
+  }
 }
 
 @media (max-width: 768px) {
@@ -147,7 +152,6 @@ body {
   }
 
   #keypad {
-    background-color: inherit !important;
     min-height: -webkit-fill-available;
     border-radius: 0;
     display: flex;
