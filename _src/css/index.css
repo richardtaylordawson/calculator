@@ -142,7 +142,7 @@ body {
   }
 
   #mobile-keypad {
-    padding: 0 10px 20px 10px;
+    padding: 20px 10px;
   }
 
   #keypad {
@@ -160,6 +160,7 @@ body {
 
   #application {
     min-width: 375px;
+    margin-top: -2px;
   }
 
   #keyboard-tips {
