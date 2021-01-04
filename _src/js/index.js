@@ -53,10 +53,6 @@ calculator.initialize()
 const theme = new Theme({
   themes: [
     {
-      element: document.getElementById("select-theme"),
-      elementType: "select",
-    },
-    {
       element: document.getElementById("minty-theme"),
       elementType: "button",
       identifier: "minty-theme",
