@@ -35,13 +35,11 @@ if (installBtn !== null && mobileInstallBtn !== null) {
     setShowInstallBtn(false)
   } else {
     setShowInstallBtn(
-      (isIOS && isSupportingBrowser) ||
+      isIOS ||
         (isSupportingBrowser &&
           (localStorage.getItem("calculatorInstalled") === "" ||
             localStorage.getItem("calculatorInstalled") === "false"))
     )
-
-    console.log(isIOS, isSupportingBrowser)
 
     // This will only be called if the browser is eligible and PWA has NOT been installed yet
     window.addEventListener("beforeinstallprompt", () => {
