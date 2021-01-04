@@ -7,6 +7,7 @@ if (installBtn !== null && mobileInstallBtn !== null) {
   })
 
   mobileInstallBtn.addEventListener("click", () => {
+    console.log("mobile button clicked")
     document.querySelector("pwa-install").openPrompt()
   })
 
