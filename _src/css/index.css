@@ -45,7 +45,8 @@ body {
 }
 
 #mobile-install-button-container,
-#select-theme {
+#select-theme,
+#select-theme-caret {
   display: none;
 }
 
@@ -84,6 +85,7 @@ body {
     top: 18px;
     z-index: 999;
     color: white;
+    display: block;
   }
 
   #mobile-install-button-container {

@@ -8,7 +8,8 @@ export default class Theme {
    * @param {object} options - All the DOM objects and themes of the application
    */
   constructor(options) {
-    this.themes = options.themes
+    this.themeButtons = options.themeButtons
+    this.themeSelect = options.themeSelect
   }
 
   /**
@@ -23,7 +24,7 @@ export default class Theme {
    * Displays the default theme
    */
   initializeDefaultTheme() {
-    this.themes.map((theme) => {
+    this.themeButtons.forEach((theme) => {
       if (theme.default) {
         this.toggleTheme(theme.element)
       }
@@ -34,16 +35,18 @@ export default class Theme {
    * Adds click event handlers to all DOM objects of the theme switcher.
    */
   initializeEvents() {
-    this.themes.map((theme) => {
-      if (theme.elementType === "button") {
-        theme.element.addEventListener("click", (event) =>
-          this.toggleTheme(event.target)
-        )
-      } else if (theme.elementType === "select") {
-        theme.element.addEventListener("change", (event) =>
-          this.toggleTheme(event.target.value)
-        )
-      }
+    this.themeButtons.forEach((theme) => {
+      theme.element.addEventListener("click", (event) =>
+        this.toggleTheme(event.target)
+      )
+    })
+
+    this.themeSelect.addEventListener("change", (event) => {
+      this.themeButtons.forEach((theme) => {
+        if (theme.identifier === event.target.value) {
+          this.toggleTheme(theme.element)
+        }
+      })
     })
   }
 
@@ -54,20 +57,16 @@ export default class Theme {
   toggleTheme(chosenTheme) {
     let chosenIndex = 0
 
-    this.themes.map((theme, index) => {
-      if (theme.elementType === "button") {
-        if (theme.element === chosenTheme) {
-          chosenIndex = index
-          theme.element.classList.add("active")
-        } else {
-          theme.element.classList.remove("active")
-        }
-      } else if (theme.elementType === "select") {
-        theme.element.value = chosenTheme
+    this.themeButtons.forEach((theme, index) => {
+      if (theme.element === chosenTheme) {
+        chosenIndex = index
+        theme.element.classList.add("active")
+      } else {
+        theme.element.classList.remove("active")
       }
     })
 
-    for (let i = 0; i < this.themes.length; i++) {
+    for (let i = 0; i < this.themeButtons.length; i++) {
       document.styleSheets[i].disabled = i !== chosenIndex
     }
   }

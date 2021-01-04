@@ -51,56 +51,49 @@ calculator.initialize()
  * @constant Theme
  */
 const theme = new Theme({
-  themes: [
+  themeButtons: [
     {
       element: document.getElementById("minty-theme"),
-      elementType: "button",
       identifier: "minty-theme",
       default: false,
     },
     {
       element: document.getElementById("sandstone-theme"),
-      elementType: "button",
       identifier: "sandstone-theme",
       default: false,
     },
     {
       element: document.getElementById("pulse-theme"),
-      elementType: "button",
       identifier: "pulse-theme",
       default: false,
     },
     {
       element: document.getElementById("journal-theme"),
-      elementType: "button",
       identifier: "journal-theme",
       default: false,
     },
     {
       element: document.getElementById("slate-theme"),
-      elementType: "button",
       identifier: "slate-theme",
       default: false,
     },
     {
       element: document.getElementById("dark-theme"),
-      elementType: "button",
       identifier: "dark-theme",
       default: false,
     },
     {
       element: document.getElementById("school-theme"),
-      elementType: "button",
       identifier: "school-theme",
       default: false,
     },
     {
       element: document.getElementById("default-theme"),
-      elementType: "button",
       identifier: "default-theme",
       default: true,
     },
   ],
+  themeSelect: document.getElementById("select-theme"),
 })
 
 theme.initialize()
