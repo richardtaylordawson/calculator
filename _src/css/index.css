@@ -7,6 +7,10 @@ pwa-install::part(openButton) {
   display: none;
 }
 
+pwa-install::part(installModal) #descriptionWrapper {
+  display: none;
+}
+
 #application {
   min-width: 400px;
 }
