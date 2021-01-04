@@ -73,8 +73,8 @@ const theme = new Theme({
       default: false,
     },
     {
-      element: document.getElementById("sandstone-theme"),
-      identifier: "sandstone-theme",
+      element: document.getElementById("pulse-theme"),
+      identifier: "pulse-theme",
       default: false,
     },
     {
