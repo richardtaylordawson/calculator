@@ -13,7 +13,7 @@ body {
 
 #keypad {
   /* Needed a gray that isn't part of the default Bootstrap 4 background colors */
-  background-color: rgb(80, 80, 80);
+  background-color: rgb(80, 80, 80) !important;
   border-radius: 10px;
 }
 
