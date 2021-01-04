@@ -73,8 +73,8 @@ const theme = new Theme({
       default: false,
     },
     {
-      element: document.getElementById("yeti-theme"),
-      identifier: "yeti-theme",
+      element: document.getElementById("united-theme"),
+      identifier: "united-theme",
       default: false,
     },
     {

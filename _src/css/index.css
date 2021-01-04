@@ -82,7 +82,7 @@ body {
 
   #select-theme-caret {
     position: absolute;
-    left: 220px;
+    left: 215px;
     top: 18px;
     z-index: 999;
     color: white;
