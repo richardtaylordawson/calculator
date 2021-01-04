@@ -3,6 +3,10 @@ body {
   touch-action: manipulation;
 }
 
+pwa-install::part(openButton) {
+  display: none;
+}
+
 #application {
   min-width: 400px;
 }
