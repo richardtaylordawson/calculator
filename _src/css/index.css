@@ -142,6 +142,7 @@ body {
   }
 
   #mobile-keypad {
+    background-color: rgb(80, 80, 80);
     padding: 20px 10px;
   }
 
@@ -151,7 +152,6 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    background-color: #424242;
   }
 
   .card {
