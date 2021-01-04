@@ -44,7 +44,7 @@ body {
   right: 20px;
 }
 
-#mobile-install-button {
+#mobile-install-button-container {
   display: none;
 }
 
@@ -62,7 +62,7 @@ body {
     overflow: hidden;
   }
 
-  #mobile-install-button {
+  #mobile-install-button-container {
     display: block;
     position: absolute;
     top: 0.5rem;
