@@ -63,8 +63,8 @@ const theme = new Theme({
       default: false,
     },
     {
-      element: document.getElementById("lux-theme"),
-      identifier: "lux-theme",
+      element: document.getElementById("lumen-theme"),
+      identifier: "lumen-theme",
       default: false,
     },
     {
