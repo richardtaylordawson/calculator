@@ -44,7 +44,8 @@ body {
   right: 20px;
 }
 
-#mobile-install-button-container {
+#mobile-install-button-container,
+#select-theme {
   display: none;
 }
 
@@ -60,6 +61,15 @@ body {
     margin: 0;
     height: 100%;
     overflow: hidden;
+  }
+
+  #select-theme {
+    display: block;
+    position: absolute;
+    top: 0.5rem;
+    left: 10px;
+    z-index: 999;
+    background-color: transparent;
   }
 
   #mobile-install-button-container {

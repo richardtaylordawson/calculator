@@ -1,4 +1,5 @@
 const gulp = require("gulp")
+const sass = require("gulp-sass")
 const browserSync = require("browser-sync").create()
 const imagemin = require("gulp-imagemin")
 const cache = require("gulp-cache")
@@ -10,13 +11,14 @@ const htmlmin = require("gulp-htmlmin")
 const rollup = require("gulp-better-rollup")
 const babel = require("rollup-plugin-babel")
 
-gulp.task("css", () =>
-  gulp
-    .src("_src/css/index.css")
+gulp.task("scss", () => {
+  return gulp
+    .src("_src/scss/index.scss")
+    .pipe(sass())
     .pipe(cleanCSS())
     .pipe(gulp.dest("dist/css"))
     .pipe(browserSync.reload({ stream: true }))
-)
+})
 
 gulp.task("images", () => {
   gulp
@@ -65,7 +67,7 @@ gulp.task("browserSync", () =>
 )
 
 gulp.task("watch", () => {
-  gulp.watch("_src/css/**/*.css", ["css"])
+  gulp.watch("_src/scss/**/*.scss", ["scss"])
   gulp.watch("_src/images/**/*.+(png|jpg|jpeg|gif|svg)", ["images"])
   gulp.watch("_src/js/**/*.js", ["js"])
   gulp.watch("_src/**/*.html", ["html"])
@@ -73,13 +75,13 @@ gulp.task("watch", () => {
 })
 
 gulp.task("build", (callback) => {
-  runSequence(["css", "images", "js", "html", "files"], callback)
+  runSequence(["scss", "images", "js", "html", "files"], callback)
 })
 
 gulp.task("default", (callback) => {
   runSequence(
     "syncDist",
-    ["css", "images", "js", "html", "files", "browserSync", "watch"],
+    ["scss", "images", "js", "html", "files", "browserSync", "watch"],
     callback
   )
 })

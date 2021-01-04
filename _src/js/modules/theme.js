@@ -16,7 +16,7 @@ export default class Theme {
    */
   initialize() {
     this.initializeDefaultTheme()
-    this.initializeClickEvents()
+    this.initializeEvents()
   }
 
   /**
@@ -33,11 +33,17 @@ export default class Theme {
   /**
    * Adds click event handlers to all DOM objects of the theme switcher.
    */
-  initializeClickEvents() {
+  initializeEvents() {
     this.themes.map((theme) => {
-      theme.element.addEventListener("click", (event) =>
-        this.toggleTheme(event.target)
-      )
+      if (theme.elementType === "button") {
+        theme.element.addEventListener("click", (event) =>
+          this.toggleTheme(event.target)
+        )
+      } else if (theme.elementType === "select") {
+        theme.element.addEventListener("change", (event) =>
+          this.toggleTheme(event.target.value)
+        )
+      }
     })
   }
 
@@ -49,11 +55,15 @@ export default class Theme {
     let chosenIndex = 0
 
     this.themes.map((theme, index) => {
-      if (theme.element === chosenTheme) {
-        chosenIndex = index
-        theme.element.classList.add("active")
-      } else {
-        theme.element.classList.remove("active")
+      if (theme.elementType === "button") {
+        if (theme.element === chosenTheme) {
+          chosenIndex = index
+          theme.element.classList.add("active")
+        } else {
+          theme.element.classList.remove("active")
+        }
+      } else if (theme.elementType === "select") {
+        theme.element.value = chosenTheme
       }
     })
 
