@@ -44,12 +44,30 @@ body {
   right: 20px;
 }
 
+@media (max-width: 768px) {
+  body {
+    padding: 0;
+  }
+}
+
 @media (max-width: 425px) {
   html,
   body {
     margin: 0;
     height: 100%;
     overflow: hidden;
+  }
+
+  #mobile-install-button {
+    position: absolute;
+    top: 0.5rem;
+    left: 10px;
+  }
+
+  #backspace-icon {
+    font-size: 25px;
+    bottom: 1px;
+    position: relative;
   }
 
   #calculator-container {
