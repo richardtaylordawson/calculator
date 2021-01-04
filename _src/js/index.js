@@ -68,13 +68,13 @@ const theme = new Theme({
       default: false,
     },
     {
-      element: document.getElementById("journal-theme"),
-      identifier: "journal-theme",
+      element: document.getElementById("solar-theme"),
+      identifier: "solar-theme",
       default: false,
     },
     {
-      element: document.getElementById("slate-theme"),
-      identifier: "slate-theme",
+      element: document.getElementById("spacelab-theme"),
+      identifier: "spacelab-theme",
       default: false,
     },
     {
