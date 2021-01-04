@@ -63,8 +63,8 @@ const theme = new Theme({
       default: false,
     },
     {
-      element: document.getElementById("pulse-theme"),
-      identifier: "pulse-theme",
+      element: document.getElementById("lux-theme"),
+      identifier: "lux-theme",
       default: false,
     },
     {
