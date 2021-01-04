@@ -44,6 +44,10 @@ body {
   right: 20px;
 }
 
+#mobile-install-button {
+  display: none;
+}
+
 @media (max-width: 768px) {
   body {
     padding: 0;
@@ -59,9 +63,11 @@ body {
   }
 
   #mobile-install-button {
+    display: block;
     position: absolute;
     top: 0.5rem;
     left: 10px;
+    z-index: 999;
   }
 
   #backspace-icon {
