@@ -63,13 +63,23 @@ body {
     overflow: hidden;
   }
 
+  #select-theme-container {
+    position: relative;
+  }
+
   #select-theme {
     display: block;
     position: absolute;
     top: 0.5rem;
-    left: 10px;
+    left: 25px;
     z-index: 999;
     background-color: transparent;
+    color: white;
+    padding: 5px 20px;
+  }
+
+  #select-theme-caret {
+    position: absolute;
   }
 
   #mobile-install-button-container {
