@@ -80,6 +80,10 @@ body {
 
   #select-theme-caret {
     position: absolute;
+    left: 185px;
+    top: 18px;
+    z-index: 999;
+    color: white;
   }
 
   #mobile-install-button-container {
