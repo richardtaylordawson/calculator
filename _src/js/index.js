@@ -102,3 +102,10 @@ theme.initialize()
 if ("serviceWorker" in navigator) {
   navigator.serviceWorker.register("/sw.js")
 }
+
+if (window.matchMedia("(display-mode: standalone)").matches) {
+  window.addEventListener("scroll", (e) => {
+    e.preventDefault()
+    window.scrollTo(0, 0)
+  })
+}
