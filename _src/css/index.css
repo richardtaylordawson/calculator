@@ -56,13 +56,6 @@ pwa-install::part(installModal) #descriptionWrapper {
   display: none;
 }
 
-@media (min-width: 426px) {
-  #keypad {
-    /* Needed a gray that isn't part of the default Bootstrap 4 background colors */
-    background-color: rgb(80, 80, 80) !important;
-  }
-}
-
 @media (max-width: 768px) {
   body {
     padding: 0;
@@ -70,6 +63,18 @@ pwa-install::part(installModal) #descriptionWrapper {
 }
 
 @media (max-width: 425px) {
+  #keypad {
+    /* Needed a gray that isn't part of the default Bootstrap 4 background colors */
+    background-color: rgb(80, 80, 80) !important;
+  }
+
+  html,
+  body {
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+  }
+
   #select-theme-container {
     position: relative;
   }
