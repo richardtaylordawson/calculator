@@ -180,3 +180,10 @@ pwa-install::part(installModal) #descriptionWrapper {
     display: none;
   }
 }
+
+@media all and (display-mode: standalone) {
+  body {
+    position: fixed;
+    width: 100%;
+  }
+}
