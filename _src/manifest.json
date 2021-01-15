@@ -7,11 +7,6 @@
   "display": "standalone",
   "orientation": "any",
   "description": "Simple calculator application built using Bootstrap 4, HTML, ES6 Modules and multiple Bootstrap Themes from Bootswatch.",
-  "features": [
-    "Calculate simple equations",
-    "Save to phone for easy and quick access",
-    "No network connection needed"
-  ],
   "screenshots": [
     {
       "src":"https://calculator.richardtaylordawson.com/images/screenshots/desktop-normal.png"
