@@ -53,8 +53,8 @@ calculator.initialize()
 const theme = new Theme({
   themeButtons: [
     {
-      element: document.getElementById("minty-theme"),
-      identifier: "minty-theme",
+      element: document.getElementById("litera-theme"),
+      identifier: "litera-theme",
       default: false,
     },
     {
