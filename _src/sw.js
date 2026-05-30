@@ -1,4 +1,4 @@
-var cacheName = "rtd-calculator"
+var cacheName = "rtd-calculator-v2"
 var filesToCache = ["/", "/index.html", "/css/index.css", "/js/index.js"]
 
 self.addEventListener("install", (e) => {
@@ -10,7 +10,18 @@ self.addEventListener("install", (e) => {
 })
 
 self.addEventListener("activate", (event) => {
-  event.waitUntil(self.clients.claim())
+  event.waitUntil(
+    caches
+      .keys()
+      .then((cacheNames) =>
+        Promise.all(
+          cacheNames
+            .filter((name) => name !== cacheName)
+            .map((name) => caches.delete(name))
+        )
+      )
+      .then(() => self.clients.claim())
+  )
 })
 
 self.addEventListener("fetch", (event) => {

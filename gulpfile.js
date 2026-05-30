@@ -1,85 +1,127 @@
-const gulp = require("gulp")
-const browserSync = require("browser-sync").create()
-const imagemin = require("gulp-imagemin")
-const cache = require("gulp-cache")
-const del = require("del")
-const runSequence = require("run-sequence")
+const fs = require("node:fs")
+const http = require("node:http")
+const path = require("node:path")
+const { dest, parallel, series, src, watch } = require("gulp")
 const cleanCSS = require("gulp-clean-css")
-const uglify = require("gulp-uglify")
-const htmlmin = require("gulp-htmlmin")
-const rollup = require("gulp-better-rollup")
-const babel = require("rollup-plugin-babel")
+const htmlmin = require("gulp-html-minifier-terser")
+const { rollup } = require("rollup")
+const terser = require("@rollup/plugin-terser")
 
-gulp.task("css", () =>
-  gulp
-    .src("_src/css/index.css")
-    .pipe(cleanCSS())
-    .pipe(gulp.dest("dist/css"))
-    .pipe(browserSync.reload({ stream: true }))
-)
+const paths = {
+  css: "_src/css/index.css",
+  html: "_src/**/*.html",
+  images: "_src/images/**/*.+(png|jpg|jpeg|gif|svg)",
+  staticFiles: "_src/**/*.+(json|txt|xml)",
+}
 
-gulp.task("images", () => {
-  gulp
-    .src("_src/images/**/*.+(png|jpg|jpeg|gif|svg)")
-    .pipe(cache(imagemin()))
-    .pipe(gulp.dest("dist/images"))
+function clean() {
+  fs.rmSync("dist", { recursive: true, force: true })
+  return Promise.resolve()
+}
 
-  return del.sync("dist/images")
-})
+function css() {
+  return src(paths.css).pipe(cleanCSS()).pipe(dest("dist/css"))
+}
 
-gulp.task("js", () => {
-  gulp
-    .src("_src/sw.js")
-    .pipe(rollup({ plugins: [babel()] }, { format: "cjs" }))
-    .pipe(uglify())
-    .pipe(gulp.dest("dist/"))
+function images() {
+  return src(paths.images, { encoding: false }).pipe(dest("dist/images"))
+}
 
-  return gulp
-    .src("_src/js/index.js")
-    .pipe(rollup({ plugins: [babel()] }, { format: "cjs" }))
-    .pipe(uglify())
-    .pipe(gulp.dest("dist/js"))
-    .pipe(browserSync.reload({ stream: true }))
-})
+async function bundle(input, file) {
+  fs.mkdirSync(path.dirname(file), { recursive: true })
 
-gulp.task("html", () => {
-  gulp
-    .src("_src/**/*.html")
-    .pipe(htmlmin({ collapseWhitespace: true }))
-    .pipe(gulp.dest("dist/"))
-    .pipe(browserSync.reload({ stream: true }))
+  const bundle = await rollup({
+    input,
+    plugins: [terser()],
+  })
 
-  return del.sync("dist/**/*.html")
-})
+  await bundle.write({
+    file,
+    format: "es",
+  })
 
-gulp.task("files", () => {
-  gulp.src("_src/**/*.+(json|txt|xml)").pipe(gulp.dest("dist/"))
+  await bundle.close()
+}
 
-  return del.sync("dist/**/*.+(json|txt|xml)")
-})
+async function js() {
+  await Promise.all([
+    bundle("_src/js/index.js", "dist/js/index.js"),
+    bundle("_src/sw.js", "dist/sw.js"),
+  ])
+}
 
-gulp.task("syncDist", () => del.sync("dist"))
+function html() {
+  return src(paths.html)
+    .pipe(htmlmin({ collapseWhitespace: true, removeComments: true }))
+    .pipe(dest("dist/"))
+}
 
-gulp.task("browserSync", () =>
-  browserSync.init({ server: { baseDir: "./dist" } })
-)
+function files() {
+  return src(paths.staticFiles).pipe(dest("dist/"))
+}
 
-gulp.task("watch", () => {
-  gulp.watch("_src/css/**/*.css", ["css"])
-  gulp.watch("_src/images/**/*.+(png|jpg|jpeg|gif|svg)", ["images"])
-  gulp.watch("_src/js/**/*.js", ["js"])
-  gulp.watch("_src/**/*.html", ["html"])
-  gulp.watch("_src/**/*.+(json|txt|xml)", ["files"])
-})
+function serve(done) {
+  const root = path.resolve("dist")
+  const port = Number(process.env.PORT) || 3000
 
-gulp.task("build", (callback) => {
-  runSequence(["css", "images", "js", "html", "files"], callback)
-})
+  http
+    .createServer((request, response) => {
+      const requestedPath = new URL(
+        request.url,
+        `http://${request.headers.host}`
+      ).pathname
+      const filePath = path.resolve(
+        root,
+        requestedPath === "/" ? "index.html" : `.${requestedPath}`
+      )
 
-gulp.task("default", (callback) => {
-  runSequence(
-    "syncDist",
-    ["css", "images", "js", "html", "files", "browserSync", "watch"],
-    callback
-  )
-})
+      if (!filePath.startsWith(root)) {
+        response.writeHead(403)
+        response.end("Forbidden")
+        return
+      }
+
+      fs.readFile(filePath, (error, content) => {
+        if (error) {
+          response.writeHead(404)
+          response.end("Not found")
+          return
+        }
+
+        const extension = path.extname(filePath)
+        const contentType =
+          {
+            ".css": "text/css",
+            ".html": "text/html",
+            ".ico": "image/x-icon",
+            ".js": "text/javascript",
+            ".json": "application/json",
+            ".png": "image/png",
+            ".txt": "text/plain",
+            ".xml": "application/xml",
+          }[extension] || "application/octet-stream"
+
+        response.writeHead(200, { "Content-Type": contentType })
+        response.end(content)
+      })
+    })
+    .listen(port, () => {
+      console.log(`Serving dist at http://localhost:${port}`)
+    })
+
+  done()
+}
+
+function watchFiles() {
+  watch("_src/css/**/*.css", css)
+  watch(paths.images, images)
+  watch("_src/js/**/*.js", js)
+  watch("_src/sw.js", js)
+  watch(paths.html, html)
+  watch(paths.staticFiles, files)
+}
+
+const build = series(clean, parallel(css, images, js, html, files))
+
+exports.build = build
+exports.default = series(build, serve, watchFiles)

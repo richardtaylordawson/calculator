@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "author": "richardtaylordawson",
   "description": "Simple calculator application built using Bootstrap 4, HTML, ES6 Modules and multiple Bootstrap Themes from Bootswatch.",
+  "engines": {
+    "node": ">=20"
+  },
   "homepage": "https://calculator.richardtaylordawson.com",
   "repository": {
     "type": "git",
@@ -12,24 +15,16 @@
     "url": "https://github.com/richardtaylordawson/calculator/issues"
   },
   "devDependencies": {
-    "@babel/core": "^7.5.5",
-    "@babel/preset-env": "^7.5.5",
-    "browser-sync": "^2.26.3",
-    "del": "^4.1.0",
-    "gulp": "^3.9.0",
-    "gulp-better-rollup": "^4.0.1",
-    "gulp-cache": "^1.1.1",
+    "@rollup/plugin-terser": "^1.0.0",
+    "gulp": "^5.0.1",
     "gulp-clean-css": "^4.2.0",
-    "gulp-htmlmin": "^5.0.1",
-    "gulp-imagemin": "^4.1.0",
-    "gulp-uglify": "^3.0.2",
-    "prettier": "^2.2.1",
-    "rollup": "^2.79.2",
-    "rollup-plugin-babel": "^4.3.3",
-    "run-sequence": "^2.2.1"
+    "gulp-html-minifier-terser": "^8.0.0",
+    "prettier": "^3.8.3",
+    "rollup": "^4.60.4"
   },
   "scripts": {
     "develop": "gulp default",
+    "start": "gulp default",
     "build": "gulp build",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\""
   }

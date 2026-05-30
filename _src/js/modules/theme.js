@@ -10,6 +10,7 @@ export default class Theme {
   constructor(options) {
     this.themeButtons = options.themeButtons
     this.themeSelect = options.themeSelect
+    this.themeSheets = document.querySelectorAll("link[data-theme]")
   }
 
   /**
@@ -61,13 +62,15 @@ export default class Theme {
       if (theme.element === chosenTheme) {
         chosenIndex = index
         theme.element.classList.add("active")
+        this.themeSelect.value = theme.identifier
       } else {
         theme.element.classList.remove("active")
       }
     })
 
-    for (let i = 0; i < this.themeButtons.length; i++) {
-      document.styleSheets[i].disabled = i !== chosenIndex
-    }
+    this.themeSheets.forEach((themeSheet) => {
+      themeSheet.disabled =
+        themeSheet.dataset.theme !== this.themeButtons[chosenIndex].identifier
+    })
   }
 }

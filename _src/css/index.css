@@ -32,6 +32,22 @@ pwa-install::part(openButton) {
   border-radius: 15px;
 }
 
+.btn-raised {
+  box-shadow: 0 2px 5px rgb(0 0 0 / 20%);
+}
+
+.bmd-btn-fab {
+  border-radius: 50%;
+  height: 2.5rem;
+  padding: 0;
+  width: 2.5rem;
+}
+
+.bmd-btn-fab-sm {
+  height: 1.75rem;
+  width: 1.75rem;
+}
+
 #backspace-icon {
   font-size: 18px;
 }
