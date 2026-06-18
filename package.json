@@ -9,17 +9,14 @@
     "url": "git+https://github.com/richardtaylordawson/calculator.git"
   },
   "devDependencies": {
-    "@rollup/plugin-terser": "^1.0.0",
-    "gulp": "^5.0.1",
-    "gulp-clean-css": "^4.2.0",
-    "gulp-html-minifier-terser": "^8.0.0",
     "prettier": "^3.8.3",
-    "rollup": "^4.60.4"
+    "vite": "^8.0.16"
   },
   "scripts": {
-    "develop": "gulp default",
-    "start": "gulp default",
-    "build": "gulp build",
+    "dev": "vite --host 0.0.0.0",
+    "develop": "vite --host 0.0.0.0",
+    "build": "vite build",
+    "preview": "vite preview --host 0.0.0.0",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\""
   },
   "packageManager": "yarn@4.15.0+sha512.07ec708ac11e2eaa4ea2b04cfbb272812f7e74a753f1595eaef4486c663a98306a30cca3e6fc40f7a0b168dcfb3a2490b6a5e0501e20fb69cc36f563dd161c53"
