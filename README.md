@@ -5,7 +5,6 @@
 ## Run Project
 
 ```shell
-# requires node v11 or earlier
 $ yarn
 $ yarn develop
 ```
