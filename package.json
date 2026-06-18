@@ -3,16 +3,10 @@
   "version": "1.0.0",
   "author": "richardtaylordawson",
   "description": "Simple calculator application built using Bootstrap 4, HTML, ES6 Modules and multiple Bootstrap Themes from Bootswatch.",
-  "engines": {
-    "node": ">=20"
-  },
   "homepage": "https://calculator.richardtaylordawson.com",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/richardtaylordawson/calculator.git"
-  },
-  "bugs": {
-    "url": "https://github.com/richardtaylordawson/calculator/issues"
   },
   "devDependencies": {
     "@rollup/plugin-terser": "^1.0.0",

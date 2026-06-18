@@ -1,302 +1,544 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <meta name="description" content="Simple calculator application to compute simple to complex problems in many different color themes.">
-  <meta name="keywords" content="calculator, application, calculate, themes, simple calculator">
-  <meta name="author" content="Richard Taylor Dawson">
-  <meta name="robots" content="index, follow">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <meta
+      name="description"
+      content="Simple calculator application to compute simple to complex problems in many different color themes."
+    />
+    <meta
+      name="keywords"
+      content="calculator, application, calculate, themes, simple calculator"
+    />
+    <meta name="author" content="Richard Taylor Dawson" />
+    <meta name="robots" content="index, follow" />
 
-  <!-- Social OG Tags -->
-  <meta property="og:title" content="Calculator" />
-  <meta property="og:site_name" content="Calculator" />
-  <meta itemprop="name" content="Calculator" />
-  <meta name="twitter:title" content="Calculator" />
-  <meta name="twitter:text:title" content="Calculator" />
-  <meta name="twitter:image:alt" content="Calculator" />
-  <meta property="og:description" content="Simple calculator application to compute simple to complex problems in many different color themes." />
-  <meta itemprop="description" content="Simple calculator application to compute simple to complex problems in many different color themes." />
-  <meta name="twitter:description" content="Simple calculator application to compute simple to complex problems in many different color themes." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://calculator.richardtaylordawson.com/" />
-  <meta property="og:image" content="https://calculator.richardtaylordawson.com/images/social-share.png" />
-  <meta itemprop="image" content="https://calculator.richardtaylordawson.com/images/social-share.png" />
-  <meta name="twitter:image" content="https://calculator.richardtaylordawson.com/images/social-share.png" />
-  <meta property="og:image:type" content="image/png" />
-  <meta property="og:image:width" content="640" />
-  <meta property="og:image:height" content="320" />
-  <meta name="twitter:card" content="summary_large_image" />
+    <!-- Social OG Tags -->
+    <meta property="og:title" content="Calculator" />
+    <meta property="og:site_name" content="Calculator" />
+    <meta itemprop="name" content="Calculator" />
+    <meta name="twitter:title" content="Calculator" />
+    <meta name="twitter:text:title" content="Calculator" />
+    <meta name="twitter:image:alt" content="Calculator" />
+    <meta
+      property="og:description"
+      content="Simple calculator application to compute simple to complex problems in many different color themes."
+    />
+    <meta
+      itemprop="description"
+      content="Simple calculator application to compute simple to complex problems in many different color themes."
+    />
+    <meta
+      name="twitter:description"
+      content="Simple calculator application to compute simple to complex problems in many different color themes."
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://calculator.richardtaylordawson.com/"
+    />
+    <meta
+      property="og:image"
+      content="https://calculator.richardtaylordawson.com/images/social-share.png"
+    />
+    <meta
+      itemprop="image"
+      content="https://calculator.richardtaylordawson.com/images/social-share.png"
+    />
+    <meta
+      name="twitter:image"
+      content="https://calculator.richardtaylordawson.com/images/social-share.png"
+    />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="640" />
+    <meta property="og:image:height" content="320" />
+    <meta name="twitter:card" content="summary_large_image" />
 
-  <title>Calculator</title>
+    <title>Calculator</title>
 
-  <!-- PWA -->
-  <link rel="manifest" href="/manifest.json">
-  <meta name="theme-color" content="#f5f5f5"/>
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" href="images/favicon.png" />
 
-  <!-- PWA Icons and Favicons -->
-  <link rel="icon" type="image/png" href="images/favicon.png">
-  <link rel="apple-touch-icon" sizes="48x48" href="images/favicon-48x48.png">
-  <link rel="apple-touch-icon" sizes="72x72" href="images/favicon-72x72.png">
-  <link rel="apple-touch-icon" sizes="96x96" href="images/favicon-96x96.png">
-  <link rel="apple-touch-icon" sizes="144x144" href="images/favicon-144x144.png">
-  <link rel="apple-touch-icon" sizes="192x192" href="images/favicon-192x192.png">
-  <link rel="apple-touch-icon" sizes="256x256" href="images/favicon-256x256.png">
-  <link rel="apple-touch-icon" sizes="384x384" href="images/favicon-384x384.png">
-  <link rel="apple-touch-icon" sizes="512x512" href="images/favicon-512x512.png">
+    <!-- Themes -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/litera/bootstrap.min.css"
+      data-theme="litera-theme"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/united/bootstrap.min.css"
+      data-theme="united-theme"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/lumen/bootstrap.min.css"
+      data-theme="lumen-theme"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/solar/bootstrap.min.css"
+      data-theme="solar-theme"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/pulse/bootstrap.min.css"
+      data-theme="pulse-theme"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/darkly/bootstrap.min.css"
+      data-theme="dark-theme"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/sketchy/bootstrap.min.css"
+      data-theme="school-theme"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css"
+      data-theme="default-theme"
+    />
 
-  <!-- Themes -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.8/dist/litera/bootstrap.min.css" data-theme="litera-theme">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.8/dist/united/bootstrap.min.css" data-theme="united-theme">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.8/dist/lumen/bootstrap.min.css" data-theme="lumen-theme">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.8/dist/solar/bootstrap.min.css" data-theme="solar-theme">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.8/dist/pulse/bootstrap.min.css" data-theme="pulse-theme">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.8/dist/darkly/bootstrap.min.css" data-theme="dark-theme">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.8/dist/sketchy/bootstrap.min.css" data-theme="school-theme">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" data-theme="default-theme">
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"
+    />
 
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css">
-
-  <!-- Page Specific CSS -->
-  <link rel="stylesheet" href="css/index.css"/>
-
-  <!-- PWA Install Button -->
-  <script
-    type="module"
-    src="https://cdn.jsdelivr.net/npm/@pwabuilder/pwainstall@1.6.7"
-  ></script>
-</head>
-<body class="bg-light">
-  <main class="container-fluid">
-    <div class="row" id="application">
-      <pwa-install
-        usecustom
-        iconpath="https://calculator.richardtaylordawson.com/images/favicon.png"
-        manifestpath="/manifest.json"
-      ></pwa-install>
-      <section id="select-theme-container">
-        <select id="select-theme">
-          <option value="default-theme">Theme - Default</option>
-          <option value="school-theme">Theme - School</option>
-          <option value="dark-theme">Theme - Dark</option>
-          <option value="lumen-theme">Theme - Lumen</option>
-          <option value="solar-theme">Theme - Solar</option>
-          <option value="pulse-theme">Theme - Pulse</option>
-          <option value="united-theme">Theme - United</option>
-          <option value="litera-theme">Theme - Litera</option>
-        </select>
-        <i class="fa-solid fa-caret-down" id="select-theme-caret"></i>
-      </section>
-      <section id="mobile-install-button-container">
-        <button class="btn btn-info btn-raised theme-button" id="mobile-install-button">Install +</button>
-      </section>
-      <section class="mb-4 mt-4 col-lg-5 col-md-12" id="calculator-container">
-        <div class="card" id="calculator">
-          <div class="card-body">
-            <div class="col-12 bg-dark" id="keypad">
-              <div class="row">
-                <div class="col-12 bg-dark text-white mb-2" id="calculator-display">
-                  <h6 class="text-end text-danger mt-2" id="secondary-display">0</h6>
-                  <h1 class="text-end" id="primary-display">0</h1>
-                </div>
-              </div>
-              <div id="mobile-keypad">
+    <!-- Page Specific CSS -->
+    <link rel="stylesheet" href="css/index.css" />
+  </head>
+  <body class="bg-light">
+    <main class="container-fluid">
+      <div class="row" id="application">
+        <section id="select-theme-container">
+          <select id="select-theme">
+            <option value="default-theme">Theme - Default</option>
+            <option value="school-theme">Theme - School</option>
+            <option value="dark-theme">Theme - Dark</option>
+            <option value="lumen-theme">Theme - Lumen</option>
+            <option value="solar-theme">Theme - Solar</option>
+            <option value="pulse-theme">Theme - Pulse</option>
+            <option value="united-theme">Theme - United</option>
+            <option value="litera-theme">Theme - Litera</option>
+          </select>
+          <i class="fa-solid fa-caret-down" id="select-theme-caret"></i>
+        </section>
+        <section class="mb-4 mt-4 col-lg-5 col-md-12" id="calculator-container">
+          <div class="card" id="calculator">
+            <div class="card-body">
+              <div class="col-12 bg-dark" id="keypad">
                 <div class="row">
-                  <div class="col-9">
-                    <button class="btn btn-lg w-100 btn-danger btn-raised mb-2" id="btn-clear">Clear</button>
-                  </div>
-                  <div class="col-3">
-                    <button class="btn btn-lg w-100 btn-danger btn-raised mb-2" id="btn-backspace"><i class="fa-solid fa-delete-left" id="backspace-icon"></i></button>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-3">
-                    <button class="btn btn-lg w-100 btn-info btn-raised mb-2" id="btn-plus-minus">&#xb1;</button>
-                  </div>
-                  <div class="col-3">
-                    <button class="btn btn-lg w-100 btn-warning btn-raised mb-2" id="btn-percentage">&#37;</button>
-                  </div>
-                  <div class="col-3">
-                    <button class="btn btn-lg w-100 btn-warning btn-raised mb-2" id="btn-square-root">&#8730;</button>
-                  </div>
-                  <div class="col-3">
-                    <button class="btn btn-lg w-100 btn-warning btn-raised mb-2" id="btn-division">&#247;</button>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-3">
-                    <button class="btn btn-lg w-100 btn-info btn-raised mb-2" id="btn-seven">7</button>
-                  </div>
-                  <div class="col-3">
-                    <button class="btn btn-lg w-100 btn-info btn-raised mb-2" id="btn-eight">8</button>
-                  </div>
-                  <div class="col-3">
-                    <button class="btn btn-lg w-100 btn-info btn-raised mb-2" id="btn-nine">9</button>
-                  </div>
-                  <div class="col-3">
-                    <button class="btn btn-lg w-100 btn-warning btn-raised mb-2" id="btn-multiplication">&#215;</button>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-3">
-                    <button class="btn btn-lg w-100 btn-info btn-raised mb-2" id="btn-four">4</button>
-                  </div>
-                  <div class="col-3">
-                    <button class="btn btn-lg w-100 btn-info btn-raised mb-2" id="btn-five">5</button>
-                  </div>
-                  <div class="col-3">
-                    <button class="btn btn-lg w-100 btn-info btn-raised mb-2" id="btn-six">6</button>
-                  </div>
-                  <div class="col-3">
-                    <button class="btn btn-lg w-100 btn-warning btn-raised mb-2" id="btn-subtraction">&#8722;</button>
+                  <div
+                    class="col-12 bg-dark text-white mb-2"
+                    id="calculator-display"
+                  >
+                    <h6
+                      class="text-right text-danger mt-2"
+                      id="secondary-display"
+                    >
+                      0
+                    </h6>
+                    <h1 class="text-right" id="primary-display">0</h1>
                   </div>
                 </div>
-                <div class="row">
-                  <div class="col-3">
-                    <button class="btn btn-lg w-100 btn-info btn-raised mb-2" id="btn-one">1</button>
+                <div id="mobile-keypad">
+                  <div class="row">
+                    <div class="col-9">
+                      <button
+                        class="btn btn-lg btn-block btn-danger btn-raised mb-2"
+                        id="btn-clear"
+                      >
+                        Clear
+                      </button>
+                    </div>
+                    <div class="col-3">
+                      <button
+                        class="btn btn-lg btn-block btn-danger btn-raised mb-2"
+                        id="btn-backspace"
+                      >
+                        <i
+                          class="fa-solid fa-delete-left"
+                          id="backspace-icon"
+                        ></i>
+                      </button>
+                    </div>
                   </div>
-                  <div class="col-3">
-                    <button class="btn btn-lg w-100 btn-info btn-raised mb-2" id="btn-two">2</button>
+                  <div class="row">
+                    <div class="col-3">
+                      <button
+                        class="btn btn-lg btn-block btn-info btn-raised mb-2"
+                        id="btn-plus-minus"
+                      >
+                        &#xb1;
+                      </button>
+                    </div>
+                    <div class="col-3">
+                      <button
+                        class="btn btn-lg btn-block btn-warning btn-raised mb-2"
+                        id="btn-percentage"
+                      >
+                        &#37;
+                      </button>
+                    </div>
+                    <div class="col-3">
+                      <button
+                        class="btn btn-lg btn-block btn-warning btn-raised mb-2"
+                        id="btn-square-root"
+                      >
+                        &#8730;
+                      </button>
+                    </div>
+                    <div class="col-3">
+                      <button
+                        class="btn btn-lg btn-block btn-warning btn-raised mb-2"
+                        id="btn-division"
+                      >
+                        &#247;
+                      </button>
+                    </div>
                   </div>
-                  <div class="col-3">
-                    <button class="btn btn-lg w-100 btn-info btn-raised mb-2" id="btn-three">3</button>
+                  <div class="row">
+                    <div class="col-3">
+                      <button
+                        class="btn btn-lg btn-block btn-info btn-raised mb-2"
+                        id="btn-seven"
+                      >
+                        7
+                      </button>
+                    </div>
+                    <div class="col-3">
+                      <button
+                        class="btn btn-lg btn-block btn-info btn-raised mb-2"
+                        id="btn-eight"
+                      >
+                        8
+                      </button>
+                    </div>
+                    <div class="col-3">
+                      <button
+                        class="btn btn-lg btn-block btn-info btn-raised mb-2"
+                        id="btn-nine"
+                      >
+                        9
+                      </button>
+                    </div>
+                    <div class="col-3">
+                      <button
+                        class="btn btn-lg btn-block btn-warning btn-raised mb-2"
+                        id="btn-multiplication"
+                      >
+                        &#215;
+                      </button>
+                    </div>
                   </div>
-                  <div class="col-3">
-                    <button class="btn btn-lg w-100 btn-warning btn-raised mb-2" id="btn-addition">&#43;</button>
+                  <div class="row">
+                    <div class="col-3">
+                      <button
+                        class="btn btn-lg btn-block btn-info btn-raised mb-2"
+                        id="btn-four"
+                      >
+                        4
+                      </button>
+                    </div>
+                    <div class="col-3">
+                      <button
+                        class="btn btn-lg btn-block btn-info btn-raised mb-2"
+                        id="btn-five"
+                      >
+                        5
+                      </button>
+                    </div>
+                    <div class="col-3">
+                      <button
+                        class="btn btn-lg btn-block btn-info btn-raised mb-2"
+                        id="btn-six"
+                      >
+                        6
+                      </button>
+                    </div>
+                    <div class="col-3">
+                      <button
+                        class="btn btn-lg btn-block btn-warning btn-raised mb-2"
+                        id="btn-subtraction"
+                      >
+                        &#8722;
+                      </button>
+                    </div>
                   </div>
-                </div>
-                <div class="row">
-                  <div class="col-6">
-                    <button class="btn btn-lg w-100 btn-info btn-raised mb-2" id="btn-zero">0</button>
+                  <div class="row">
+                    <div class="col-3">
+                      <button
+                        class="btn btn-lg btn-block btn-info btn-raised mb-2"
+                        id="btn-one"
+                      >
+                        1
+                      </button>
+                    </div>
+                    <div class="col-3">
+                      <button
+                        class="btn btn-lg btn-block btn-info btn-raised mb-2"
+                        id="btn-two"
+                      >
+                        2
+                      </button>
+                    </div>
+                    <div class="col-3">
+                      <button
+                        class="btn btn-lg btn-block btn-info btn-raised mb-2"
+                        id="btn-three"
+                      >
+                        3
+                      </button>
+                    </div>
+                    <div class="col-3">
+                      <button
+                        class="btn btn-lg btn-block btn-warning btn-raised mb-2"
+                        id="btn-addition"
+                      >
+                        &#43;
+                      </button>
+                    </div>
                   </div>
-                  <div class="col-3">
-                    <button class="btn btn-lg w-100 btn-info btn-raised mb-2" id="btn-decimal">.</button>
-                  </div>
-                  <div class="col-3">
-                    <button class="btn btn-lg w-100 btn-primary btn-raised mb-2" id="btn-equals">&#61;</button>
+                  <div class="row">
+                    <div class="col-6">
+                      <button
+                        class="btn btn-lg btn-block btn-info btn-raised mb-2"
+                        id="btn-zero"
+                      >
+                        0
+                      </button>
+                    </div>
+                    <div class="col-3">
+                      <button
+                        class="btn btn-lg btn-block btn-info btn-raised mb-2"
+                        id="btn-decimal"
+                      >
+                        .
+                      </button>
+                    </div>
+                    <div class="col-3">
+                      <button
+                        class="btn btn-lg btn-block btn-primary btn-raised mb-2"
+                        id="btn-equals"
+                      >
+                        &#61;
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
-      <section class="mb-4 mt-4 col-lg-7 col-md-12" id="keyboard-tips">
-        <div class="card bg-info bg-gradient text-muted">
-          <div class="card-body">
-            <h5 class="card-title">Theme</h5>
-            <div class="card-text mb-4">
-              <div class="row">
-                <div class="col-12">
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-secondary btn-raised theme-button active" id="default-theme">Default</button>
-                    <button type="button" class="btn btn-secondary btn-raised theme-button" id="school-theme">School</button>
-                    <button type="button" class="btn btn-secondary btn-raised theme-button" id="dark-theme">Dark</button>
-                    <button type="button" class="btn btn-secondary btn-raised theme-button" id="lumen-theme">Lumen</button>
+        </section>
+        <section class="mb-4 mt-4 col-lg-7 col-md-12" id="keyboard-tips">
+          <div class="card bg-gradient-info text-muted">
+            <div class="card-body">
+              <h5 class="card-title">Theme</h5>
+              <div class="card-text mb-4">
+                <div class="row">
+                  <div class="col-12">
+                    <div class="btn-group">
+                      <button
+                        type="button"
+                        class="btn btn-secondary btn-raised theme-button active"
+                        id="default-theme"
+                      >
+                        Default
+                      </button>
+                      <button
+                        type="button"
+                        class="btn btn-secondary btn-raised theme-button"
+                        id="school-theme"
+                      >
+                        School
+                      </button>
+                      <button
+                        type="button"
+                        class="btn btn-secondary btn-raised theme-button"
+                        id="dark-theme"
+                      >
+                        Dark
+                      </button>
+                      <button
+                        type="button"
+                        class="btn btn-secondary btn-raised theme-button"
+                        id="lumen-theme"
+                      >
+                        Lumen
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="row mt-2">
+                  <div class="col-12">
+                    <div class="btn-group">
+                      <button
+                        type="button"
+                        class="btn btn-secondary btn-raised theme-button"
+                        id="solar-theme"
+                      >
+                        Solar
+                      </button>
+                      <button
+                        type="button"
+                        class="btn btn-secondary btn-raised theme-button"
+                        id="pulse-theme"
+                      >
+                        Pulse
+                      </button>
+                      <button
+                        type="button"
+                        class="btn btn-secondary btn-raised theme-button"
+                        id="united-theme"
+                      >
+                        United
+                      </button>
+                      <button
+                        type="button"
+                        class="btn btn-secondary btn-raised theme-button"
+                        id="litera-theme"
+                      >
+                        Litera
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
-              <div class="row mt-2">
-                <div class="col-12">
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-secondary btn-raised theme-button" id="solar-theme">Solar</button>
-                    <button type="button" class="btn btn-secondary btn-raised theme-button" id="pulse-theme">Pulse</button>
-                    <button type="button" class="btn btn-secondary btn-raised theme-button" id="united-theme">United</button>
-                    <button type="button" class="btn btn-secondary btn-raised theme-button" id="litera-theme">Litera</button>
+              <h5 class="card-title">Color Coding</h5>
+              <div class="card-text">
+                <div class="row">
+                  <div class="col-md-6 col-sm-12">
+                    <button
+                      type="button"
+                      class="btn btn-danger bmd-btn-fab bmd-btn-fab-sm"
+                    ></button>
+                    <p class="ml-2 d-inline font-italic">Clears memory</p>
+                  </div>
+                  <div class="col-md-6 col-sm-12">
+                    <button
+                      type="button"
+                      class="btn btn-warning bmd-btn-fab bmd-btn-fab-sm"
+                    ></button>
+                    <p class="ml-2 d-inline font-italic">
+                      Action that involves two numbers
+                    </p>
                   </div>
                 </div>
               </div>
-            </div>
-            <button class="btn btn-info btn-raised theme-button" id="install-button">Install +</button>
-            <h5 class="card-title">Color Coding</h5>
-            <div class="card-text">
-              <div class="row">
-                <div class="col-md-6 col-sm-12">
-                  <button type="button" class="btn btn-danger bmd-btn-fab bmd-btn-fab-sm"></button>
-                  <p class="ms-2 d-inline fst-italic">Clears memory</p>
-                </div>
-                <div class="col-md-6 col-sm-12">
-                  <button type="button" class="btn btn-warning bmd-btn-fab bmd-btn-fab-sm"></button>
-                  <p class="ms-2 d-inline fst-italic">Action that involves two numbers</p>
-                </div>
-              </div>
-            </div>
-            <div class="card-text">
-              <div class="row">
-                <div class="col-md-6 col-sm-12">
-                  <button type="button" class="btn btn-info bmd-btn-fab bmd-btn-fab-sm"></button>
-                  <p class="ms-2 d-inline fst-italic">Simple number or constant</p>
-                </div>
-                <div class="col-md-6 col-sm-12">
-                  <button type="button" class="btn btn-primary bmd-btn-fab bmd-btn-fab-sm"></button>
-                  <p class="ms-2 d-inline fst-italic">Gives a result</p>
+              <div class="card-text">
+                <div class="row">
+                  <div class="col-md-6 col-sm-12">
+                    <button
+                      type="button"
+                      class="btn btn-info bmd-btn-fab bmd-btn-fab-sm"
+                    ></button>
+                    <p class="ml-2 d-inline font-italic">
+                      Simple number or constant
+                    </p>
+                  </div>
+                  <div class="col-md-6 col-sm-12">
+                    <button
+                      type="button"
+                      class="btn btn-primary bmd-btn-fab bmd-btn-fab-sm"
+                    ></button>
+                    <p class="ml-2 d-inline font-italic">Gives a result</p>
+                  </div>
                 </div>
               </div>
-            </div>
-            <h5 class="card-title mt-4">Keyboard Shortcuts</h5>
-            <div class="card-text">
-              <div class="row mb-2">
-                <div class="col-md-12 col-sm-12">
-                  <button class="btn btn-secondary btn-raised">Backspace</button>
-                  <div class="ms-2 d-inline fst-italic">Deletes last inputted character</div>
+              <h5 class="card-title mt-4">Keyboard Shortcuts</h5>
+              <div class="card-text">
+                <div class="row mb-2">
+                  <div class="col-md-12 col-sm-12">
+                    <button class="btn btn-secondary btn-raised">
+                      Backspace
+                    </button>
+                    <div class="ml-2 d-inline font-italic">
+                      Deletes last inputted character
+                    </div>
+                  </div>
                 </div>
-              </div>
-              <div class="row mb-2">
-                <div class="col-md-6 col-sm-12">
-                  <button class="btn btn-secondary btn-raised">0-9</button> OR <button class="btn btn-secondary btn-raised">.</button>
-                  <div class="ms-2 d-inline fst-italic">Gives input</div>
+                <div class="row mb-2">
+                  <div class="col-md-6 col-sm-12">
+                    <button class="btn btn-secondary btn-raised">0-9</button> OR
+                    <button class="btn btn-secondary btn-raised">.</button>
+                    <div class="ml-2 d-inline font-italic">Gives input</div>
+                  </div>
+                  <div class="col-md-6 col-sm-12">
+                    <button class="btn btn-secondary btn-raised">Esc</button> OR
+                    <button class="btn btn-secondary btn-raised">Clear</button>
+                    <div class="ml-2 d-inline font-italic">Clears memory</div>
+                  </div>
                 </div>
-                <div class="col-md-6 col-sm-12">
-                  <button class="btn btn-secondary btn-raised">Esc</button> OR <button class="btn btn-secondary btn-raised">Clear</button>
-                  <div class="ms-2 d-inline fst-italic">Clears memory</div>
+                <div class="row mb-2">
+                  <div class="col-md-6 col-sm-12">
+                    <button class="btn btn-secondary btn-raised">
+                      + / * -
+                    </button>
+                    <div class="ml-2 d-inline font-italic">
+                      Executes given action
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-sm-12">
+                    <button class="btn btn-secondary btn-raised">Return</button>
+                    OR <button class="btn btn-secondary btn-raised">=</button>
+                    <div class="ml-2 d-inline font-italic">
+                      Calculates result
+                    </div>
+                  </div>
                 </div>
-              </div>
-              <div class="row mb-2">
-                <div class="col-md-6 col-sm-12">
-                  <button class="btn btn-secondary btn-raised">+ / * -</button>
-                  <div class="ms-2 d-inline fst-italic">Executes given action</div>
+                <div class="row mb-2">
+                  <div class="col-md-6 col-sm-12">
+                    <button class="btn btn-secondary btn-raised">%</button>
+                    <div class="ml-2 d-inline font-italic">
+                      Performs percentage function
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-sm-12">
+                    <button class="btn btn-secondary btn-raised">S</button>
+                    <div class="ml-2 d-inline font-italic">
+                      Performs the square root function
+                    </div>
+                  </div>
                 </div>
-                <div class="col-md-6 col-sm-12">
-                  <button class="btn btn-secondary btn-raised">Return</button> OR <button class="btn btn-secondary btn-raised">=</button>
-                  <div class="ms-2 d-inline fst-italic">Calculates result</div>
-                </div>
-              </div>
-              <div class="row mb-2">
-                <div class="col-md-6 col-sm-12">
-                  <button class="btn btn-secondary btn-raised">%</button>
-                  <div class="ms-2 d-inline fst-italic">Performs percentage function</div>
-                </div>
-                <div class="col-md-6 col-sm-12">
-                  <button class="btn btn-secondary btn-raised">S</button>
-                  <div class="ms-2 d-inline fst-italic">Performs the square root function</div>
-                </div>
-              </div>
-              <div class="row mb-2">
-                <div class="col-md-12 col-sm-12">
-                  <button class="btn btn-secondary btn-raised">P</button>
-                  <div class="ms-2 d-inline fst-italic">Changes current input to negative or positive</div>
+                <div class="row mb-2">
+                  <div class="col-md-12 col-sm-12">
+                    <button class="btn btn-secondary btn-raised">P</button>
+                    <div class="ml-2 d-inline font-italic">
+                      Changes current input to negative or positive
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
-    </div>
-  </main>
+        </section>
+      </div>
+    </main>
 
-  <!-- Page Specific JS -->
-  <script type="module" src="js/index.js"></script>
+    <!-- Page Specific JS -->
+    <script type="module" src="js/index.js"></script>
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-G8MJG60FRM"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-G8MJG60FRM"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || []
+      function gtag() {
+        dataLayer.push(arguments)
+      }
+      gtag("js", new Date())
 
-    gtag('config', 'G-G8MJG60FRM');
-  </script>
-</body>
+      gtag("config", "G-G8MJG60FRM")
+    </script>
+  </body>
 </html>

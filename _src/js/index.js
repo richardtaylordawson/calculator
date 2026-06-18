@@ -1,6 +1,5 @@
 import Calculator from "./modules/calculator.js"
 import Theme from "./modules/theme.js"
-import "./utils/install-button"
 
 /**
  * Initializes the calculator object
@@ -97,15 +96,3 @@ const theme = new Theme({
 })
 
 theme.initialize()
-
-// Register service worker
-if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.register("/sw.js")
-}
-
-if (window.matchMedia("(display-mode: standalone)").matches) {
-  window.addEventListener("scroll", (e) => {
-    e.preventDefault()
-    window.scrollTo(0, 0)
-  })
-}

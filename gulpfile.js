@@ -44,10 +44,7 @@ async function bundle(input, file) {
 }
 
 async function js() {
-  await Promise.all([
-    bundle("_src/js/index.js", "dist/js/index.js"),
-    bundle("_src/sw.js", "dist/sw.js"),
-  ])
+  await Promise.all([bundle("_src/js/index.js", "dist/js/index.js")])
 }
 
 function html() {
@@ -116,7 +113,6 @@ function watchFiles() {
   watch("_src/css/**/*.css", css)
   watch(paths.images, images)
   watch("_src/js/**/*.js", js)
-  watch("_src/sw.js", js)
   watch(paths.html, html)
   watch(paths.staticFiles, files)
 }

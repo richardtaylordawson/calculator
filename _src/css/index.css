@@ -3,10 +3,6 @@ body {
   touch-action: manipulation;
 }
 
-pwa-install::part(openButton) {
-  display: none;
-}
-
 #application {
   min-width: 400px;
 }
@@ -56,13 +52,6 @@ pwa-install::part(openButton) {
   position: relative;
 }
 
-#install-button {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-}
-
-#mobile-install-button-container,
 #select-theme,
 #select-theme-caret {
   display: none;
@@ -112,14 +101,6 @@ pwa-install::part(openButton) {
     z-index: 999;
     color: white;
     display: block;
-  }
-
-  #mobile-install-button-container {
-    display: block;
-    position: absolute;
-    top: 0.5rem;
-    right: 10px;
-    z-index: 999;
   }
 
   #backspace-icon {
@@ -190,12 +171,5 @@ pwa-install::part(openButton) {
 
   #keyboard-tips {
     display: none;
-  }
-}
-
-@media all and (display-mode: standalone) {
-  body {
-    position: fixed;
-    width: 100%;
   }
 }
